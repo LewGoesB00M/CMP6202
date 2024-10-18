@@ -1,0 +1,11 @@
+Powerpoint should be 5 min long and cover my chosen dataset. Talk about it, talk about its attributes, how you handled missing values etc. 
+Presenting them on the 2nd December. This is NOT a normally scheduled lesson, meaning it takes precedent over whatever else would be on that day.
+(Could also be the week beginning 2nd Dec)
+
+Your report MUST use the dataset used in your powerpoint and the techniques you referred to. You can do more techniques but you cannot do less than what you said you'd do in the powerpoint. 10% the slides, 10% your presentation of the slides and ability to answer questions on it. Nouh may be quite harsh with questions, definitely prep for it.
+
+With regards to said report, he said to use Google Scholar to find a dataset rather than Kaggle.
+It could probably be good to find one related to health care (heart conditions, strokes, etc.), as there's plenty to talk about with 
+their real-world impact in both your presentation and final report.
+
+The Lab 4 .ipynb is actually really helpful, and details EDA processes.
