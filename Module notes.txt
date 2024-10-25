@@ -10,3 +10,7 @@ their real-world impact in both your presentation and final report.
 
 The Lab 4 .ipynb is actually really helpful, and details EDA processes.
 Lab 5 is equally useful, with more EDA info as well as hands-on KNN training.
+
+When searching for datasets, use IEEE DataPortal, Mendeley, or Google Scholar.
+Use terms like "machine learning classification data" or something like that.
+Mendeley seemed quite good, I bookmarked a link from it.
