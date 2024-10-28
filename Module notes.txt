@@ -1,8 +1,13 @@
 Powerpoint should be 5 min long and cover my chosen dataset. Talk about it, talk about its attributes, how you handled missing values etc. 
 Presenting them on the 2nd December (or the week of, so possibly the 6th).
 However, the slides themselves must be submitted on November 30th. 
+The presentation may not be on the 6th, and it also may not be with Nouh.
+It's possible that he'll bring in another lecturer to assess you on this, so you need to get this presentation down solid.
 
-Your report MUST use the dataset used in your powerpoint and the techniques you referred to. You can do more techniques but you cannot do less than what you said you'd do in the powerpoint. 10% the slides, 10% your presentation of the slides and ability to answer questions on it. Nouh may be quite harsh with questions, definitely prep for it.
+Your report MUST use the dataset used in your powerpoint and the techniques you referred to.
+You can do more techniques but you cannot do less than what you said you'd do in the powerpoint. 
+10% the slides, 10% your presentation of the slides and ability to answer questions on it. 
+Nouh [[Or the lecturer in his place]] may be quite harsh with questions, definitely prep for it.
 
 With regards to said report, he said to use Google Scholar to find a dataset rather than Kaggle.
 It could probably be good to find one related to health care (heart conditions, strokes, etc.), as there's plenty to talk about with 
