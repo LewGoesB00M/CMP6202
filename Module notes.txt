@@ -1,3 +1,10 @@
+------------------------------------------------------------------------------------
+You have an upcoming deadline clash with this module and your dissertation.
+Lit Review - Nov 25
+Presentation - Nov 29
+------------------------------------------------------------------------------------
+
+
 Powerpoint should be 5 min long and cover my chosen dataset. Talk about it, talk about its attributes, how you handled missing values etc. 
 Presenting them on the 2nd December (or the week of, so possibly the 6th).
 However, the slides themselves must be submitted on November 30th. 
@@ -10,12 +17,25 @@ You can do more techniques but you cannot do less than what you said you'd do in
 Nouh [[Or the lecturer in his place]] may be quite harsh with questions, definitely prep for it.
 
 With regards to said report, he said to use Google Scholar to find a dataset rather than Kaggle.
+Nouh disapproves of Kaggle, treats it as a last resort. He then went on to show it in his presentation though?
 It could probably be good to find one related to health care (heart conditions, strokes, etc.), as there's plenty to talk about with 
 their real-world impact in both your presentation and final report.
 
 The Lab 4 .ipynb is actually really helpful, and details EDA processes.
 Lab 5 is equally useful, with more EDA info as well as hands-on KNN training.
 
-When searching for datasets, use IEEE DataPortal, Mendeley, or Google Scholar.
+When searching for datasets, use IEEE DataPort, Mendeley, or Google Scholar.
 Use terms like "machine learning classification data" or something like that.
 Mendeley seemed quite good, I bookmarked a link from it.
+You can apparently get datasets from Github? The repo he had open was called "LLMs-from-scratch". I'd rather not do that though.
+
+Use Nouh's template for the report. Convert it to LaTeX but stick to it, as with CMP6200.
+Hyperparameter tuning is a "critical section if you want high marks."
+Additionally, 6.2 (Reflection on Individual Learning) is the first section he will read and will be a substantial part of the mark, at least 10%.
+The final .zip should be the report, dataset and the Jupyter notebook.
+
+Even though you typically use camelCase, consider snake_case for the coursework. When it comes to X_train, X_test, y_train and y_test,
+they should look like that; X is capitalised, y is not.
+
+Remember from Data Visualisation that Nouh is a harsh marker. Make sure that you use the correct tense and 1st/3rd person for the report because
+he docked marks from you for that last year.
