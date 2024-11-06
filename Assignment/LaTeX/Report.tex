@@ -124,10 +124,45 @@ possible so that they become useful training data for the model, as ML models ca
 \\
 \noindent
 You should work with at least two ML algorithms. Compare them, pros/cons, why you settled on the one you did.
-F1-Score if you do a classification problem. A template exists for both the presentation and report.
-\huge \noindent \textbf{You need to pay close attention to section 6.2, as he says it'll be at least 10\%}.
+F1-Score if you do a classification problem, otherwise $r^2$. A template exists for both the presentation and report.
+\noindent \textbf{You need to pay close attention to section 6.2, as he says it'll be at least 10\%}.
 He mentions things like certificates, a linkedin profile and more can be relevant to this section.
-Sounds less like "individual learning reflection" and more "individual reflection". 
+Sounds less like "individual learning reflection" and more "individual reflection".
+\\
+\noindent 
+You might be missing some \LaTeX packages, consult your lit review for the ones you might need.
+This also applies to the CMP6230 report.
+\\
+\noindent
+Kaggle can give you certificates, as can GitHub. With Github, it could be 
+advisable to make this repo public, or perhaps a sanitised duplicate. 
+
+\chapter{Notes, remove before final}
+\section{Week 7}
+\subsection{Naive Bayes}
+This symbol | means "given that".
+Sentiment analysis, this could be linked to your dissertation too.
+Used in classification. After the formula, the larger number is chosen as the class (i.e. if spam scored 0.05 but good showed 0.12, good wins).
+Gaussian NB is best used for continuous data and text data classification.
+The prior probability is calculated by dividing the number of positive instances by the total number of instances.
+When classifying spam emails, the probability of the email being spam is the prior probability.
+
+\subsubsection{Cross Validation}
+Train_test_split has some issues, due to its random selection of data to put in each split, which are addressed by cross validation.
+Cross validation helps to reduce bias in an ML model.
+\subsubsection{K-Fold}
+Divides the dataset into "K" subsets/folds, then trains and evaluates the model "K" times, using a different fold as the test set while the others 
+act as the test data.
+\subsubsection{Stratified K-Fold}
+A variation of K-Fold that ensures class balance, helping where the dataset is imbalanced. \textbf{Could be very relevant.}
+Week 7 PPT slides 17 through 20 help with this and regular K-Fold.
+\subsubsection{Accuracy score}
+Your accuracy score will differ from the cross-validation score because it doesn't account for the averaged and varied subsets
+used in cross-validation.
+
+\subsection{Decision tree}
+Another classification method, currently don't know much about it.
+Initialised in code via DecisionTreeClassifier().
 
 
 \end{document}
