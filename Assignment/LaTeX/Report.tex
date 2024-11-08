@@ -146,9 +146,10 @@ Used in classification. After the formula, the larger number is chosen as the cl
 Gaussian NB is best used for continuous data and text data classification.
 The prior probability is calculated by dividing the number of positive instances by the total number of instances.
 When classifying spam emails, the probability of the email being spam is the prior probability.
+Probability of a given event (A) given that (|) a previous event has occurred (B)
 
 \subsubsection{Cross Validation}
-Train_test_split has some issues, due to its random selection of data to put in each split, which are addressed by cross validation.
+Train test split has some issues, due to its random selection of data to put in each split, which are addressed by cross validation.
 Cross validation helps to reduce bias in an ML model.
 \subsubsection{K-Fold}
 Divides the dataset into "K" subsets/folds, then trains and evaluates the model "K" times, using a different fold as the test set while the others 
@@ -164,5 +165,108 @@ used in cross-validation.
 Another classification method, currently don't know much about it.
 Initialised in code via DecisionTreeClassifier().
 
+\section{Mihai W7}
+\subsection{Overall notes - Beginning of talk}
+\begin{itemize}
+    \item Find a problem before a dataset (No)
+    \item Identify if said problem is regression or classification
+    \item It's hard to use a classification dataset where the target column is just a bunch of labels (???)
+    \begin{itemize}
+        \item This may be in reference to Week 7's wine set where you had 7 different levels of quality but converted them to 2 for binary classification.
+    \end{itemize}
+    \item Examples on Moodle
+    \item Datasets on Moodle but it's almost 100\% that someone else will have used them.
+    \item I also don't know if you're even allowed to use them.
+    \item A dataset can have more than one target column (though the ones you use likely won't).
+    \item Mihai strongly warns that ML is a very iterative process, and your first attempt will probably be poor.
+    \item You will be asked questions on it in the presentation \textbf{RELATED TO WHAT YOU'VE DONE IN CLASS}, likely
+    by Mihai himself, and he is trying to catch you out.
+\end{itemize}
+
+\subsection{Section 2}
+\begin{itemize}
+    \item After you have an identified dataset, begin EDA.
+    \item Describe how you split the dataset into training and testing dataset.
+    \item If the machine sees the test data, it may "overfit". \begin{itemize}
+        \item You've seen this before where the line of best fit isn't really a line and just connects every single point, meaning it's 
+        really good at guessing the data it already knows but not new data. 
+    \end{itemize}
+    \item You split your data \textit{BEFORE} EDA to avoid "conceptual overfitting".
+    \item When splitting data, you need to think about data imbalance i.e. training set having too much of the one option and few of the other (too many True, not enough False).
+    \item SKLearn may try to fix that for you.
+    \item Identify outliers, missing data.
+    \item "Missing information can be information in itself". Consider the source of the data (not Kaggle but rather where the Kaggle author got it from)
+    \begin{itemize}
+        \item You might be able to impute data rather than deleting it.
+        \item Conserve as much data as you can, deleting data should be a last option.
+    \end{itemize}
+    \item Erroneous data \begin{itemize}
+        \item Another reason why your data source is important.
+        \item Could just be mistyped, see what the erroneous data actually is to see if you can correct it.
+    \end{itemize}
+    \item Outliers
+    \begin{itemize}
+        \item Is it significant enough to remove it? Is it definitely an outlier; could it feasibly be true? (speed camera example where one guy went 30 but another went 100, but that's still plausible.)
+        \item Boxplots can identify outliers.
+    \end{itemize}
+    \item If your dataset is bad, your model will be, too.
+\end{itemize}
+
+\subsection{Section 3}
+\begin{itemize}
+    \item Identify the right algorithm. \begin{itemize}
+        \item Decision trees are good at classification.
+        \item Random forest is also used for it.
+        \item Naive Bayes and KNN work for prediction and classification.
+        \item Some of these may perform worse with higher amounts of data, look into them.
+    \end{itemize}
+    \item Performance won't matter a massive amount but you still need to be able to justify why it was good.
+    \begin{itemize}
+        \item Also justify its downsides and limitations.
+        \item And the limtiations of the dataset itself.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Section 4}
+\begin{itemize}
+    \item Encoding is important here because ML doesn't use text. \begin{itemize}
+        \item Side-note: Even if it does that's actually just an abstraction and it's just encoding it under the hood.
+    \end{itemize}
+    \item Fine-tuning \begin{itemize}
+        \item Playing around with parameters of the functions.
+        \item KNN Neighbours and such
+        \item Often comes after an initial test run
+        \item If your accuracy is really low (20\% was the example), fine-tuning won't help and you just need to redo the entire work.
+        \item Could maybe give you an extra 5\% accuracy.
+        \item Decision trees may have multiple versions. SKLearn's decision tree may be different from a CUDA one.
+    \end{itemize}
+
+    \item Evaluation metrics
+    \begin{itemize}
+        \item Accuracy is not Precision. Which do you need?
+        \item You want both to be high, if one lags massively behind the other then that's bad.
+        \item ML is an iterative process until you can get the best performing model.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Section 5}
+    \begin{itemize}
+        \item Visualisation of evaluation results
+        \begin{itemize}
+            \item For a correlation matrix, a heatmap is better than a bar plot for example.
+        \end{itemize}
+    \end{itemize}
+
+\subsection{Presentation}
+When writing this presentation, there's 3 questions at all times. What, why and how?
+What are you doing, why are you doing it, how are you doing it?
+Why is very important - why did I select my problem? Why do I think it's important.
+
+
+\chapter{Key note}
+You need quite a substantial amount of this actually done for \textbf{November 29th} rather than Dec 20th as the 
+deadline states. This is because the presentation relies upon this report. For both the report and the presentation,
+treat it like your dissertation. Cite some academic papers to prove you're making a good case. Mihai used the 
+term "literature review", so maybe he really does mean to that depth.
 
 \end{document}
