@@ -165,6 +165,36 @@ used in cross-validation.
 Another classification method, currently don't know much about it.
 Initialised in code via DecisionTreeClassifier().
 
+\section{Week 8}
+You left the lecture early this week to work on your dissertation. He may have covered topics that you missed by
+consequence. I believe all of these are classification algorithms, and as such are of key importance to your probable 
+dataset.
+
+\subsection{Random Forest}
+Utilise multiple deicsion trees. Random data points are selected and a decision tree is built with them. Several
+trees are then modeled to predict the value of any new data point. Because there's multiple trees, there's multiple 
+outputs, so you have to average all the predicted values for a new data point to compute the final output.
+
+\subsection{Logistic Regression}
+I really don't understand this in the slightest.
+Takes iterations as a parameter to "find the best line"?
+
+\subsection{Support Vector Machines}
+Also didn't understand this. Powerpoints are useless.
+
+
+\subsection{Dataset imbalance}
+\subsubsection{Oversampling}
+SMOTE adds synthetic data to add more to the minority class. It's based on nearest-neighbours.
+
+\subsubsection{Undersampling}
+Undersampling removes some of the majority. Good with loads of data (i.e. millions).
+Uses TomekLinks, though the Powerpoint does not say what that is.
+
+
+\section{Week 9}
+\subsection{Hyperparameter tuning}
+
 \section{Mihai W7}
 \subsection{Overall notes - Beginning of talk}
 \begin{itemize}
@@ -178,7 +208,9 @@ Initialised in code via DecisionTreeClassifier().
     \item Datasets on Moodle but it's almost 100\% that someone else will have used them.
     \item I also don't know if you're even allowed to use them.
     \item A dataset can have more than one target column (though the ones you use likely won't).
-    \item Mihai strongly warns that ML is a very iterative process, and your first attempt will probably be poor.
+    \item Mihai strongly warns that ML is a very iterative process, and your first attempt will probably be poor. \begin{itemize}
+        \item This is why you use \textbf{pipelines} as in CMP6230 but that's not this module.
+    \end{itemize}
     \item You will be asked questions on it in the presentation \textbf{RELATED TO WHAT YOU'VE DONE IN CLASS}, likely
     by Mihai himself, and he is trying to catch you out.
 \end{itemize}
@@ -261,7 +293,7 @@ Initialised in code via DecisionTreeClassifier().
 When writing this presentation, there's 3 questions at all times. What, why and how?
 What are you doing, why are you doing it, how are you doing it?
 Why is very important - why did I select my problem? Why do I think it's important.
-
+Panel may consist of many people. Nouh and his students
 
 \chapter{Key note}
 You need quite a substantial amount of this actually done for \textbf{November 29th} rather than Dec 20th as the 
