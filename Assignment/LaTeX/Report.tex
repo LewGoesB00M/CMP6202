@@ -186,14 +186,23 @@ Also didn't understand this. Powerpoints are useless.
 \subsection{Dataset imbalance}
 \subsubsection{Oversampling}
 SMOTE adds synthetic data to add more to the minority class. It's based on nearest-neighbours.
+Experimentation in labs revealed that there seems to be an element of RNG to it that could then 
+influence the accuracy of models. In your work, perhaps specify a seed so that your results 
+can be reproduced.
 
 \subsubsection{Undersampling}
 Undersampling removes some of the majority. Good with loads of data (i.e. millions).
 Uses TomekLinks, though the Powerpoint does not say what that is.
 
+\section{Weeks 10, 11 and 12?}
+No notes for week 9 because I was doing CMP6230 instead. Consult lab sheet for it because that's equally useful.
 
-\section{Week 9}
-\subsection{Hyperparameter tuning}
+It sounds like going forward you're not learning things relevant to the module anymore? Just him loredumping about various 
+tech like deep learning.
+
+\subsubsection{Epochs}
+A common term that you see quite often. Refers to iterations. Typically you'll see it in relation to neural networks 
+where each epoch was one attempt that then influences the next.
 
 \section{Mihai W7}
 \subsection{Overall notes - Beginning of talk}
@@ -300,5 +309,9 @@ You need quite a substantial amount of this actually done for \textbf{November 2
 deadline states. This is because the presentation relies upon this report. For both the report and the presentation,
 treat it like your dissertation. Cite some academic papers to prove you're making a good case. Mihai used the 
 term "literature review", so maybe he really does mean to that depth.
+
+Furthermore, while it may not actually be marked, describe everything you do within the Jupyter notebook with 
+Markdown text cells. It won't count to the word count and might let you sneak in some added detail that might not 
+have been able to go in the report.
 
 \end{document}
