@@ -98,6 +98,8 @@
 \usepackage{amssymb}
 % ------------------------------------------------------------------------------
 \usepackage{tcolorbox}
+\newcommand{\para}{\vspace{8pt}\noindent}
+
 % -------------------------------------------------------------------------------
 
 \title{Using supervised learning for the binary classification of Type 2 Diabetes}
@@ -261,7 +263,7 @@ of patients suffering from peripheral neuropathy \autocite{dhanapalaratnam_effec
 to nerve damage from high blood sugar \autocite{nhs_peripheral_2022}, which can occur when the patient was unaware they even 
 had diabetes. 
 
-\vspace{8pt}\noindent 
+\para
 Therefore, it is imperative that systems are put in place to enable the swift diagnosis of diabetes, especially type 2 diabetes 
 given its major prevalence. This can be accomplished by training machine learning models on existing clinical datasets 
 to identify common trends in those with and without type 2 diabetes. This report will document the planning, development 
@@ -285,7 +287,41 @@ Machine learning models require large amounts of data to train upon, meaning a d
 rows and features. This project identified two datasets which could be wrangled into one larger dataset, the first of which being 
 the well-reputed Pima Indian\footnote{"Pima Indian" refers to a specific Native American ethnic group rather than people from India.} 
 Diabetes Database \autocite{uci_machine_learning_pima_nodate}, sourced from \href{https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database}{Kaggle}, 
-a platform for students and researchers alike to download and upload datasets and code for research purposes.
+a platform for students and researchers alike to download and upload datasets and code for research purposes. The dataset contains data on Pima Indian women in 
+Phoenix, Arizona, USA, and has previously seen wide use across academic literature relating to machine learning (\textcite{alzubi_diabetes_2023}, \textcite{zou_construction_2024}, \textcite{joshi_predicting_2021}, \textcite{hayashi_rule_2016}),
+where other researchers have also aimed to solve the problem of diabetes classification via supervised learning. This dataset contains 768 rows with 9 features.
+
+\para
+This project also includes a second dataset, also from \href{https://www.kaggle.com/datasets/johndasilva/diabetes/data}{Kaggle}, that has been previously used in literature by 
+\textcite{zou_construction_2024}. This dataset \autocite{john_dasilva_frankfurt_nodate} is based on data from female patients in Frankfurt, Germany, and includes the same 9 features as the Pima Indian dataset, but includes 2000 rows. By wrangling these two datasets into one larger
+dataset of 2768 rows, it will be possible to give the machine learning models more data to train upon.
+
+\para Table \ref{tab:Features} details the 9 features seen in both datasets and their descriptions.
+
+\begin{longtable}{ | p{0.3\textwidth} | p{0.5\textwidth} | }
+    \hline
+    \cellcolor{blue!25}Feature & \cellcolor{blue!25}Description \\
+    \hline
+    Pregnancies & The number of pregnancies the patient has had. \\
+    \hline
+    Glucose & Plasma glucose concentration over 2 hours in an oral glucose tolerance test. \\
+    \hline
+    BloodPressure & Diastolic blood pressure in mm/Hg. \\
+    \hline
+    SkinThickness & Triceps skin fold thickness (mm) \\
+    \hline
+    Insulin & 2-hour serum insulin. \\
+    \hline
+    BMI & Body Mass Index, calculated from the patient's weight and height. \\
+    \hline
+    DiabetesPedigreeFunction & The product of a function to ascertain the probability of diabetes based on family genetics. \autocite{akmese_diagnosing_2022} \\
+    \hline
+    Age & The patient's age.\\
+    \hline
+    Outcome & Whether the patient is likely to develop diabetes.\\
+    \hline 
+    \caption{The features seen in both datasets.}\label{tab:Features}
+\end{longtable}
 
 % An interesting statement was made by Mihai in Week 7.
 % He said "You split your data BEFORE EDA to avoid conceptual overfitting".

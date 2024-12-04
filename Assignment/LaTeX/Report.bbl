@@ -19,6 +19,149 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global/global}
+    \entry{akmese_diagnosing_2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dbb4ce2bf0c227fcf942ecae10e04e5a}{%
+           family={Akmeşe},
+           familyi={A\bibinitperiod},
+           given={Ömer\bibnamedelima Faruk},
+           giveni={Ö\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \strng{fullhash}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \strng{fullhashraw}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \strng{bibnamehash}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \strng{authorbibnamehash}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \strng{authornamehash}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \strng{authorfullhash}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \strng{authorfullhashraw}{dbb4ce2bf0c227fcf942ecae10e04e5a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The rate of diabetes is rapidly increasing worldwide. Early detection of diabetes can help prevent or delay the onset of diabetes by initiating lifestyle changes and taking appropriate preventive measures. Until now, prediabetes and type 2 diabetes have proved to be early detection problems. There is a need for easy, rapid, and accurate diagnostic tools for the early diagnosis of diabetes in this context. Machine learning algorithms can help diagnose diseases early. Numerous studies are being conducted to improve the speed, performance, reliability, and accuracy of diagnosing with these methods for a particular disease. This study aims to predict whether a patient has diabetes based on diagnostic measurements in a dataset from the National Institute of Diabetes and Digestive and Kidney Diseases. Eight different variables belonging to the patients were selected as the input variable, and it was estimated whether the patient had diabetes or not. Of the 768 records examined, 500 (65.1\%) were healthy, and 268 (34.9\%) had diabetes. Ten different machine learning algorithms have been applied to predict diabetic status. The most successful method was the Random Forest algorithm with 90.1\% accuracy. Accuracy percentages of other algorithms are also between 89\% and 81\%. This study describes a highly accurate machine learning prediction tool for finding patients with diabetes. The model identified in the study may be helpful for early diabetes diagnosis.}
+      \field{day}{30}
+      \field{issn}{2148-4171}
+      \field{journaltitle}{Hittite Journal of Science and Engineering}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{Diagnosing Diabetes with Machine Learning Techiques}
+      \field{urlday}{27}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{9}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{9\bibrangedash 18}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.17350/HJSE19030000250
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\Lewis\\Zotero\\storage\\AQRN2CAN\\Akmeşe - 2022 - Diagnosing Diabetes with Machine Learning Techiques.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://dergipark.org.tr/en/doi/10.17350/HJSE19030000250
+      \endverb
+      \verb{url}
+      \verb http://dergipark.org.tr/en/doi/10.17350/HJSE19030000250
+      \endverb
+    \endentry
+    \entry{alzubi_diabetes_2023}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=1d09dc6db9b9aa6920ad80212e01f1e6}{%
+           family={{AlZu}’bi},
+           familyi={A\bibinitperiod},
+           given={Shadi},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94dd7d6ade1f958a7a61428ac1e88b84}{%
+           family={Elbes},
+           familyi={E\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bab0c2b5126e3453473daad18d4c9616}{%
+           family={Mughaid},
+           familyi={M\bibinitperiod},
+           given={Ala},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91dc64eef8505b0d8370f15a98b2256e}{%
+           family={Bdair},
+           familyi={B\bibinitperiod},
+           given={Noor},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=61b325a50c18a490fd21f80291e071af}{%
+           family={Abualigah},
+           familyi={A\bibinitperiod},
+           given={Laith},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f7f095055df7595db9435ff7add31236}{%
+           family={Forestiero},
+           familyi={F\bibinitperiod},
+           given={Agostino},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29f2ad3d369f8660a320313e14a73742}{%
+           family={Zitar},
+           familyi={Z\bibinitperiod},
+           given={Raed\bibnamedelima Abu},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{57381c98dfc096476e81866a561c4153}
+      \strng{fullhash}{3c4f41c02e0aeee87e77896d5bbd1370}
+      \strng{fullhashraw}{3c4f41c02e0aeee87e77896d5bbd1370}
+      \strng{bibnamehash}{3c4f41c02e0aeee87e77896d5bbd1370}
+      \strng{authorbibnamehash}{3c4f41c02e0aeee87e77896d5bbd1370}
+      \strng{authornamehash}{57381c98dfc096476e81866a561c4153}
+      \strng{authorfullhash}{3c4f41c02e0aeee87e77896d5bbd1370}
+      \strng{authorfullhashraw}{3c4f41c02e0aeee87e77896d5bbd1370}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Diabetes is a metabolic disorder in which the body is unable to properly regulate blood sugar levels. It can occur when the body does not produce enough insulin or when cells become resistant to insulin’s effects. There are two main types of diabetes, Type 1 and Type 2, which have different causes and risk factors. Early detection of diabetes allows for early intervention and management of the condition. This can help prevent or delay the development of serious complications associated with diabetes. Early diagnosis also allows for individuals to make lifestyle changes to prevent the progression of the disease. Healthcare systems play a vital role in the management and treatment of diabetes. They provide access to diabetes education, regular check-ups, and necessary medications for individuals with diabetes. They also provide monitoring and management of diabetes-related complications, such as heart disease, kidney failure, and neuropathy. Through early detection, prevention and management programs, healthcare systems can help improve the quality of life and outcomes for people with diabetes. Current initiatives in healthcare systems for diabetes may fail due to lack of access to education and resources for individuals with diabetes. There may also be inadequate follow-up and monitoring for those who have been diagnosed, leading to poor management of the disease and lack of prevention of complications. Additionally, current initiatives may not be tailored to specific cultural or demographic groups, resulting in a lack of effectiveness for certain populations. In this study, we developed a diabetes prediction system using a healthcare framework. The system employs various machine learning methods, such as K-nearest neighbors, decision tree, deep learning, {SVM}, random forest, {AdaBoost} and logistic regression. The performance of the system was evaluated using the {PIMA} Indians Diabetes dataset and achieved a training accuracy of 82\% and validation accuracy of 80\%.}
+      \field{issn}{1999-5903}
+      \field{journaltitle}{Future Internet}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{note}{Number: 2 Publisher: Multidisciplinary Digital Publishing Institute}
+      \field{number}{2}
+      \field{title}{Diabetes Monitoring System in Smart Health Cities Based on Big Data Intelligence}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{15}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{85}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/fi15020085
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\QKQQA3NC\\AlZu’bi et al. - 2023 - Diabetes Monitoring System in Smart Health Cities Based on Big Data Intelligence.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1999-5903/15/2/85
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1999-5903/15/2/85
+      \endverb
+      \keyw{big data intelligence,classification,data science,deep learning,diabetes prediction,E-health,healthcare analytics,intelligent diagnosis,machine learning}
+    \endentry
     \entry{dhanapalaratnam_effect_2024}{article}{}{}
       \name{author}{8}{}{%
         {{un=0,uniquepart=base,hash=25e2f06532f2df716131b9fd72f701b2}{%
@@ -151,6 +294,162 @@
       \endverb
       \verb{url}
       \verb https://www.diabetes.org.uk/about-us/about-the-charity/our-strategy/statistics
+      \endverb
+    \endentry
+    \entry{hayashi_rule_2016}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=959addcc30c42555d48ab09bfbe5b238}{%
+           family={Hayashi},
+           familyi={H\bibinitperiod},
+           given={Yoichi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a26844901af6eec2da3409ffb7100dc}{%
+           family={Yukita},
+           familyi={Y\bibinitperiod},
+           given={Shonosuke},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1ae15cde8e7ea9de179573e8435bc036}
+      \strng{fullhash}{1ae15cde8e7ea9de179573e8435bc036}
+      \strng{fullhashraw}{1ae15cde8e7ea9de179573e8435bc036}
+      \strng{bibnamehash}{1ae15cde8e7ea9de179573e8435bc036}
+      \strng{authorbibnamehash}{1ae15cde8e7ea9de179573e8435bc036}
+      \strng{authornamehash}{1ae15cde8e7ea9de179573e8435bc036}
+      \strng{authorfullhash}{1ae15cde8e7ea9de179573e8435bc036}
+      \strng{authorfullhashraw}{1ae15cde8e7ea9de179573e8435bc036}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Diabetes is a complex disease that is increasing in prevalence around the world. Type 2 diabetes mellitus (T2DM) accounts for about 90–95\% of all diagnosed adult cases of diabetes. Most present diagnostic methods for T2DM are black-box models, which are unable to provide the reasons underlying diagnosis to physicians; therefore, algorithms that can provide further insight are needed. Rule extraction can provide such explanations; however, in the medical setting, extracted rules must be not only highly accurate, but also simple and easy to understand. The Recursive-Rule {eXtraction} (Re-{RX}) algorithm is a “white-box” model that provides highly accurate classification. However, due to its recursive nature, it tends to generate more rules than other algorithms. Therefore, in this study, we propose the use of a rule extraction algorithm, Re-{RX} with J48graft, combined with sampling selection techniques (sampling Re-{RX} with J48graft) to achieve highly accurate, concise, and interpretable classification rules for the Pima Indian Diabetes ({PID}) dataset, which comprises 768 samples with two classes (diabetes or non-diabetes) and eight continuous attributes. The use of this algorithm resulted in an average accuracy of 83.83\% after 10 runs of 10-fold cross validation. Sampling Re-{RX} with J48 graft achieved substantially better accuracy and provided a considerably fewer average number of rules and antecedents than the original Re-{RX} algorithm. These results suggest that sampling Re-{RX} with J48graft provides more accurate, concise, and interpretable extracted rules than previous algorithms, and is therefore more suitable for medical decision making, including the diagnosis of T2DM.}
+      \field{day}{1}
+      \field{issn}{2352-9148}
+      \field{journaltitle}{Informatics in Medicine Unlocked}
+      \field{month}{1}
+      \field{shortjournal}{Informatics in Medicine Unlocked}
+      \field{title}{Rule extraction using Recursive-Rule extraction algorithm with J48graft combined with sampling selection techniques for the diagnosis of type 2 diabetes mellitus in the Pima Indian dataset}
+      \field{urlday}{28}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{2}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{92\bibrangedash 104}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.imu.2016.02.001
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\9YBG5SVG\\Hayashi and Yukita - 2016 - Rule extraction using Recursive-Rule extraction algorithm with J48graft combined with sampling selec.pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\33WQRM47\\S2352914816300016.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2352914816300016
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2352914816300016
+      \endverb
+      \keyw{Data mining,Pima Indian diabetes,Re-{RX} algorithm,Rule extraction,Sampling selection,Type 2 diabetes mellitus}
+    \endentry
+    \entry{john_dasilva_frankfurt_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=108aae1b288fb2f46190508ce7310f3d}{%
+           family={{John DaSilva}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{108aae1b288fb2f46190508ce7310f3d}
+      \strng{fullhash}{108aae1b288fb2f46190508ce7310f3d}
+      \strng{fullhashraw}{108aae1b288fb2f46190508ce7310f3d}
+      \strng{bibnamehash}{108aae1b288fb2f46190508ce7310f3d}
+      \strng{authorbibnamehash}{108aae1b288fb2f46190508ce7310f3d}
+      \strng{authornamehash}{108aae1b288fb2f46190508ce7310f3d}
+      \strng{authorfullhash}{108aae1b288fb2f46190508ce7310f3d}
+      \strng{authorfullhashraw}{108aae1b288fb2f46190508ce7310f3d}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Kaggle is the world’s largest data science community with powerful tools and resources to help you achieve your data science goals.}
+      \field{langid}{english}
+      \field{title}{Frankfurt Diabetes Dataset}
+      \field{titleaddon}{diabetes}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\57QGGCE3\\data.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.kaggle.com/datasets/johndasilva/diabetes
+      \endverb
+      \verb{url}
+      \verb https://www.kaggle.com/datasets/johndasilva/diabetes
+      \endverb
+    \endentry
+    \entry{joshi_predicting_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b2115e4b70881491b2b10c01136a3d13}{%
+           family={Joshi},
+           familyi={J\bibinitperiod},
+           given={Ram\bibnamedelima D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b3bed78ede817e3a6e23fa94229eddd}{%
+           family={Dhakal},
+           familyi={D\bibinitperiod},
+           given={Chandra\bibnamedelima K.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f2a9619af7ea78bf45d107d3124ead9f}
+      \strng{fullhash}{f2a9619af7ea78bf45d107d3124ead9f}
+      \strng{fullhashraw}{f2a9619af7ea78bf45d107d3124ead9f}
+      \strng{bibnamehash}{f2a9619af7ea78bf45d107d3124ead9f}
+      \strng{authorbibnamehash}{f2a9619af7ea78bf45d107d3124ead9f}
+      \strng{authornamehash}{f2a9619af7ea78bf45d107d3124ead9f}
+      \strng{authorfullhash}{f2a9619af7ea78bf45d107d3124ead9f}
+      \strng{authorfullhashraw}{f2a9619af7ea78bf45d107d3124ead9f}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Diabetes mellitus is one of the most common human diseases worldwide and may cause several health-related complications. It is responsible for considerable morbidity, mortality, and economic loss. A timely diagnosis and prediction of this disease could provide patients with an opportunity to take the appropriate preventive and treatment strategies. To improve the understanding of risk factors, we predict type 2 diabetes for Pima Indian women utilizing a logistic regression model and decision tree—a machine learning algorithm. Our analysis finds five main predictors of type 2 diabetes: glucose, pregnancy, body mass index ({BMI}), diabetes pedigree function, and age. We further explore a classification tree to complement and validate our analysis. The six-fold classification tree indicates glucose, {BMI}, and age are important factors, while the ten-node tree implies glucose, {BMI}, pregnancy, diabetes pedigree function, and age as the significant predictors. Our preferred specification yields a prediction accuracy of 78.26\% and a cross-validation error rate of 21.74\%. We argue that our model can be applied to make a reasonable prediction of type 2 diabetes, and could potentially be used to complement existing preventive measures to curb the incidence of diabetes and reduce associated costs.}
+      \field{day}{9}
+      \field{issn}{1661-7827}
+      \field{journaltitle}{International Journal of Environmental Research and Public Health}
+      \field{month}{7}
+      \field{number}{14}
+      \field{shortjournal}{Int J Environ Res Public Health}
+      \field{title}{Predicting Type 2 Diabetes Using Logistic Regression and Machine Learning Approaches}
+      \field{urlday}{28}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{18}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{7346}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/ijerph18147346
+      \endverb
+      \verb{file}
+      \verb PubMed Central Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\GWH4U3RK\\Joshi and Dhakal - 2021 - Predicting Type 2 Diabetes Using Logistic Regression and Machine Learning Approaches.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8306487/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8306487/
       \endverb
     \endentry
     \entry{khan_epidemiology_2020}{article}{}{}
@@ -314,6 +613,75 @@
       \endverb
       \verb{url}
       \verb https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+      \endverb
+    \endentry
+    \entry{zou_construction_2024}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d6e7df25fb39deb21d772542046a6a77}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Qiong},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e760d38078aff4a5b24c867aa5178c26}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3fb7fd6765972b61144e29c6cc0e32a1}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chang\bibnamedelima Sheng},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York, {NY}, {USA}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{c8524bde9639ee5fdff67cde590e18db}
+      \strng{fullhash}{c8524bde9639ee5fdff67cde590e18db}
+      \strng{fullhashraw}{c8524bde9639ee5fdff67cde590e18db}
+      \strng{bibnamehash}{c8524bde9639ee5fdff67cde590e18db}
+      \strng{authorbibnamehash}{c8524bde9639ee5fdff67cde590e18db}
+      \strng{authornamehash}{c8524bde9639ee5fdff67cde590e18db}
+      \strng{authorfullhash}{c8524bde9639ee5fdff67cde590e18db}
+      \strng{authorfullhashraw}{c8524bde9639ee5fdff67cde590e18db}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Diabetes is one of the world's most common human illnesses, and it has become a major public health issue. There is a pressing need to use robust methods to accurately predict diabetes in the population so that appropriate prevention and therapy can be implemented in time to avoid its complications. On the one hand, in view of the global nature of diabetes, it is necessary to develop a more reliable prediction method suitable for data from different sources or their fusion data. On the other hand, the issue of data imbalance is ubiquitous in medical data. Therefore, we discussed the construction of a diabetes prediction model and the comparison of the discrimination effects of K-nearest neighbor, logical regression, naive bayes, support vector machine, decision tree, {XGBoost}, Catboost, and {GBDT} under the fusion of unbalanced diabetes data. {XGBoost} with {SMOTE} achieved an accuracy of 99.3\% under stratified 10-fold cross validation and more than 90\% accuracy in two external unbalanced datasets, indicating high algorithm reliability. Our results confirm the effectiveness of {XGBoost} in predicting the occurrence of diabetes, and identify important characteristics that affect its performance. Machine learning provides a more effective and rapid method to detect diabetes. Research will have important public health significance in promoting the progress of prevention, diagnosis, and treatment of diabetes and reducing the burden of the disease.}
+      \field{booktitle}{Proceedings of the 2023 International Joint Conference on Robotics and Artificial Intelligence}
+      \field{day}{13}
+      \field{isbn}{979-8-4007-0770-4}
+      \field{month}{2}
+      \field{series}{{JCRAI} '23}
+      \field{title}{Construction and Application of a Machine Learning Prediction Model Based on Unbalanced Diabetes Data Fusion}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{114\bibrangedash 123}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3632971.3633348
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\6NJ8C943\\Zou et al. - 2024 - Construction and Application of a Machine Learning Prediction Model Based on Unbalanced Diabetes Dat.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/3632971.3633348
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/3632971.3633348
       \endverb
     \endentry
   \enddatalist
