@@ -16,5 +16,307 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{dhanapalaratnam_effect_2024}{article}{}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=25e2f06532f2df716131b9fd72f701b2}{%
+           family={Dhanapalaratnam},
+           familyi={D\bibinitperiod},
+           given={Roshan},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=430b695150c23989b3fc07b880b23391}{%
+           family={Issar},
+           familyi={I\bibinitperiod},
+           given={Tushar},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=82c2799a9cb367c654374b0f29efbeec}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Leiao\bibnamedelima Leon},
+           giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=44a6efca7f93862ea28d36524a31cdff}{%
+           family={Tran},
+           familyi={T\bibinitperiod},
+           given={Darren},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d3165e7b33cc86887d7020de5afb6d7}{%
+           family={Poynten},
+           familyi={P\bibinitperiod},
+           given={Ann\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08cc0f20fc3c4f2f009cac8f48f18aeb}{%
+           family={Milner},
+           familyi={M\bibinitperiod},
+           given={Kerry-Lee},
+           giveni={K\bibinithyphendelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a971264f73a8211937b072f041605af3}{%
+           family={Kwai},
+           familyi={K\bibinitperiod},
+           given={Natalie\bibnamedelima C.G.},
+           giveni={N\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=834659bc32158d1af34b241e4194b89f}{%
+           family={Krishnan},
+           familyi={K\bibinitperiod},
+           given={Arun\bibnamedelima V.},
+           giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e7264756f247df78d6443b40304467eb}
+      \strng{fullhash}{48cce333da0f7807c91ce9169b238338}
+      \strng{fullhashraw}{48cce333da0f7807c91ce9169b238338}
+      \strng{bibnamehash}{48cce333da0f7807c91ce9169b238338}
+      \strng{authorbibnamehash}{48cce333da0f7807c91ce9169b238338}
+      \strng{authornamehash}{e7264756f247df78d6443b40304467eb}
+      \strng{authorfullhash}{48cce333da0f7807c91ce9169b238338}
+      \strng{authorfullhashraw}{48cce333da0f7807c91ce9169b238338}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Diabetic peripheral neuropathy ({DPN}) affects ∼50\% of the 500 million people with type 2 diabetes worldwide and is considered disabling and irreversible. The current study was undertaken to assess the effect of metformin on peripheral neuropathy outcomes in type 2 diabetes. Participants with type 2 diabetes (n = 69) receiving metformin were recruited and underwent clinical assessment, peripheral nerve ultrasonography, nerve conduction studies, and axonal excitability studies. Also concurrently screened were 318 participants who were not on metformin, and 69 were selected as disease control subjects and matched to the metformin participants for age, sex, diabetes duration, {BMI}, {HbA}1c, and use of other diabetes therapies. Medical record data over the previous 20 years were analyzed for previous metformin use. Mean tibial nerve cross-sectional area was lower in the metformin group (metformin 14.1 ± 0.7 mm2, nonmetformin 16.2 ± 0.9 mm2, P = 0.038), accompanied by reduction in neuropathy symptom severity (P = 0.021). Axonal excitability studies demonstrated superior axonal function in the metformin group, and mathematical modeling demonstrated that these improvements were mediated by changes in nodal Na+and K+conductances. Metformin treatment is associated with superior nerve structure and clinical and neurophysiological measures. Treatment with metformin may be neuroprotective in {DPN}.,}
+      \field{day}{21}
+      \field{issn}{0012-1797}
+      \field{journaltitle}{Diabetes}
+      \field{month}{8}
+      \field{number}{11}
+      \field{shortjournal}{Diabetes}
+      \field{shorttitle}{Effect of Metformin on Peripheral Nerve Morphology in Type 2 Diabetes}
+      \field{title}{Effect of Metformin on Peripheral Nerve Morphology in Type 2 Diabetes: A Cross-Sectional Observational Study}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{73}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1875\bibrangedash 1882}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.2337/db24-0365
+      \endverb
+      \verb{file}
+      \verb PubMed Central Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\UXTP6YC7\\Dhanapalaratnam et al. - 2024 - Effect of Metformin on Peripheral Nerve Morphology in Type 2 Diabetes A Cross-Sectional Observation.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11493759/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11493759/
+      \endverb
+    \endentry
+    \entry{diabetes_uk_how_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=aabe6b85cb11662007f547630d4991f8}{%
+           family={{Diabetes UK}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{aabe6b85cb11662007f547630d4991f8}
+      \strng{fullhash}{aabe6b85cb11662007f547630d4991f8}
+      \strng{fullhashraw}{aabe6b85cb11662007f547630d4991f8}
+      \strng{bibnamehash}{aabe6b85cb11662007f547630d4991f8}
+      \strng{authorbibnamehash}{aabe6b85cb11662007f547630d4991f8}
+      \strng{authornamehash}{aabe6b85cb11662007f547630d4991f8}
+      \strng{authorfullhash}{aabe6b85cb11662007f547630d4991f8}
+      \strng{authorfullhashraw}{aabe6b85cb11662007f547630d4991f8}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We estimate that more than 5.6 million people in the {UK} are living with diabetes, which is an all-time high.   Our data shows that 4.4 million people in the {UK} live with diabetes. Additionally, 1.2 million people could be living with type 2 diabetes who are yet to be diagnosed.  These registration figures for 2022-23 are up by 167,822 from 2021-22.}
+      \field{langid}{english}
+      \field{title}{How many people in the {UK} have diabetes?}
+      \field{titleaddon}{Diabetes {UK}}
+      \field{urlday}{27}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\TE57ISIQ\\statistics.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.diabetes.org.uk/about-us/about-the-charity/our-strategy/statistics
+      \endverb
+      \verb{url}
+      \verb https://www.diabetes.org.uk/about-us/about-the-charity/our-strategy/statistics
+      \endverb
+    \endentry
+    \entry{khan_epidemiology_2020}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=1228131e4bc8d64387ee38d537c3f997}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Moien\bibnamedelimb Abdul\bibnamedelima Basith},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1680a443c12811b551cef58abe58a7f8}{%
+           family={Hashim},
+           familyi={H\bibinitperiod},
+           given={Muhammad\bibnamedelima Jawad},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=030c861d28c9050ebb688ab7e357e575}{%
+           family={King},
+           familyi={K\bibinitperiod},
+           given={Jeffrey\bibnamedelima Kwan},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bffd93299b15c933545bce301129c3f9}{%
+           family={Govender},
+           familyi={G\bibinitperiod},
+           given={Romona\bibnamedelima Devi},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=54356f4a67149668b0f9d5ab4339e902}{%
+           family={Mustafa},
+           familyi={M\bibinitperiod},
+           given={Halla},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=019c9cf27f8692f7f1481438cbd9b349}{%
+           family={Al\bibnamedelima Kaabi},
+           familyi={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Juma},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4d210feaecae43f9aa43567f0857df1a}
+      \strng{fullhash}{b72b80b402a3600b86e8ab6360513672}
+      \strng{fullhashraw}{b72b80b402a3600b86e8ab6360513672}
+      \strng{bibnamehash}{b72b80b402a3600b86e8ab6360513672}
+      \strng{authorbibnamehash}{b72b80b402a3600b86e8ab6360513672}
+      \strng{authornamehash}{4d210feaecae43f9aa43567f0857df1a}
+      \strng{authorfullhash}{b72b80b402a3600b86e8ab6360513672}
+      \strng{authorfullhashraw}{b72b80b402a3600b86e8ab6360513672}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The rising burden of type 2 diabetes is a major concern in healthcare worldwide. This research aimed to analyze the global epidemiology of type 2 diabetes. We analyzed the incidence, prevalence, and burden of suffering of diabetes mellitus based on epidemiological data from the Global Burden of Disease ({GBD}) current dataset from the Institute of Health Metrics, Seattle. Global and regional trends from 1990 to 2017 of type 2 diabetes for all ages were compiled. Forecast estimates were obtained using the {SPSS} Time Series Modeler. In 2017, approximately 462 million individuals were affected by type 2 diabetes corresponding to 6.28\% of the world’s population (4.4\% of those aged 15–49 years, 15\% of those aged 50–69, and 22\% of those aged 70+), or a prevalence rate of 6059 cases per 100,000. Over 1 million deaths per year can be attributed to diabetes alone, making it the ninth leading cause of mortality. The burden of diabetes mellitus is rising globally, and at a much faster rate in developed regions, such as Western Europe. The gender distribution is equal, and the incidence peaks at around 55 years of age. Global prevalence of type 2 diabetes is projected to increase to 7079 individuals per 100,000 by 2030, reflecting a continued rise across all regions of the world. There are concerning trends of rising prevalence in lower-income countries. Urgent public health and clinical preventive measures are warranted.}
+      \field{issn}{2210-6006}
+      \field{journaltitle}{Journal of Epidemiology and Global Health}
+      \field{month}{3}
+      \field{number}{1}
+      \field{shortjournal}{J Epidemiol Glob Health}
+      \field{title}{Epidemiology of Type 2 Diabetes – Global Burden of Disease and Forecasted Trends}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{10}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{107\bibrangedash 111}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.2991/jegh.k.191028.001
+      \endverb
+      \verb{file}
+      \verb PubMed Central Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\XRUDLAY3\\Khan et al. - 2020 - Epidemiology of Type 2 Diabetes – Global Burden of Disease and Forecasted Trends.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7310804/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7310804/
+      \endverb
+    \endentry
+    \entry{nhs_peripheral_2022}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4459a7e783de4f93dc38a03555f4191f}{%
+           family={{NHS}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{fullhash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{fullhashraw}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{bibnamehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authorbibnamehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authornamehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authorfullhash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authorfullhashraw}{4459a7e783de4f93dc38a03555f4191f}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Find out about the causes of peripheral neuropathy. In the {UK}, the most common cause of peripheral neuropathy is diabetes.}
+      \field{day}{16}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{note}{Section: conditions}
+      \field{title}{Peripheral neuropathy - Causes}
+      \field{titleaddon}{nhs.uk}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\J3RUFS8W\\causes.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nhs.uk/conditions/peripheral-neuropathy/causes/
+      \endverb
+      \verb{url}
+      \verb https://www.nhs.uk/conditions/peripheral-neuropathy/causes/
+      \endverb
+    \endentry
+    \entry{uci_machine_learning_pima_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5e7c0d923ea6b474ee750e997254bf11}{%
+           family={{UCI Machine Learning}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e7c0d923ea6b474ee750e997254bf11}
+      \strng{fullhash}{5e7c0d923ea6b474ee750e997254bf11}
+      \strng{fullhashraw}{5e7c0d923ea6b474ee750e997254bf11}
+      \strng{bibnamehash}{5e7c0d923ea6b474ee750e997254bf11}
+      \strng{authorbibnamehash}{5e7c0d923ea6b474ee750e997254bf11}
+      \strng{authornamehash}{5e7c0d923ea6b474ee750e997254bf11}
+      \strng{authorfullhash}{5e7c0d923ea6b474ee750e997254bf11}
+      \strng{authorfullhashraw}{5e7c0d923ea6b474ee750e997254bf11}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Predict the onset of diabetes based on diagnostic measures}
+      \field{langid}{english}
+      \field{title}{Pima Indians Diabetes Database}
+      \field{titleaddon}{Pima Indians Diabetes Database}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\BWRLRDLZ\\pima-indians-diabetes-database.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+      \endverb
+      \verb{url}
+      \verb https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

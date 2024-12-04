@@ -40,7 +40,7 @@
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 
 % Declare it as the bibliography source, to be called later via \printbibliography
-\addbibresource{Report.bib}
+\addbibresource{pipeline.bib}
 
 % -------------------------------------------------------------------------------
 % To prevent "Chapter N" display for each chapter
@@ -100,7 +100,7 @@
 \usepackage{tcolorbox}
 % -------------------------------------------------------------------------------
 
-\title{Using supervised learning for the binary classification of Type 2 Diabetes}
+\title{Using supervised learning for the Binary classification of Type 2 Diabetes}
 \author{Lewis Higgins - Student ID 22133848}
 \date{December 2024}
 
@@ -113,7 +113,7 @@
 \begin{titlepage}
     \begin{center}
         \includegraphics[width=0.7\linewidth]{BCU}\\[4ex]
-        {\huge \bfseries  \@title}\\[50ex]
+        {\large \bfseries  \@title}\\[50ex]
         {\@author}\\[2ex]
         {CMP6202 - Artificial Intelligence \& Machine Learning}\\[2ex]
         {Module Coordinator: Nouh Elmitwally}\\[10ex]
@@ -131,23 +131,98 @@
 \tableofcontents
 \thispagestyle{empty}
 
-\pagecolor{yellow}
-\begin{abstract}
-    Probably would benefit from an abstract. You can't really write this until the very end though,
-    so return to it then. \textbf{The example work is from a previous year wherein this assessment was a group task.
-    You can see that each group member developed one ML model, but you seem to be developing all of them yourself, so don't be mislead
-    by the report titles only mentioning one model.}
-\end{abstract}
-\pagecolor{white}
-
-
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+% Put the chapter name in the header.
+\markboth{Introduction}{}
 
 Your EDA can be very extensive, and you could potentially have pages and pages and pages of it; this isn't a bad thing.
 The vast majority of any ML-related work is EDA because it gives you the background information on the dataset to then apply
 when training the model, such as the identification of non-numerical columns and encoding them into numerical equivalents where
 possible so that they become useful training data for the model, as ML models cannot interpret strings.
+\\
+\noindent
+You should work with at least two ML algorithms. Compare them, pros/cons, why you settled on the one you did.
+F1-Score if you do a classification problem, otherwise $r^2$. A template exists for both the presentation and report.
+\noindent \textbf{You need to pay close attention to section 6.2, as he says it'll be at least 10\%}.
+He mentions things like certificates, a linkedin profile and more can be relevant to this section.
+Sounds less like "individual learning reflection" and more "individual reflection".
+\\
+\noindent 
+You might be missing some \LaTeX packages, consult your lit review for the ones you might need.
+This also applies to the CMP6230 report.
+\\
+\noindent
+Kaggle can give you certificates, as can GitHub. With Github, it could be 
+advisable to make this repo public, or perhaps a sanitised duplicate. 
 
-\chapter*{Notes, remove before final}
+\chapter{Notes, remove before final}
+\section{Week 7}
+\subsection{Naive Bayes}
+This symbol | means "given that".
+Sentiment analysis, this could be linked to your dissertation too.
+Used in classification. After the formula, the larger number is chosen as the class (i.e. if spam scored 0.05 but good showed 0.12, good wins).
+Gaussian NB is best used for continuous data and text data classification.
+The prior probability is calculated by dividing the number of positive instances by the total number of instances.
+When classifying spam emails, the probability of the email being spam is the prior probability.
+Probability of a given event (A) given that (|) a previous event has occurred (B)
+
+\subsubsection{Cross Validation}
+Train test split has some issues, due to its random selection of data to put in each split, which are addressed by cross validation.
+Cross validation helps to reduce bias in an ML model.
+\subsubsection{K-Fold}
+Divides the dataset into "K" subsets/folds, then trains and evaluates the model "K" times, using a different fold as the test set while the others 
+act as the test data.
+\subsubsection{Stratified K-Fold}
+A variation of K-Fold that ensures class balance, helping where the dataset is imbalanced. \textbf{Could be very relevant.}
+Week 7 PPT slides 17 through 20 help with this and regular K-Fold.
+\subsubsection{Accuracy score}
+Your accuracy score will differ from the cross-validation score because it doesn't account for the averaged and varied subsets
+used in cross-validation.
+
+\subsection{Decision tree}
+Another classification method, currently don't know much about it.
+Initialised in code via DecisionTreeClassifier().
+
+\section{Week 8}
+You left the lecture early this week to work on your dissertation. He may have covered topics that you missed by
+consequence. I believe all of these are classification algorithms, and as such are of key importance to your probable 
+dataset.
+
+\subsection{Random Forest}
+Utilise multiple deicsion trees. Random data points are selected and a decision tree is built with them. Several
+trees are then modeled to predict the value of any new data point. Because there's multiple trees, there's multiple 
+outputs, so you have to average all the predicted values for a new data point to compute the final output.
+
+\subsection{Logistic Regression}
+I really don't understand this in the slightest.
+Takes iterations as a parameter to "find the best line"?
+
+\subsection{Support Vector Machines}
+Also didn't understand this. Powerpoints are useless.
+
+
+\subsection{Dataset imbalance}
+\subsubsection{Oversampling}
+SMOTE adds synthetic data to add more to the minority class. It's based on nearest-neighbours.
+Experimentation in labs revealed that there seems to be an element of RNG to it that could then 
+influence the accuracy of models. In your work, perhaps specify a seed so that your results 
+can be reproduced.
+
+\subsubsection{Undersampling}
+Undersampling removes some of the majority. Good with loads of data (i.e. millions).
+Uses TomekLinks, though the Powerpoint does not say what that is.
+
+\section{Weeks 10, 11 and 12?}
+No notes for week 9 because I was doing CMP6230 instead. Consult lab sheet for it because that's equally useful.
+
+It sounds like going forward you're not learning things relevant to the module anymore? Just him loredumping about various 
+tech like deep learning.
+
+\subsubsection{Epochs}
+A common term that you see quite often. Refers to iterations. Typically you'll see it in relation to neural networks 
+where each epoch was one attempt that then influences the next.
+
 \section{Mihai W7}
 \subsection{Overall notes - Beginning of talk}
 \begin{itemize}
@@ -242,55 +317,20 @@ possible so that they become useful training data for the model, as ML models ca
         \end{itemize}
     \end{itemize}
 
-% Cite some academic papers to prove you're making a good case. Mihai used the 
-% term "literature review", so maybe he really does mean to that depth.
+\subsection{Presentation}
+When writing this presentation, there's 3 questions at all times. What, why and how?
+What are you doing, why are you doing it, how are you doing it?
+Why is very important - why did I select my problem? Why do I think it's important.
+Panel may consist of many people. Nouh and his students
 
-% Furthermore, while it may not actually be marked, describe everything you do within the Jupyter notebook with 
-% Markdown text cells. It won't count to the word count and might let you sneak in some added detail that might not 
-% have been able to go in the report.
+\chapter{Key note}
+You need quite a substantial amount of this actually done for \textbf{November 29th} rather than Dec 20th as the 
+deadline states. This is because the presentation relies upon this report. For both the report and the presentation,
+treat it like your dissertation. Cite some academic papers to prove you're making a good case. Mihai used the 
+term "literature review", so maybe he really does mean to that depth.
 
-\chapter{Introduction}
-
-% You've opened by talking about the UK but then transitioned to the whole world?
-% Your datasets are American and German in origin, so it's likely that the worldwide perspective will be better.
-Diabetes mellitus, or type 2 diabetes, accounts for 90\% of the 4.4 million cases of diabetes in the UK, and it is estimated that 
-there are 1.2 million undiagnosed cases of type 2 diabetes across the country \autocite{diabetes_uk_how_nodate}. The rate of type 
-2 diabetes per 100,000 individuals is rapidly increasing, with \textcite{khan_epidemiology_2020}'s analysis projecting that by 
-2030, the rate will reach 7,079 per 100,000. Many people with diabetes suffer immensely reduced quality of life, with approximately 50\% 
-of patients suffering from peripheral neuropathy \autocite{dhanapalaratnam_effect_2024}, an irreversible disability which causes immense pain due 
-to nerve damage from high blood sugar \autocite{nhs_peripheral_2022}, which can occur when the patient was unaware they even 
-had diabetes. 
-
-\vspace{8pt}\noindent 
-Therefore, it is imperative that systems are put in place to enable the swift diagnosis of diabetes, especially type 2 diabetes 
-given its major prevalence. This can be accomplished by training machine learning models on existing clinical datasets 
-to identify common trends in those with and without type 2 diabetes. This report will document the planning, development 
-and evaluation of multiple machine learning models in their classification of whether individuals have type 2 diabetes based 
-on multiple clinical factors, specifically through the stages of:
-
-\begin{itemize}
-    \item Dataset Identification
-    \item Data Preprocessing
-    \item Data Wrangling
-    \item Exploratory Data Analysis (EDA)
-    \item Model Development 
-    \item Model Evaluation
-    \item Research Conclusions
-\end{itemize}
-
-\pagebreak 
-\section{Dataset Identification}
-
-Machine learning models require large amounts of data to train upon, meaning a dataset must be identified consisting of many 
-rows and features. This project identified two datasets which could be wrangled into one larger dataset, the first of which being 
-the well-reputed Pima Indian\footnote{"Pima Indian" refers to a specific Native American ethnic group rather than people from India.} 
-Diabetes Database \autocite{uci_machine_learning_pima_nodate}, sourced from \href{https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database}{Kaggle}, 
-a platform for students and researchers alike to download and upload datasets and code for research purposes.
-
-% An interesting statement was made by Mihai in Week 7.
-% He said "You split your data BEFORE EDA to avoid conceptual overfitting".
-% This probably should have been considered in the presentation slides.
-
-\printbibliography
+Furthermore, while it may not actually be marked, describe everything you do within the Jupyter notebook with 
+Markdown text cells. It won't count to the word count and might let you sneak in some added detail that might not 
+have been able to go in the report.
 
 \end{document}
