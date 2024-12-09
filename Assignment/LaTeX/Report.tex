@@ -297,6 +297,7 @@ This project also includes a second dataset, also from \href{https://www.kaggle.
 dataset of 2768 rows, it will be possible to give the machine learning models more data to train upon.
 
 \para Table \ref{tab:Features} details the 9 features seen in both datasets and their descriptions.
+% You also need to include their types. Ordinal, nominal, etc as with CMP6230.
 
 \begin{longtable}{ | p{0.3\textwidth} | p{0.5\textwidth} | }
     \hline
@@ -326,6 +327,108 @@ dataset of 2768 rows, it will be possible to give the machine learning models mo
 % An interesting statement was made by Mihai in Week 7.
 % He said "You split your data BEFORE EDA to avoid conceptual overfitting".
 % This probably should have been considered in the presentation slides.
+% The template also is structured in a way where you split before analysis.
+
+\section{Supervised learning task identification}
+These datasets provide the 'Outcome' feature, which will be used as the ground truth for a 
+classification model.
+
+
+\chapter{Exploratory Data Analysis}
+This chapter details the EDA processes undertaken with the datasets, including 
+key questions that will be answered by the process, as well as the splitting of the 
+data into training, testing % and validation
+sets.
+
+\section{Question identification}
+% What questions do you have that thorough EDA would answer?
+
+\section{Wrangling}
+% Not included in template but I feel it's necessary to include somewhere.
+The two datasets must first be merged into one to allow for an overall analysis to be performed.
+This is a simple process because they both contain the same 9 features, and is detailed in Figure 
+\ref{fig:Wrangling}.
+
+
+\section{Splitting the dataset}
+% How was the data split?
+% Train/test? KFold?
+% Training and testing sets are a minimum. It's possible they also want a VALIDATION set.
+
+\section{EDA process and results}
+
+% Screenshots work for the code but maybe Minted could be good.
+
+\section{EDA conclusions}
+
+
+\chapter{Experimental Design} % This may benefit from being its own .TeX file.
+This chapter details the planned algorithms to be leveraged against this dataset,
+as well as the metrics to evaluate them. Furthermore, the data cleaning and preprocessing 
+stages will be deeply explored, as well as some potential limitations relating to their use.
+
+\section{Identification of chosen algorithms}
+% What algorithms? 
+% Why those? 
+% How do those algorithms work?
+
+
+\section{Identification of appropriate evaluation techniques}
+% What metrics?
+% Why those?
+% How do they show the model's performance?
+
+\section{Data Cleaning and Pre-processing Transformations}
+% What data cleaning techniques did you apply and why?
+% Discuss:
+%   What is data cleaning? (e.g. handling missing data)
+%   What is data encoding? (label, one-hot)
+%   What is data scaling? Why is it done?
+%   Have any further engineering techniques been applied? Dimensionality reduction? <- research this
+%   How have you handled missing data? (Imputation via KNNImputer as Zou et al. did?)
+
+\section{Limitations and Options}
+% What are the limitations of this approach?
+%   The sheer amount of missing insulin data and imputation means the datasets are basically synthetic now.
+
+
+\chapter{Model Development} % Titled "predictive modelling / model development" in template.
+% This may benefit from being its own .TeX file.
+
+\section{Predictive modelling process}
+% What processes did you undertake to train the models?
+%   How did you use the pre-processed data for training?
+%   What parameters did you use?
+%   Screenshots of code or Minted code blocks necessary.
+
+\section{Results on seen data}
+% Discuss evaluating your model on previously seen data i.e. the training set.
+% Screenshots of code or Minted code blocks necessary.
+
+\chapter{Evaluation and further modelling improvements}
+% This chapter MUST be its own .TeX file, and is the bulk of this report at first glance.
+% No idea what this section entails, as the template is quite non-descript on it. (or over-descript idk)
+% I believe it's about the iterative improvements to the models?
+
+
+\chapter{Conclusion}
+\section{Summary of results} 
+% You've done this in labs, make a DF of all models and accuracies, plot it on a graph.
+% Discuss the evaluation results for your final models.
+% Summarise the entire report:
+%   The problem
+%   The datasets
+%   Your methodology
+%   Your results
+%   Any insights gained?
+
+\section{Reflection on Individual Learning}
+% Nouh has previously stated he will begin here. This section could be 10% of the marks.
+% What did you learn by doing this assignment?
+% What aspects of the assignment did you enjoy most?
+% How will you further hone your skills in future?
+
+% You need evidence for this section. Miscellaneous certificates as well as public Github repositories.
 
 \printbibliography
 
