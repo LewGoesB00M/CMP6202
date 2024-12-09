@@ -162,6 +162,45 @@
       \endverb
       \keyw{big data intelligence,classification,data science,deep learning,diabetes prediction,E-health,healthcare analytics,intelligent diagnosis,machine learning}
     \endentry
+    \entry{c3ai_what_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fe5ca4bdce9e8bcd5fb228480fffb804}{%
+           family={{c3.ai}},
+           familyi={c\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \strng{fullhash}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \strng{fullhashraw}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \strng{bibnamehash}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \strng{authorbibnamehash}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \strng{authornamehash}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \strng{authorfullhash}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \strng{authorfullhashraw}{fe5ca4bdce9e8bcd5fb228480fffb804}
+      \field{sortinit}{c}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Understand ground truth in machine learning. Learn why ground truth is crucial for training models effectively, especially in enterprise {AI} use cases.}
+      \field{langid}{american}
+      \field{shorttitle}{What is Ground Truth?}
+      \field{title}{What is Ground Truth? {|} Machine Learning Glossary Definition}
+      \field{titleaddon}{C3 {AI}}
+      \field{urlday}{9}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\ACUJNFHT\\ground-truth.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://c3.ai/glossary/machine-learning/ground-truth/
+      \endverb
+      \verb{url}
+      \verb https://c3.ai/glossary/machine-learning/ground-truth/
+      \endverb
+    \endentry
     \entry{dhanapalaratnam_effect_2024}{article}{}{}
       \name{author}{8}{}{%
         {{un=0,uniquepart=base,hash=25e2f06532f2df716131b9fd72f701b2}{%

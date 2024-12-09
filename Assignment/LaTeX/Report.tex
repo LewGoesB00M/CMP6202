@@ -272,8 +272,8 @@ on multiple clinical factors, specifically through the stages of:
 
 \begin{itemize}
     \item Dataset Identification
+    \item Data Integration
     \item Data Preprocessing
-    \item Data Wrangling
     \item Exploratory Data Analysis (EDA)
     \item Model Development 
     \item Model Evaluation
@@ -284,16 +284,17 @@ on multiple clinical factors, specifically through the stages of:
 \section{Dataset Identification}
 
 Machine learning models require large amounts of data to train upon, meaning a dataset must be identified consisting of many 
-rows and features. This project identified two datasets which could be wrangled into one larger dataset, the first of which being 
+rows and features. This project identified two datasets which could be integrated into one larger dataset, the first of which being 
 the well-reputed Pima Indian\footnote{"Pima Indian" refers to a specific Native American ethnic group rather than people from India.} 
 Diabetes Database \autocite{uci_machine_learning_pima_nodate}, sourced from \href{https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database}{Kaggle}, 
 a platform for students and researchers alike to download and upload datasets and code for research purposes. The dataset contains data on Pima Indian women in 
 Phoenix, Arizona, USA, and has previously seen wide use across academic literature relating to machine learning (\textcite{alzubi_diabetes_2023}, \textcite{zou_construction_2024}, \textcite{joshi_predicting_2021}, \textcite{hayashi_rule_2016}),
 where other researchers have also aimed to solve the problem of diabetes classification via supervised learning. This dataset contains 768 rows with 9 features.
+% Also cite Kaggle here rather than just hyperlinking it.
 
 \para
 This project also includes a second dataset, also from \href{https://www.kaggle.com/datasets/johndasilva/diabetes/data}{Kaggle}, that has been previously used in literature by 
-\textcite{zou_construction_2024}. This dataset \autocite{john_dasilva_frankfurt_nodate} is based on data from female patients in Frankfurt, Germany, and includes the same 9 features as the Pima Indian dataset, but includes 2000 rows. By wrangling these two datasets into one larger
+\textcite{zou_construction_2024}. This dataset \autocite{john_dasilva_frankfurt_nodate} is based on data from female patients in Frankfurt, Germany, and includes the same 9 features as the Pima Indian dataset, but includes 2000 rows. By integrating these two datasets into one larger
 dataset of 2768 rows, it will be possible to give the machine learning models more data to train upon.
 
 \para Table \ref{tab:Features} details the 9 features seen in both datasets and their descriptions.
@@ -330,8 +331,13 @@ dataset of 2768 rows, it will be possible to give the machine learning models mo
 % The template also is structured in a way where you split before analysis.
 
 \section{Supervised learning task identification}
-These datasets provide the 'Outcome' feature, which will be used as the ground truth for a 
-classification model.
+As previously mentioned, it is possible for patients to have diabetes without knowing. Therefore,
+it is paramount that swift and simple diagnosis methods are put in place, which can be achieved 
+through the use of supervised learning classification models. This requires the existence of the 
+"ground truth", which refers to the label given to data that indicates its class \autocite{c3ai_what_nodate}. 
+Within these datasets, the ground truth is present as the 'Outcome' feature, which will be used 
+as the target variable for the produced classification models.
+% Write more.
 
 
 \chapter{Exploratory Data Analysis}
@@ -342,12 +348,15 @@ sets.
 
 \section{Question identification}
 % What questions do you have that thorough EDA would answer?
+The key factors involved in the diagnosis of diabetes are critical to understand, which 
+can be solved through EDA on these datasets. 
+% Example A gives a good example on what this section should look like.
 
-\section{Wrangling}
+\section{Data Integration}
 % Not included in template but I feel it's necessary to include somewhere.
 The two datasets must first be merged into one to allow for an overall analysis to be performed.
 This is a simple process because they both contain the same 9 features, and is detailed in Figure 
-\ref{fig:Wrangling}.
+\ref{fig:Integration}.
 
 
 \section{Splitting the dataset}
@@ -394,6 +403,8 @@ stages will be deeply explored, as well as some potential limitations relating t
 
 \chapter{Model Development} % Titled "predictive modelling / model development" in template.
 % This may benefit from being its own .TeX file.
+This chapter details the training and evaluation processes of the original produced models
+before any iterative improvements such as hyperparameter tuning.
 
 \section{Predictive modelling process}
 % What processes did you undertake to train the models?
@@ -405,7 +416,9 @@ stages will be deeply explored, as well as some potential limitations relating t
 % Discuss evaluating your model on previously seen data i.e. the training set.
 % Screenshots of code or Minted code blocks necessary.
 
-\chapter{Evaluation and further modelling improvements}
+\chapter{Evaluation and further improvements}
+This chapter details the extensive evaluation of each model, as well as iterative improvements 
+that were made to enhance their performance.
 % This chapter MUST be its own .TeX file, and is the bulk of this report at first glance.
 % No idea what this section entails, as the template is quite non-descript on it. (or over-descript idk)
 % I believe it's about the iterative improvements to the models?
