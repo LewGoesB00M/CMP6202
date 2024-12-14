@@ -99,7 +99,7 @@
 % ------------------------------------------------------------------------------
 \usepackage{tcolorbox}
 \newcommand{\para}{\vspace{8pt}\noindent}
-
+\usepackage{tikz}
 % -------------------------------------------------------------------------------
 
 \title{Using supervised learning for the binary classification of Type 2 Diabetes}
@@ -141,13 +141,6 @@
     by the report titles only mentioning one model.}
 \end{abstract}
 \pagecolor{white}
-
-
-
-Your EDA can be very extensive, and you could potentially have pages and pages and pages of it; this isn't a bad thing.
-The vast majority of any ML-related work is EDA because it gives you the background information on the dataset to then apply
-when training the model, such as the identification of non-numerical columns and encoding them into numerical equivalents where
-possible so that they become useful training data for the model, as ML models cannot interpret strings.
 
 % \chapter*{Notes, remove before final}
 % \section{Mihai W7}
@@ -443,7 +436,7 @@ on topical background research of each of the features in the dataset, detailed 
     \hline 
     4 & Does the rate of diabetes positively correlate with the amount of pregnancies a woman has had?\\
     \hline
-    5 & Do the amount of pregnancies influence any of the other features?\\
+    5 & Does the amount of pregnancies influence any of the other features?\\
     \hline
     6 & What is the distribution of blood glucose levels in patients with and without diabetes?\\
     \hline
@@ -464,8 +457,155 @@ on topical background research of each of the features in the dataset, detailed 
 % Train/test? KFold?
 % Maybe do train/test at first and KFold in an iterative improvement and compare the models?
 % Training and testing sets are a minimum. It's possible they also want a VALIDATION set
+It is good practice to first split the data into training and testing sets before performing exploratory data analysis
+to avoid conceptual overfitting, also known as data leakage. Conceptual overfitting occurs when insights gained from the entire dataset 
+influence model development decisions, which may eventually lead to actual overfitting. By excluding the training data from the analysis,
+it effectively simulates a real-world environment where the data being given to the model is not known, even to its developers.
+
+% !!! Give a better and longer definition of overfitting.
+
+\para Splitting the data is a mandatory process when developing supervised learning models, primarily for the prevention of overfitting.
+Overfitting is a significant challenge in machine learning, where models can perform exceptionally well on their original training data but 
+are unable to generalize to unseen data, making them unsuitable for deployed use. The training set must consist of a large portion of the 
+data so that the model has enough information to analyse and discover trends within, whereas the testing set is a smaller, unseen remainder 
+of the data that the model's predictions can be evaluated against using various metrics. A key point of determination is the proportions 
+of the dataset that should go in each set - there is no 'one-size-fits-all' percentage that can provide the best results for every possible dataset \autocite{sivakumar_trade-off_2024},
+and factors such as the size of the dataset play a large part in this. Most commonly, splits are either 70:30 or 80:20 for training and testing sets 
+respectively.
+
+\para The integrated dataset for this project is 2,768 rows. This is considered to be a small dataset, and as such, it will be best to 
+maximize the size of the training split, so a split of 80\% training and 20\% testing was used, visualized in Figure \ref{fig:TrainTestDiagram}.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        full/.style={draw, rectangle, minimum width=10cm, minimum height=1.5cm, fill = lightgray},
+        train/.style={draw, rectangle, minimum width=8cm, minimum height=1.5cm, fill = cyan},
+        test/.style={draw, rectangle, minimum width=2cm, minimum height=1.5cm, fill = pink},
+        arrow/.style={<->, thick}
+    ]
+    
+    % Full dataset block
+    \node[full] (full) at (0,1.5) {Full dataset (2768 rows)};
+    
+    % Training set block
+    \node[train] (train) at (-1,0) {Training};
+    
+    % Testing set block
+    \node[test] (test) at (4, 0) {Testing};
+
+    % Proportion indicators
+    \draw[arrow] (-5,-1.2) -- (2.9,-1.2) node[midway, below] {80\%};
+    \draw[arrow] (3.1,-1.2) -- (4.9,-1.2) node[midway, below] {20\%};
+    
+    \end{tikzpicture}
+    \caption{A visual representation of the train/test split.}
+    \label{fig:TrainTestDiagram}
+\end{figure}
+
+\para To accomplish this, the data must first be split into $X$ and $y$ tables, where $X$ consists of the eight features, and $y$ is the target variable.
+After the data is split to $X$ and $y$, it can be split into training and testing sets through Scikit-Learn's "train\_test\_split" method, as depicted in Figure \ref{fig:TrainTestSplit}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{EDA/TrainTestSplit.png}
+    \caption{Splitting the data at an 80:20 ratio.}
+    \label{fig:TrainTestSplit}
+\end{figure}
+
+\para By default, this method will first shuffle all rows in the dataset before splitting it, which introduces an element of randomness which can damage 
+reproducibility. To combat this, the "random\_state" parameter can be set to ensure that the same shuffle will occur every time.
+
 
 \section{EDA process and results}
+These subsections correspond in order to each of the questions posed in Table \ref{tab:Questions}. Problems identified here are not solved within this 
+section, and are instead solved in Section \ref{sec:Preprocessing}.
+
+\subsection{Identification of missing or impossible values}
+An initial glance at the dataset would make it appear as though as there are not any missing values in the dataset, as shown in Figure \ref{fig:InitialNoNAs}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\linewidth]{EDA/InitialNoNAs.png}
+    \caption{An initial count of missing values before any further analysis.}
+    \label{fig:InitialNoNAs}
+\end{figure}
+
+\para This would be very good - if it were true. Instead of missing values, this dataset contains impossible values in five columns, highlighted in red in 
+Figure \ref{fig:ImpossibleValues}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{EDA/ImpossibleValues.png}
+    \caption{The overall dataset description. Physically impossible values are \textcolor{red}{in red}.}
+    \label{fig:ImpossibleValues}
+\end{figure}
+
+\para It is not possible for a living person to have a 0 in any of the five highlighted columns, and these datasets do not contain information of the deceased.
+Therefore, it can be deduced that these values are erroneous, and should be treated as though they are missing. It is theorised by some in Kaggle discussions of these 
+datasets that the zeroes in the Insulin column actually meant "imperceptible levels", which would have been useful data. However, a further review of literature around the datasets,
+especially \textcite{hayashi_rule_2016}'s paper, led to the discovery that these zeroes truly are missing values that were missing due to experimental invalidity.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{EDA/ConvertImpossibleValues-NoSums.png} % A version of this with NA sums exists too.
+    \caption{Converting the impossible values to NaNs which are recognised by Pandas.}
+    \label{fig:ConvertImpossibleValues}
+\end{figure}
+
+\para Now that there are officially recognised missing values, they can be visualised using the Missingno package, which can produce a 
+matrix of missing values by column, seen in Figure \ref{fig:MissingnoMatrix}.
+% bar chart of the amount of values in each column, seen in Figure \ref{fig:MissingnoBar}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{EDA/Plots/MissingnoMatrix.png}
+    \caption{A matrix of the missing data per column.}
+    \label{fig:MissingnoMatrix}
+\end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\linewidth]{EDA/Plots/MissingnoBar.png}
+%     \caption{A bar chart visualisation of the amount of data per column.}
+%     \label{fig:MissingnoBar}
+% \end{figure}
+
+\para This matrix reveals that the Insulin and SkinThickness columns contain considerable amounts of missing data, 
+which will need to be fixed before any model can be trained. This will be accomplished through imputation in Section 
+\ref{sec:Preprocessing}.
+
+
+
+\subsection{Identification of outliers}
+
+
+\subsection{Dataset imbalance}
+
+
+\subsection{Influence of pregnancies}
+\subsubsection{On the diabetes outcome} 
+
+\subsubsection{On other factors}
+
+
+\subsection{Glucose levels with and without diabetes}
+
+
+\subsection{Influence of BMI}
+
+
+\subsection{Relevance of diastolic blood pressure}
+% This is worded like you've decided to get rid of it. You have not.
+
+
+\subsection{Skin thickness with and without diabetes}
+
+
+\subsection{Insulin and glucose with and without diabetes}
+
+
+
 
 % Screenshots work for the code but maybe Minted could be good.
 % Not that it's inherently necessary. Your code is expected as part of this submission.
@@ -489,7 +629,7 @@ stages will be deeply explored, as well as some potential limitations relating t
 % Why those?
 % How do they show the model's performance?
 
-\section{Data Cleaning and Pre-processing Transformations}
+\section{Data Cleaning and Pre-processing Transformations}\label{sec:Preprocessing}
 % What data cleaning techniques did you apply and why?
 % Discuss:
 %   What is data cleaning? (e.g. handling missing data)
@@ -531,11 +671,19 @@ that were made to enhance their performance.
 
 
 \chapter{Conclusion}
+% THIS IS NOT A DRAFT. YOU NEED TO PROOFREAD THIS!
+% ENSURE IT'S STRUCTURED WELL WITH NO WEIRD PAGE BREAKS.
+
 % Upon reaching this point, go back and make sure your introduction is still valid and makes sense in relation
 % to the rest of the document. This was an issue in CMP6230 that you caught last-minute.
 
 % Pay significant attention to the conclusion, especially the individual learning reflection, as Nouh mentioned 
 % in previous weeks that he's starting his reading from there and it's a heavy bearing on your grade (10% so 8% overall)
+
+% A few times across the report you mention "the 9 features". I don't think the target variable is a feature, so shouldn't it be
+% the 8 features?
+
+% In the notebook, you've split AFTER identifying missing. That isn't what you said you'd do in this report.
 
 \section{Summary of results} 
 % You've done this in labs, make a DF of all models and accuracies, plot it on a graph.
