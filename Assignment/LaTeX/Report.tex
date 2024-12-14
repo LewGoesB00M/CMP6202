@@ -339,6 +339,15 @@ Within these datasets, the ground truth is present as the 'Outcome' feature, whi
 as the target variable for the produced classification models.
 % Write more.
 
+% RECALL VERY IMPORTANT DUE TO MEDICAL FIELD!
+% SMOTE drawbacks - Synthetic data. Needs data to make more data. In the event of SEVERE imbalance
+% (not like your data) it might just give noise instead of useful data.
+% KNN + SMOTE - Your dataset is 50% synthetic now. Talk somewhere about the risks of that.
+% You removed 98th percentile before imputing your 0s, so was it even the 98th percentile or not?
+%   He either didn't notice that or thought it was the right thing to do and didn't mention it so maybe it's fine?
+% Split before EDA.
+% Why do we do training and testing splits? You were unable to directly answer that during the presentation.
+
 
 \chapter{Exploratory Data Analysis}
 This chapter details the EDA processes undertaken with the datasets, including 
@@ -353,7 +362,7 @@ can be solved through EDA on these datasets.
 % Example A gives a good example on what this section should look like.
 
 \section{Data Integration}
-% Not included in template but I feel it's necessary to include somewhere.
+% Not included in template but I feel it's necessary to include somewhere because that's what you're doing.
 The two datasets must first be merged into one to allow for an overall analysis to be performed.
 This is a simple process because they both contain the same 9 features, and is detailed in Figure 
 \ref{fig:Integration}.
@@ -362,7 +371,8 @@ This is a simple process because they both contain the same 9 features, and is d
 \section{Splitting the dataset}
 % How was the data split?
 % Train/test? KFold?
-% Training and testing sets are a minimum. It's possible they also want a VALIDATION set.
+% Maybe do train/test at first and KFold in an iterative improvement and compare the models?
+% Training and testing sets are a minimum. It's possible they also want a VALIDATION set
 
 \section{EDA process and results}
 
@@ -425,6 +435,12 @@ that were made to enhance their performance.
 
 
 \chapter{Conclusion}
+% Upon reaching this point, go back and make sure your introduction is still valid and makes sense in relation
+% to the rest of the document. This was an issue in CMP6230 that you caught last-minute.
+
+% Pay significant attention to the conclusion, especially the individual learning reflection, as Nouh mentioned 
+% in previous weeks that he's starting his reading from there and it's a heavy bearing on your grade (10% so 8% overall)
+
 \section{Summary of results} 
 % You've done this in labs, make a DF of all models and accuracies, plot it on a graph.
 % Discuss the evaluation results for your final models.
@@ -442,6 +458,9 @@ that were made to enhance their performance.
 % How will you further hone your skills in future?
 
 % You need evidence for this section. Miscellaneous certificates as well as public Github repositories.
+% On that topic, many of your repos aren't exactly "sanitised" for public viewing and had many colorful notes in
+% that were only meant to be read by you. Pick and choose repos that are fine. Also the GitHub username needs to change,
+% there's no way I'm putting "LewGoesB00M" in an official University assignment.
 
 \printbibliography
 
