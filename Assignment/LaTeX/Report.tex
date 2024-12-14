@@ -149,100 +149,100 @@ The vast majority of any ML-related work is EDA because it gives you the backgro
 when training the model, such as the identification of non-numerical columns and encoding them into numerical equivalents where
 possible so that they become useful training data for the model, as ML models cannot interpret strings.
 
-\chapter*{Notes, remove before final}
-\section{Mihai W7}
-\subsection{Overall notes - Beginning of talk}
-\begin{itemize}
-    \item Find a problem before a dataset (No)
-    \item Identify if said problem is regression or classification
-    \item It's hard to use a classification dataset where the target column is just a bunch of labels (???)
-    \begin{itemize}
-        \item This may be in reference to Week 7's wine set where you had 7 different levels of quality but converted them to 2 for binary classification.
-    \end{itemize}
-    \item Examples on Moodle
-    \item Datasets on Moodle but it's almost 100\% that someone else will have used them.
-    \item I also don't know if you're even allowed to use them.
-    \item A dataset can have more than one target column (though the ones you use likely won't).
-    \item Mihai strongly warns that ML is a very iterative process, and your first attempt will probably be poor. \begin{itemize}
-        \item This is why you use \textbf{pipelines} as in CMP6230 but that's not this module.
-    \end{itemize}
-    \item You will be asked questions on it in the presentation \textbf{RELATED TO WHAT YOU'VE DONE IN CLASS}, likely
-    by Mihai himself, and he is trying to catch you out.
-\end{itemize}
+% \chapter*{Notes, remove before final}
+% \section{Mihai W7}
+% \subsection{Overall notes - Beginning of talk}
+% \begin{itemize}
+%     \item Find a problem before a dataset (No)
+%     \item Identify if said problem is regression or classification
+%     \item It's hard to use a classification dataset where the target column is just a bunch of labels (???)
+%     \begin{itemize}
+%         \item This may be in reference to Week 7's wine set where you had 7 different levels of quality but converted them to 2 for binary classification.
+%     \end{itemize}
+%     \item Examples on Moodle
+%     \item Datasets on Moodle but it's almost 100\% that someone else will have used them.
+%     \item I also don't know if you're even allowed to use them.
+%     \item A dataset can have more than one target column (though the ones you use likely won't).
+%     \item Mihai strongly warns that ML is a very iterative process, and your first attempt will probably be poor. \begin{itemize}
+%         \item This is why you use \textbf{pipelines} as in CMP6230 but that's not this module.
+%     \end{itemize}
+%     \item You will be asked questions on it in the presentation \textbf{RELATED TO WHAT YOU'VE DONE IN CLASS}, likely
+%     by Mihai himself, and he is trying to catch you out.
+% \end{itemize}
 
-\subsection{Section 2}
-\begin{itemize}
-    \item After you have an identified dataset, begin EDA.
-    \item Describe how you split the dataset into training and testing dataset.
-    \item If the machine sees the test data, it may "overfit". \begin{itemize}
-        \item You've seen this before where the line of best fit isn't really a line and just connects every single point, meaning it's 
-        really good at guessing the data it already knows but not new data. 
-    \end{itemize}
-    \item You split your data \textit{BEFORE} EDA to avoid "conceptual overfitting".
-    \item When splitting data, you need to think about data imbalance i.e. training set having too much of the one option and few of the other (too many True, not enough False).
-    \item SKLearn may try to fix that for you.
-    \item Identify outliers, missing data.
-    \item "Missing information can be information in itself". Consider the source of the data (not Kaggle but rather where the Kaggle author got it from)
-    \begin{itemize}
-        \item You might be able to impute data rather than deleting it.
-        \item Conserve as much data as you can, deleting data should be a last option.
-    \end{itemize}
-    \item Erroneous data \begin{itemize}
-        \item Another reason why your data source is important.
-        \item Could just be mistyped, see what the erroneous data actually is to see if you can correct it.
-    \end{itemize}
-    \item Outliers
-    \begin{itemize}
-        \item Is it significant enough to remove it? Is it definitely an outlier; could it feasibly be true? (speed camera example where one guy went 30 but another went 100, but that's still plausible.)
-        \item Boxplots can identify outliers.
-    \end{itemize}
-    \item If your dataset is bad, your model will be, too.
-\end{itemize}
+% \subsection{Section 2}
+% \begin{itemize}
+%     \item After you have an identified dataset, begin EDA.
+%     \item Describe how you split the dataset into training and testing dataset.
+%     \item If the machine sees the test data, it may "overfit". \begin{itemize}
+%         \item You've seen this before where the line of best fit isn't really a line and just connects every single point, meaning it's 
+%         really good at guessing the data it already knows but not new data. 
+%     \end{itemize}
+%     \item You split your data \textit{BEFORE} EDA to avoid "conceptual overfitting".
+%     \item When splitting data, you need to think about data imbalance i.e. training set having too much of the one option and few of the other (too many True, not enough False).
+%     \item SKLearn may try to fix that for you.
+%     \item Identify outliers, missing data.
+%     \item "Missing information can be information in itself". Consider the source of the data (not Kaggle but rather where the Kaggle author got it from)
+%     \begin{itemize}
+%         \item You might be able to impute data rather than deleting it.
+%         \item Conserve as much data as you can, deleting data should be a last option.
+%     \end{itemize}
+%     \item Erroneous data \begin{itemize}
+%         \item Another reason why your data source is important.
+%         \item Could just be mistyped, see what the erroneous data actually is to see if you can correct it.
+%     \end{itemize}
+%     \item Outliers
+%     \begin{itemize}
+%         \item Is it significant enough to remove it? Is it definitely an outlier; could it feasibly be true? (speed camera example where one guy went 30 but another went 100, but that's still plausible.)
+%         \item Boxplots can identify outliers.
+%     \end{itemize}
+%     \item If your dataset is bad, your model will be, too.
+% \end{itemize}
 
-\subsection{Section 3}
-\begin{itemize}
-    \item Identify the right algorithm. \begin{itemize}
-        \item Decision trees are good at classification.
-        \item Random forest is also used for it.
-        \item Naive Bayes and KNN work for prediction and classification.
-        \item Some of these may perform worse with higher amounts of data, look into them.
-    \end{itemize}
-    \item Performance won't matter a massive amount but you still need to be able to justify why it was good.
-    \begin{itemize}
-        \item Also justify its downsides and limitations.
-        \item And the limtiations of the dataset itself.
-    \end{itemize}
-\end{itemize}
+% \subsection{Section 3}
+% \begin{itemize}
+%     \item Identify the right algorithm. \begin{itemize}
+%         \item Decision trees are good at classification.
+%         \item Random forest is also used for it.
+%         \item Naive Bayes and KNN work for prediction and classification.
+%         \item Some of these may perform worse with higher amounts of data, look into them.
+%     \end{itemize}
+%     \item Performance won't matter a massive amount but you still need to be able to justify why it was good.
+%     \begin{itemize}
+%         \item Also justify its downsides and limitations.
+%         \item And the limtiations of the dataset itself.
+%     \end{itemize}
+% \end{itemize}
 
-\subsection{Section 4}
-\begin{itemize}
-    \item Encoding is important here because ML doesn't use text. \begin{itemize}
-        \item Side-note: Even if it does that's actually just an abstraction and it's just encoding it under the hood.
-    \end{itemize}
-    \item Fine-tuning \begin{itemize}
-        \item Playing around with parameters of the functions.
-        \item KNN Neighbours and such
-        \item Often comes after an initial test run
-        \item If your accuracy is really low (20\% was the example), fine-tuning won't help and you just need to redo the entire work.
-        \item Could maybe give you an extra 5\% accuracy.
-        \item Decision trees may have multiple versions. SKLearn's decision tree may be different from a CUDA one.
-    \end{itemize}
+% \subsection{Section 4}
+% \begin{itemize}
+%     \item Encoding is important here because ML doesn't use text. \begin{itemize}
+%         \item Side-note: Even if it does that's actually just an abstraction and it's just encoding it under the hood.
+%     \end{itemize}
+%     \item Fine-tuning \begin{itemize}
+%         \item Playing around with parameters of the functions.
+%         \item KNN Neighbours and such
+%         \item Often comes after an initial test run
+%         \item If your accuracy is really low (20\% was the example), fine-tuning won't help and you just need to redo the entire work.
+%         \item Could maybe give you an extra 5\% accuracy.
+%         \item Decision trees may have multiple versions. SKLearn's decision tree may be different from a CUDA one.
+%     \end{itemize}
 
-    \item Evaluation metrics
-    \begin{itemize}
-        \item Accuracy is not Precision. Which do you need?
-        \item You want both to be high, if one lags massively behind the other then that's bad.
-        \item ML is an iterative process until you can get the best performing model.
-    \end{itemize}
-\end{itemize}
+%     \item Evaluation metrics
+%     \begin{itemize}
+%         \item Accuracy is not Precision. Which do you need?
+%         \item You want both to be high, if one lags massively behind the other then that's bad.
+%         \item ML is an iterative process until you can get the best performing model.
+%     \end{itemize}
+% \end{itemize}
 
-\subsection{Section 5}
-    \begin{itemize}
-        \item Visualisation of evaluation results
-        \begin{itemize}
-            \item For a correlation matrix, a heatmap is better than a bar plot for example.
-        \end{itemize}
-    \end{itemize}
+% \subsection{Section 5}
+%     \begin{itemize}
+%         \item Visualisation of evaluation results
+%         \begin{itemize}
+%             \item For a correlation matrix, a heatmap is better than a bar plot for example.
+%         \end{itemize}
+%     \end{itemize}
 
 % Cite some academic papers to prove you're making a good case. Mihai used the 
 % term "literature review", so maybe he really does mean to that depth.
@@ -285,10 +285,10 @@ on multiple clinical factors, specifically through the stages of:
 
 Machine learning models require large amounts of data to train upon, meaning a dataset must be identified consisting of many 
 rows and features. This project identified two datasets which could be integrated into one larger dataset, the first of which being 
-the well-reputed Pima Indian\footnote{"Pima Indian" refers to a specific Native American ethnic group rather than people from India.} 
-Diabetes Database \autocite{uci_machine_learning_pima_nodate}, sourced from \href{https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database}{Kaggle}, 
-a platform for students and researchers alike to download and upload datasets and code for research purposes. The dataset contains data on Pima Indian women in 
-Phoenix, Arizona, USA, and has previously seen wide use across academic literature relating to machine learning (\textcite{alzubi_diabetes_2023}, \textcite{zou_construction_2024}, \textcite{joshi_predicting_2021}, \textcite{hayashi_rule_2016}),
+the well-reputed Pima Indian Diabetes Database \autocite{uci_machine_learning_pima_nodate}, downloaded from \href{https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database}{Kaggle}, 
+a platform for students and researchers alike to download and upload datasets and code for research purposes. The data originates from the National Institute 
+of Diabetes and Digestive and Kidney Diseases, who collected this data from Pima Indian\footnote{"Pima Indian" refers to a specific Native American ethnic group rather than people from India.}
+women aged 21 and over in hospitals in Phoenix, Arizona, USA, and it has previously seen wide use across academic literature relating to machine learning (\textcite{alzubi_diabetes_2023}, \textcite{zou_construction_2024}, \textcite{joshi_predicting_2021}, \textcite{hayashi_rule_2016}),
 where other researchers have also aimed to solve the problem of diabetes classification via supervised learning. This dataset contains 768 rows with 9 features.
 % Also cite Kaggle here rather than just hyperlinking it.
 
@@ -348,18 +348,14 @@ as the target variable for the produced classification models.
 % Split before EDA.
 % Why do we do training and testing splits? You were unable to directly answer that during the presentation.
 
+% If you take VSCode screenshots, ensure that your IDE theme is the same across all of them.
+
 
 \chapter{Exploratory Data Analysis}
 This chapter details the EDA processes undertaken with the datasets, including 
 key questions that will be answered by the process, as well as the splitting of the 
-data into training, testing % and validation
+data into training and testing % and validation
 sets.
-
-\section{Question identification}
-% What questions do you have that thorough EDA would answer?
-The key factors involved in the diagnosis of diabetes are critical to understand, which 
-can be solved through EDA on these datasets. 
-% Example A gives a good example on what this section should look like.
 
 \section{Data Integration}
 % Not included in template but I feel it's necessary to include somewhere because that's what you're doing.
@@ -367,9 +363,104 @@ The two datasets must first be merged into one to allow for an overall analysis 
 This is a simple process because they both contain the same 9 features, and is detailed in Figure 
 \ref{fig:Integration}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Integration.png}
+    \caption{Integrating the two separate datasets into one larger dataset.}
+    \label{fig:Integration}
+\end{figure}
+
+\pagebreak 
+
+\section{Question identification and assumptions}
+% What questions do you have that thorough EDA would answer?
+% Example A gives a good example on what this section should look like.
+The key factors involved in the diagnosis of diabetes are critical to understand, which 
+can be solved through EDA on these datasets. It is possible to make various assumptions based 
+on topical background research of each of the features in the dataset, detailed in Table \ref{tab:Assumptions}
+
+\begin{longtable}{ | p{0.19\textwidth} | p{0.75\textwidth} | }
+    \hline
+    \cellcolor{blue!25} Feature & \cellcolor{blue!25} Research-based assumptions \\
+    \hline
+    Pregnancies & Approximately 13.4\% of pregnant women develop a temporary condition known as Gestational 
+    Diabetes Mellitus (GDM), which typically subsides after birth \autocite{adam_pregnancy_2023}.
+    However, research by \autocite{dennison_absolute_2021} indicates that 33\% of women who develop 
+    GDM will go on to develop permanent diabetes mellitus within 15 years. Therefore, it is assumed 
+    that pregnancies will positively correlate with the diabetes outcome. It is also expected that 
+    pregnancies should naturally positively correlate with age. \\
+    \hline
+    Glucose & Glucose concentrations are an enormous factor in the diagnosis of diabetes mellitus, being one 
+    of the main metrics used to certify the condition, where results over 200mg/dL mean an absolute diagnosis\footnote{The other main metric is insulin deficiency, meaning that the patient could have glucose levels lower than 200mg/dL and still be diagnosed if they are instead insulin deficient. \autocite{aftab_cloud-based_2021}.}
+    \autocite{aftab_cloud-based_2021}. It is therefore assumed that the glucose concentrations will be one 
+    of the strongest influences of the outcome, and that it will also correlate heavily with insulin levels. \\
+    \hline
+    BloodPressure & Diastolic blood pressure (DBP) does influence the diagnosis of diabetes mellitus, as 
+    56.2\% of recently diagnosed patients presented with elevated DBP in \textcite{nelaj_high_2023}'s limited 
+    study of 126 patients, but it is not a decisive factor by itself. Therefore, it is assumed that there will 
+    be some correlation between DBP and the outcome, but not as major as other factors like plasma glucose levels.\\
+    \hline
+    SkinThickness & It is a frequent assumption even non-academically that people who weigh more, and by consequence have higher 
+    skin thickness in certain areas such as the triceps, have a higher risk of developing conditions like type 2 diabetes. This is 
+    backed by a study by \textcite{ruiz-alejos_skinfold_2020}, which found strong associations between skin thickness and diabetes mellitus,
+    as well as high blood pressure. Therefore, it is assumed that there will be a strong correlation between tricep skin thickness and the outcome, 
+    as well as an expectation of strong correlations between thickness, BMI and blood pressure.\\
+    \hline
+    Insulin & Diabetes mellitus is directly associated with insulin deficiency, and as such, it is assumed that this factor will be 
+    the strongest influence in the outcome. This is because 2-hour serum insulin tests, as used in this dataset, are frequently 
+    part of HOMA-IR\footnote{Homeostasis Model Assessment of Insulin Resistance, used to measure insulin resistance \autocite{tahapary_challenges_2022}, which can be used in both type 1 and type 2 diabetes diagnosis \autocite{khalili_are_2023}.}
+    assessments. \\
+    \hline
+    BMI & BMI is likely to be a significant factor in the outcome, which is backed by previous academic studies indicating that 71\% 
+    of studied individuals showed increases in BMI prior to diagnosis \autocite{donnelly_trajectories_2024}. Additionally, BMI is used in insulin resistance measurement assessments,
+    which are key assessments in diabetes diagnosis, meaning that it is a safe assumption that BMI will be a large factor in the outcome. \\
+    \hline
+    DiabetesPedigree- Function & People are more likely to develop diabetes mellitus if there is a family genetic history of the condition, though it is not 
+    directly caused by any one particular gene \autocite{diabetes_uk_what_nodate}. With the pedigree function aiming 
+    to quantify the inheritance probability, it can be assumed that it will likely correlate heavily with the outcome. \\
+    \hline
+    Age & \textcite{chackrewarthy_age_2012} studied the effects of age as a risk factor for diabetes mellitus, finding that many natural associated 
+    factors of ageing including increases in body fat and decreases in lipid metabolism had considerable influence on the development of insulin 
+    resistance and diabetes mellitus by consequence. Therefore, it is likely that there will be a noticeable correlation between a patient's age 
+    and the outcome. 
+     \\
+    \hline
+    \caption{Research-based assumptions prior to any EDA.}\label{tab:Assumptions}
+\end{longtable}
+
+\para Based on these assumptions, the questions that this EDA process aims to answer are:
+
+
+\begin{longtable}{ | p{0.05\textwidth} | p{0.85\textwidth} | }
+    \hline
+    \cellcolor{blue!25} ID & \cellcolor{blue!25} Research-based assumptions \\
+    \hline
+    1 & Are there any missing values or values that are not physically possible?\\
+    \hline
+    2 & Are there any significant outliers?\\
+    \hline 
+    3 & Is the dataset evenly balanced in terms of the outcome? If not, what should be done?\\
+    \hline 
+    4 & Does the rate of diabetes positively correlate with the amount of pregnancies a woman has had?\\
+    \hline
+    5 & Do the amount of pregnancies influence any of the other features?\\
+    \hline
+    6 & What is the distribution of blood glucose levels in patients with and without diabetes?\\
+    \hline
+    7 & Does BMI influence glucose levels?\\
+    \hline
+    8 & Is diastolic blood pressure a worthwhile diagnosis method in this dataset?\\
+    \hline
+    9 & Is the average skin thickness of those with diabetes actually higher than those without?\\
+    \hline
+    10 & How does the relationship between insulin and glucose change between those with and without diabetes?\\
+    \hline
+    \caption{The questions that this EDA process aims to answer.}\label{tab:Questions}
+\end{longtable}
 
 \section{Splitting the dataset}
 % How was the data split?
+% Why do we split? Why 80:20 as you're doing?
 % Train/test? KFold?
 % Maybe do train/test at first and KFold in an iterative improvement and compare the models?
 % Training and testing sets are a minimum. It's possible they also want a VALIDATION set
@@ -377,6 +468,7 @@ This is a simple process because they both contain the same 9 features, and is d
 \section{EDA process and results}
 
 % Screenshots work for the code but maybe Minted could be good.
+% Not that it's inherently necessary. Your code is expected as part of this submission.
 
 \section{EDA conclusions}
 
@@ -401,9 +493,13 @@ stages will be deeply explored, as well as some potential limitations relating t
 % What data cleaning techniques did you apply and why?
 % Discuss:
 %   What is data cleaning? (e.g. handling missing data)
+%       Imputation via KNN will work because each missing column has a highly correlated associate. Insulin can be inferred from Glucose. SkinThickness from BMI.
+%       BloodPressure can't but it's not missing too many.
 %   What is data encoding? (label, one-hot)
 %   What is data scaling? Why is it done?
-%   Have any further engineering techniques been applied? Dimensionality reduction? <- research this
+%       KNN and SVM - Distance between points. Heavily skewed by large differences.
+%   Have any further engineering techniques been applied? Dimensionality reduction?
+%       Certainly not dimensionality reduction because you only have 8 features to begin with.
 %   How have you handled missing data? (Imputation via KNNImputer as Zou et al. did?)
 
 \section{Limitations and Options}
