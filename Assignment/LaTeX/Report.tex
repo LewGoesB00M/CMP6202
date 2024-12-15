@@ -532,7 +532,8 @@ An initial glance at the dataset would make it appear as though as there are not
 \end{figure}
 
 \para This would be very good - if it were true. Instead of missing values, this dataset contains impossible values in five columns, highlighted in red in 
-Figure \ref{fig:ImpossibleValues}
+Figure \ref{fig:ImpossibleValues}.\footnote{The mean of the outcome is highlighted in blue, as the fact that it is under 0.5 indicates that there are more 
+cases of outcome 0 (no diabetes) than 1 (diabetes). This will be further analysed in Section \ref{sec:ImbalanceEDA}.}
 
 \begin{figure}[H]
     \centering
@@ -544,7 +545,8 @@ Figure \ref{fig:ImpossibleValues}
 \para It is not possible for a living person to have a 0 in any of the five highlighted columns, and these datasets do not contain information of the deceased.
 Therefore, it can be deduced that these values are erroneous, and should be treated as though they are missing. It is theorised by some in Kaggle discussions of these 
 datasets that the zeroes in the Insulin column actually meant "imperceptible levels", which would have been useful data. However, a further review of literature around the datasets,
-especially \textcite{hayashi_rule_2016}'s paper, led to the discovery that these zeroes truly are missing values that were missing due to experimental invalidity.
+especially \textcite{hayashi_rule_2016}'s paper, led to the discovery that these zeroes truly are missing values that were missing due to experimental invalidity at the time 
+of their collection.
 
 \begin{figure}[H]
     \centering
@@ -571,16 +573,18 @@ matrix of missing values by column, seen in Figure \ref{fig:MissingnoMatrix}.
 %     \label{fig:MissingnoBar}
 % \end{figure}
 
-\para This matrix reveals that the Insulin and SkinThickness columns contain considerable amounts of missing data, 
+\para This matrix reveals that the Insulin and SkinThickness columns contain considerable amounts of missing data alongside
+many missing rows of BloodPressure, and some missing rows of BMI and Glucose, 
 which will need to be fixed before any model can be trained. This will be accomplished through imputation in Section 
 \ref{sec:Preprocessing}.
 
 
 
 \subsection{Identification of outliers}
+% You are already testing your luck with the word count (2274 at this note's writing).
+% It's possible that you may need to put these subsections in an appendix, keeping only the conclusions.
 
-
-\subsection{Dataset imbalance}
+\subsection{Dataset imbalance}\label{sec:ImbalanceEDA}
 
 
 \subsection{Influence of pregnancies}
