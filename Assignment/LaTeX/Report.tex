@@ -16,6 +16,7 @@
 \usepackage{float}  % Allows for floats to be positioned using [H], which correctly
                     % positions them relative to their location within my LaTeX code.
 \usepackage{subcaption}
+\usepackage{amsmath}
 
 % -------------------------------------------------------------------------------
 % Declare biblatex with custom Harvard BCU styling for referencing.
@@ -141,108 +142,6 @@
     by the report titles only mentioning one model.}
 \end{abstract}
 \pagecolor{white}
-
-% \chapter*{Notes, remove before final}
-% \section{Mihai W7}
-% \subsection{Overall notes - Beginning of talk}
-% \begin{itemize}
-%     \item Find a problem before a dataset (No)
-%     \item Identify if said problem is regression or classification
-%     \item It's hard to use a classification dataset where the target column is just a bunch of labels (???)
-%     \begin{itemize}
-%         \item This may be in reference to Week 7's wine set where you had 7 different levels of quality but converted them to 2 for binary classification.
-%     \end{itemize}
-%     \item Examples on Moodle
-%     \item Datasets on Moodle but it's almost 100\% that someone else will have used them.
-%     \item I also don't know if you're even allowed to use them.
-%     \item A dataset can have more than one target column (though the ones you use likely won't).
-%     \item Mihai strongly warns that ML is a very iterative process, and your first attempt will probably be poor. \begin{itemize}
-%         \item This is why you use \textbf{pipelines} as in CMP6230 but that's not this module.
-%     \end{itemize}
-%     \item You will be asked questions on it in the presentation \textbf{RELATED TO WHAT YOU'VE DONE IN CLASS}, likely
-%     by Mihai himself, and he is trying to catch you out.
-% \end{itemize}
-
-% \subsection{Section 2}
-% \begin{itemize}
-%     \item After you have an identified dataset, begin EDA.
-%     \item Describe how you split the dataset into training and testing dataset.
-%     \item If the machine sees the test data, it may "overfit". \begin{itemize}
-%         \item You've seen this before where the line of best fit isn't really a line and just connects every single point, meaning it's 
-%         really good at guessing the data it already knows but not new data. 
-%     \end{itemize}
-%     \item You split your data \textit{BEFORE} EDA to avoid "conceptual overfitting".
-%     \item When splitting data, you need to think about data imbalance i.e. training set having too much of the one option and few of the other (too many True, not enough False).
-%     \item SKLearn may try to fix that for you.
-%     \item Identify outliers, missing data.
-%     \item "Missing information can be information in itself". Consider the source of the data (not Kaggle but rather where the Kaggle author got it from)
-%     \begin{itemize}
-%         \item You might be able to impute data rather than deleting it.
-%         \item Conserve as much data as you can, deleting data should be a last option.
-%     \end{itemize}
-%     \item Erroneous data \begin{itemize}
-%         \item Another reason why your data source is important.
-%         \item Could just be mistyped, see what the erroneous data actually is to see if you can correct it.
-%     \end{itemize}
-%     \item Outliers
-%     \begin{itemize}
-%         \item Is it significant enough to remove it? Is it definitely an outlier; could it feasibly be true? (speed camera example where one guy went 30 but another went 100, but that's still plausible.)
-%         \item Boxplots can identify outliers.
-%     \end{itemize}
-%     \item If your dataset is bad, your model will be, too.
-% \end{itemize}
-
-% \subsection{Section 3}
-% \begin{itemize}
-%     \item Identify the right algorithm. \begin{itemize}
-%         \item Decision trees are good at classification.
-%         \item Random forest is also used for it.
-%         \item Naive Bayes and KNN work for prediction and classification.
-%         \item Some of these may perform worse with higher amounts of data, look into them.
-%     \end{itemize}
-%     \item Performance won't matter a massive amount but you still need to be able to justify why it was good.
-%     \begin{itemize}
-%         \item Also justify its downsides and limitations.
-%         \item And the limtiations of the dataset itself.
-%     \end{itemize}
-% \end{itemize}
-
-% \subsection{Section 4}
-% \begin{itemize}
-%     \item Encoding is important here because ML doesn't use text. \begin{itemize}
-%         \item Side-note: Even if it does that's actually just an abstraction and it's just encoding it under the hood.
-%     \end{itemize}
-%     \item Fine-tuning \begin{itemize}
-%         \item Playing around with parameters of the functions.
-%         \item KNN Neighbours and such
-%         \item Often comes after an initial test run
-%         \item If your accuracy is really low (20\% was the example), fine-tuning won't help and you just need to redo the entire work.
-%         \item Could maybe give you an extra 5\% accuracy.
-%         \item Decision trees may have multiple versions. SKLearn's decision tree may be different from a CUDA one.
-%     \end{itemize}
-
-%     \item Evaluation metrics
-%     \begin{itemize}
-%         \item Accuracy is not Precision. Which do you need?
-%         \item You want both to be high, if one lags massively behind the other then that's bad.
-%         \item ML is an iterative process until you can get the best performing model.
-%     \end{itemize}
-% \end{itemize}
-
-% \subsection{Section 5}
-%     \begin{itemize}
-%         \item Visualisation of evaluation results
-%         \begin{itemize}
-%             \item For a correlation matrix, a heatmap is better than a bar plot for example.
-%         \end{itemize}
-%     \end{itemize}
-
-% Cite some academic papers to prove you're making a good case. Mihai used the 
-% term "literature review", so maybe he really does mean to that depth.
-
-% Furthermore, while it may not actually be marked, describe everything you do within the Jupyter notebook with 
-% Markdown text cells. It won't count to the word count and might let you sneak in some added detail that might not 
-% have been able to go in the report.
 
 \chapter{Introduction}
 
@@ -518,111 +417,84 @@ reproducibility. To combat this, the "random\_state" parameter can be set to ens
 
 
 \section{EDA process and results}
-These subsections correspond in order to each of the questions posed in Table \ref{tab:Questions}. Problems identified here are not solved within this 
-section, and are instead solved in Section \ref{sec:Preprocessing}.
+Exploratory Data Analysis is a key step in machine learning projects to gain a thorough understanding of the datasets used. In the interest of report conciceness,
+the full EDA process and results accompany this report as Appendix A. They were performed using the Seaborn Python library, which uses Matplotlib to produce 
+convenient visualisations to answer each question posed in Table \ref{tab:Questions}. The topics and issues identified during the process are solved in Section \ref{sec:Preprocessing}.
 
-\subsection{Identification of missing or impossible values}
-An initial glance at the dataset would make it appear as though as there are not any missing values in the dataset, as shown in Figure \ref{fig:InitialNoNAs}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.5\linewidth]{EDA/InitialNoNAs.png}
-    \caption{An initial count of missing values before any further analysis.}
-    \label{fig:InitialNoNAs}
-\end{figure}
-
-\para This would be very good - if it were true. Instead of missing values, this dataset contains impossible values in five columns, highlighted in red in 
-Figure \ref{fig:ImpossibleValues}.\footnote{The mean of the outcome is highlighted in blue, as the fact that it is under 0.5 indicates that there are more 
-cases of outcome 0 (no diabetes) than 1 (diabetes). This will be further analysed in Section \ref{sec:ImbalanceEDA}.}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{EDA/ImpossibleValues.png}
-    \caption{The overall dataset description. Physically impossible values are \textcolor{red}{in red}.}
-    \label{fig:ImpossibleValues}
-\end{figure}
-
-\para It is not possible for a living person to have a 0 in any of the five highlighted columns, and these datasets do not contain information of the deceased.
-Therefore, it can be deduced that these values are erroneous, and should be treated as though they are missing. It is theorised by some in Kaggle discussions of these 
-datasets that the zeroes in the Insulin column actually meant "imperceptible levels", which would have been useful data. However, a further review of literature around the datasets,
-especially \textcite{hayashi_rule_2016}'s paper, led to the discovery that these zeroes truly are missing values that were missing due to experimental invalidity at the time 
-of their collection.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{EDA/ConvertImpossibleValues-NoSums.png} % A version of this with NA sums exists too.
-    \caption{Converting the impossible values to NaNs which are recognised by Pandas.}
-    \label{fig:ConvertImpossibleValues}
-\end{figure}
-
-\para Now that there are officially recognised missing values, they can be visualised using the Missingno package, which can produce a 
-matrix of missing values by column, seen in Figure \ref{fig:MissingnoMatrix}.
-% bar chart of the amount of values in each column, seen in Figure \ref{fig:MissingnoBar}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{EDA/Plots/MissingnoMatrix.png}
-    \caption{A matrix of the missing data per column.}
-    \label{fig:MissingnoMatrix}
-\end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\linewidth]{EDA/Plots/MissingnoBar.png}
-%     \caption{A bar chart visualisation of the amount of data per column.}
-%     \label{fig:MissingnoBar}
-% \end{figure}
-
-\para This matrix reveals that the Insulin and SkinThickness columns contain considerable amounts of missing data alongside
-many missing rows of BloodPressure, and some missing rows of BMI and Glucose, 
-which will need to be fixed before any model can be trained. This will be accomplished through imputation in Section 
-\ref{sec:Preprocessing}.
-
-
-
-\subsection{Identification of outliers}
-% You are already testing your luck with the word count (2274 at this note's writing).
-% It's possible that you may need to put these subsections in an appendix, keeping only the conclusions.
-
-\subsection{Dataset imbalance}\label{sec:ImbalanceEDA}
-
-
-\subsection{Influence of pregnancies}
-\subsubsection{On the diabetes outcome} 
-
-\subsubsection{On other factors}
-
-
-\subsection{Glucose levels with and without diabetes}
-
-
-\subsection{Influence of BMI}
-
-
-\subsection{Relevance of diastolic blood pressure}
-% This is worded like you've decided to get rid of it. You have not.
-
-
-\subsection{Skin thickness with and without diabetes}
-
-
-\subsection{Insulin and glucose with and without diabetes}
-
-
-
-
-% Screenshots work for the code but maybe Minted could be good.
-% Not that it's inherently necessary. Your code is expected as part of this submission.
-
+\pagebreak
 \section{EDA conclusions}
+The extensive EDA conducted in Appendix A provided clear answers to each question posed in Table \ref{tab:Questions}, 
+which are detailed below in Table \ref{tab:Answers}.
 
+\begin{longtable}{ | p{0.05\textwidth} | p{0.85\textwidth} | }
+    \hline
+    \cellcolor{blue!25} ID & \cellcolor{blue!25} EDA-based answer \\
+    \hline
+    1 & There are missing values in the dataset that were not originally presented as such; they were instead
+    0s in columns where this would be physically impossible. After converting the impossible 0s to missing values 
+    with NumPy, it was established that there were 18 missing Glucose values, 125 missing BloodPressure values,
+    800 missing SkinThickness values, 1330 missing Insulin values, and 39 missing BMI values.
+    % \begin{itemize}
+    %     \item 18 missing Glucose values.
+    %     \item 125 missing BloodPressure values.
+    %     \item 800 missing SkinThickness values.
+    %     \item 1330 missing Insulin values.
+    %     \item 39 missing BMI values.
+    % \end{itemize}
+    \\
+    \hline
+    2 & The analysis identified significant outliers across various features using box plots. 
+    Particularly extremely outliers were noted in the SkinThickness, BMI, and Insulin columns. These outliers
+    could affect data scaling and model performance, and will need to be transformed in data cleaning. \\
+    \hline 
+    3 & The dataset is imbalanced, with 65.5\% of rows in the training set having an outcome of 0, while the remaining 
+    35.5\% had an outcome of 1.\\
+    \hline 
+    4 & The EDA did show a somewhat positive correlation between the number of pregnancies and diabetes outcomes, 
+    although pregnancies alone are not decisive in predicting diabetes.\\
+    \hline
+    5 & Pregnancies are found to correlate with age, as expected, but do not significantly influence other features.\\
+    \hline
+    6 & There is a clear and significant distinction in glucose levels between diabetic and non-diabetic individuals,
+    with higher levels being mostly present in those with diabetes, making it a strong indicator.\\
+    \hline
+    7 & A slight positive correlation is observed between BMI and glucose levels, indicating that higher BMI could be 
+    associated with higher glucose levels.\\
+    \hline
+    8 & Blood pressure shows some correlation with diabetes outcomes but is not a strong standalone diagnostic factor. 
+    However, like pregnancies, previously mentioned academic research specifies that it is still a useful feature to keep for the models.\\
+    \hline
+    9 & Individuals with diabetes tend to have higher skin thickness on average, although this feature contains significant high outliers
+    in both individuals with and without diabetes.\\
+    \hline
+    10 &  The relationship between insulin and glucose varies between diabetic and non-diabetic individuals, with diabetic individuals 
+    showing higher glucose levels as a result of lower insulin levels, which is expected of type 2 diabetes.\\
+    \hline
+    \caption{Answers to the questions after the completion of the EDA process.}\label{tab:Answers}
+\end{longtable}
+
+\pagebreak
+\para Overall, the EDA process conducted in Appendix A has been highly beneficial for many reasons. Firstly, it identified critical data issues, 
+such as the abundance of missing values and outliers, which are essential to address to improve model accuracy and reliability. By recognizing these 
+issues early, the EDA ensures that data preprocessing steps can be effectively planned to mitigate their impact. Secondly, the EDA highlighted significant
+correlations between features and the diabetes outcome, such as the strong influence of glucose levels and BMI on diabetes diagnosis. Understanding these
+relationships helps in feature selection and engineering, which are crucial for building effective predictive models. Additionally, the EDA revealed class 
+imbalances in the dataset, guiding the development of strategies to handle this imbalance during model training to prevent biased predictions. 
+
+\para The insights gained from the EDA therefore provide a solid foundation for informed decision-making in the experimental design and model development, 
+ensuring that the models are trained on clean, balanced, and relevant data, ultimately enhancing their predictive performance. This is especially crucial 
+given that the models would be used in the medical field, where incorrect predictions could have life-changing ramifications.
+
+
+% With Appendix A included, you are now officially 234 words over the word count before having done half of the report.
+% This will be interesting to remedy; more appendices can be tactically used if they really don't count to the word limit.
 
 \chapter{Experimental Design} % This may benefit from being its own .TeX file.
 This chapter details the planned algorithms to be leveraged against this dataset,
 as well as the metrics to evaluate them. Furthermore, the data cleaning and preprocessing 
 stages will be deeply explored, as well as some potential limitations relating to their use.
 
-\section{Identification of chosen algorithms}
+\section{Identification of chosen algorithms}\label{sec:ChosenAlgorithms}
 % What algorithms? 
 % Why those? 
 % How do those algorithms work?
@@ -678,6 +550,8 @@ that were made to enhance their performance.
 % THIS IS NOT A DRAFT. YOU NEED TO PROOFREAD THIS!
 % ENSURE IT'S STRUCTURED WELL WITH NO WEIRD PAGE BREAKS.
 
+% You say "will be" a lot, but a report is past tense. Change these to "is".
+
 % Upon reaching this point, go back and make sure your introduction is still valid and makes sense in relation
 % to the rest of the document. This was an issue in CMP6230 that you caught last-minute.
 
@@ -709,6 +583,8 @@ that were made to enhance their performance.
 % On that topic, many of your repos aren't exactly "sanitised" for public viewing and had many colorful notes in
 % that were only meant to be read by you. Pick and choose repos that are fine. Also the GitHub username needs to change,
 % there's no way I'm putting "LewGoesB00M" in an official University assignment.
+
+\include{AppendixA}
 
 \printbibliography
 

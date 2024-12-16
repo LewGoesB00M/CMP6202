@@ -1136,6 +1136,124 @@
       \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7310804/
       \endverb
     \endentry
+    \entry{mambiya_play_2019}{article}{}{}
+      \name{author}{12}{}{%
+        {{un=0,uniquepart=base,hash=c553b07ab0abb3247a7059ce69246e6d}{%
+           family={Mambiya},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29a2798e83592e5d79a91a4c590d9c86}{%
+           family={Shang},
+           familyi={S\bibinitperiod},
+           given={Mengke},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=471e61c37bc3e62dbe8655e02a002343}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9885f16be76c4e68e9c2aaf363a53600}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=36c047048acd08560ca8d536b5fb8b58}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Shan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=174256a48cfcc0b62eca8eb846d284a4}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Luping},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab5652acf0de64074be2a35319b7c36a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=47e5a8d5e9ca67c4376873aa4609ddef}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Kaili},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7984ce58a5d9f0aa970e93509d236ecc}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Mengwei},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ecefe7f4a4bedfe92f1c1b842b90dfcf}{%
+           family={Nie},
+           familyi={N\bibinitperiod},
+           given={Fangfang},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2ec72e144f0ab343bb613001c741941}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Fanxin},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a5fd47622a1b7907ffee05ce640c59c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Wanyang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2494ea7a74e2c7515cd2ec30c2cdfb15}
+      \strng{fullhash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{fullhashraw}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{bibnamehash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{authorbibnamehash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{authornamehash}{2494ea7a74e2c7515cd2ec30c2cdfb15}
+      \strng{authorfullhash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{authorfullhashraw}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{<}p{>}Diabetes has been a disease of public health concern for a number of decades. It was in the 1930s when scientists made an interesting discovery that the disease is actually divided into two types as some patients were insensitive to insulin treatment then. Type 2 Diabetes which happens to be the non-insulin dependent one is the most common form of the disease and is caused by the interaction between genetic and non-genetic factors. Despite conflicting results, numerous studies have identified genetic and non-genetic factors associated with this common type of diabetes. This review has summarized literature on some genes and non-genetic factors which have been identified to be associated with Type 2 diabetes. It has sourced literature from {PubMed}, Web of Science and Medline without any limitation to regions, publication types, or languages. The paper has started with the introduction, the play of non-genetic factors, the impact of genes in general, and ended with the interaction between some genes and environmental factors.{<}/p{>}}
+      \field{day}{19}
+      \field{issn}{2296-2565}
+      \field{journaltitle}{Frontiers in Public Health}
+      \field{month}{11}
+      \field{note}{Publisher: Frontiers}
+      \field{shortjournal}{Front. Public Health}
+      \field{title}{The Play of Genes and Non-genetic Factors on Type 2 Diabetes}
+      \field{urlday}{15}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fpubh.2019.00349
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\35GF48I5\\Mambiya et al. - 2019 - The Play of Genes and Non-genetic Factors on Type 2 Diabetes.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2019.00349/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2019.00349/full
+      \endverb
+      \keyw{environmental factors,Genes,non-genetic factors,type 2 diabetes,variants}
+    \endentry
     \entry{nelaj_high_2023}{article}{}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=d87b46d1b3edc12fc5d7c46a98cfe50c}{%
