@@ -1,0 +1,8 @@
+% Interesting trick to instead make the chapter number the letter B for this appendix.
+\begingroup
+\renewcommand\thechapter{B}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{20pt}{\Huge}
+\setcounter{section}{0} % Set the section counter back to 0 so Appendix A doesn't interfere.
+
+% Not in use yet, but it'd likely be best to move Section 3.1 here. 

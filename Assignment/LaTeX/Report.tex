@@ -584,10 +584,56 @@ KNN doesn't make any assumptions about the distribution of the data, making it u
 such as healthcare \autocite{thomas_addressing_2021}, and has also been used on the Pima Indian and Frankfurt datasets
 to high success \autocite{alzubi_diabetes_2023, zou_construction_2024}.
 
+
+\pagebreak
 \section{Identification of appropriate evaluation techniques}
 % What metrics?
 % Why those?
 % How do they show the model's performance?
+When evaluating classification models, it is crucial to select appropriate metrics that provide a comprehensive understanding of the model's performance.
+For this project, three key evaluation metrics will be used: accuracy, recall, and F1 score. 
+By using these three metrics in combination, we can gain a comprehensive understanding of our classification models' performance. Accuracy provides an overall measure of correctness,
+recall ensures positive cases are not missed, and the F1 score offers a balanced view that accounts for both precision and recall.
+This multi-metric approach will allow for a detailed evaluation of the five models.
+
+\subsection{Accuracy}
+Accuracy is the most straightforward metric, measuring the overall correctness of the model's predictions. It is calculated as the ratio of correct predictions
+(both true positives [TP] and true negatives [TN]) to the total number of predictions, including false positives [FP] and negatives [FN] \autocite{google_classification_nodate},
+shown in Equation \ref{eq:Accuracy}.
+
+\begin{equation}\label{eq:Accuracy}
+    \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}
+\end{equation}
+
+
+\para While accuracy is intuitive and easy to interpret, it can be misleading in cases
+of imbalanced datasets, which is a concern in this dataset that will need to be addressed in preprocessing.
+
+\subsection{Recall}
+Recall, also known as sensitivity or true positive rate, is particularly important in medical diagnosis scenarios like diabetes detection. It measures
+the model's ability to correctly identify all positive cases. In our context, high recall ensures that we minimize the number of diabetic patients
+who are incorrectly classified as non-diabetic (false negatives). This is crucial because missing a diabetes diagnosis could have serious health implications for the patient such 
+as neuropathy, vision problems and other health complications such as heart disease or strokes \autocite{nhs_type_nodate}.
+
+\begin{equation}\label{eq:Recall}
+    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\end{equation}
+
+\subsection{F1 Score}
+The F1 score provides a balanced measure of the model's performance by combining precision\footnote{The rate of correctly classified positives. Often has an inverse relationship with Recall \autocite{google_classification_nodate}.}
+and recall into a single metric, and is particularly useful with imbalanced datasets such as the one used in this project.
+The F1 score is calculated as the harmonic mean\footnote{The reciprocal of the mean of the reciprocals of the features. A reciprocal is 1 divided by the number, such as 4's reciprocal being 1/4.}
+of precision and recall, giving equal weight to both metrics, which is useful because in a medical context, false positives and negatives are extremely important 
+and can bear significant consequences.
+
+\begin{equation}\label{eq:Precision}
+    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+\end{equation}
+
+\begin{equation}\label{eq:F1Score}
+    \text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+
 
 
 \section{Data Cleaning and Pre-processing Transformations}\label{sec:Preprocessing}
@@ -601,7 +647,14 @@ to high success \autocite{alzubi_diabetes_2023, zou_construction_2024}.
 %       KNN and SVM - Distance between points. Heavily skewed by large differences.
 %   Have any further engineering techniques been applied? Dimensionality reduction?
 %       Certainly not dimensionality reduction because you only have 8 features to begin with.
-%   How have you handled missing data? (Imputation via KNNImputer as Zou et al. did?)
+%   How have you handled missing data? KNN Imputation as Zou et al. did because mean and median were catastrophic.
+
+% SCALING - STANDARDSCALER THEN ROBUST IN ITERATIVE IMPROVEMENT?
+% SMOTE AND NO SMOTE IN ITERATIVE IMPROVEMENT?
+
+% Significant problem: KNN Imputation of the testing set is not optimal as you're technically then testing the model
+% on data it's already been trained on.
+
 
 \section{Limitations and Options}
 % What are the limitations of this approach?
