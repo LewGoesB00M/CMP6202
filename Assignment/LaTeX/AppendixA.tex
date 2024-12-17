@@ -22,7 +22,7 @@ An initial glance at the dataset would make it appear as though as there are not
 
 \para This would be very good - if it were true. Instead of missing values, this dataset contains impossible values in five columns, highlighted in red in 
 Figure \ref{fig:ImpossibleValues}.\footnote{The mean of the outcome is highlighted in blue, as the fact that it is under 0.5 indicates that there are more 
-cases of outcome 0 (no diabetes) than 1 (diabetes). This will be further analysed in Section \ref{sec:ImbalanceEDA}.}
+cases of outcome 0 (no diabetes) than 1 (diabetes). This will be further analysed in Section \ref{ASec:Imbalance}.}
 
 \begin{figure}[H]
     \centering
@@ -31,6 +31,7 @@ cases of outcome 0 (no diabetes) than 1 (diabetes). This will be further analyse
     \label{fig:ImpossibleValues}
 \end{figure}
 
+\pagebreak
 \para It is not possible for a living person to have a 0 in any of the five highlighted columns, and these datasets do not contain information of the deceased.
 Therefore, it can be deduced that these values are erroneous, and should be treated as though they are missing. It is theorised by some in Kaggle discussions of these 
 datasets that the zeroes in the Insulin column actually meant "imperceptible levels", which would have been useful data. However, a further review of literature around the datasets,
@@ -39,12 +40,13 @@ of their collection.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{EDA/ConvertImpossibleValues-NoSums.png} % A version of this with NA sums exists too.
+    \includegraphics[width=\linewidth]{EDA/ConvertImpossibleValues.png} 
     \caption{Converting the impossible values to NaNs which are recognised by Pandas.}
     \label{fig:ConvertImpossibleValues}
 \end{figure}
 
-\para Now that there are officially recognised missing values, they can be visualised using the Missingno package, which can produce a 
+\para This conversion is applied to the actual X\_train set for model training, as well as to the fullTrainSet copy made in Figure \ref{fig:FullTrainingSet}.
+Now that there are officially recognised missing values, they can be visualised using the Missingno package, which can produce a 
 matrix of missing values by column, seen in Figure \ref{fig:MissingnoMatrix}.
 % bar chart of the amount of values in each column, seen in Figure \ref{fig:MissingnoBar}.
 
@@ -71,7 +73,7 @@ which will need to be fixed before any model can be trained. This is accomplishe
 \pagebreak 
 
 
-\section{Target univariate analysis}
+\section{Target univariate analysis}\label{ASec:Imbalance}
 Binary classification models can develop bias if they do not have enough data of both classes to accurately predict what combinations 
 of values should determine each class. Therefore, it is essential to view the balance between classes as in Figure \ref{fig:ClassImbalancePlot}.
 
@@ -107,15 +109,8 @@ aims to maintain the original class balances where possible. The class imbalance
 
 
 \section{Multivariate analysis}
-To compare each variable to each other and the outcome, a deep copy of the training 
-set was created which merged X\_train and y\_train without affecting the originals.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.8\linewidth]{EDA/FullTrainingSet.png}
-    \caption{Creating a variable to hold a copy of X\_train and y\_train.}
-    \label{fig:FullTrainingSet}
-\end{figure}
+To compare each variable to each other and the outcome, the full training set previously  
+created in Figure \ref{fig:FullTrainingSet} was used.
 
 \subsection{Data distributions by Outcome}
 

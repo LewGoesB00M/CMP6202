@@ -22,7 +22,7 @@
 % Declare biblatex with custom Harvard BCU styling for referencing.
 \usepackage[
     useprefix=true,
-    maxcitenames=3,
+    maxcitenames=2,
     maxbibnames=99,
     style=authoryear,
     dashed=false, 
@@ -415,13 +415,23 @@ After the data is split to $X$ and $y$, it can be split into training and testin
 \para By default, this method will first shuffle all rows in the dataset before splitting it, which introduces an element of randomness which can damage 
 reproducibility. To combat this, the "random\_state" parameter can be set to ensure that the same shuffle will occur every time.
 
+\para When performing EDA, the Outcome column will be necessary to the analysis, so a deep copy\footnote{A complete copy rather than a pointer to the original data}
+of X\_train was made with y\_train (the Outcome column) being added to it, merging the two back into a full training set, shown in Figure \ref{fig:FullTrainingSet}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{EDA/FullTrainingSet.png}
+    \caption{Duplicating X\_train and adding the Outcome column for EDA.}
+    \label{fig:FullTrainingSet}
+\end{figure}
+
 
 \section{EDA process and results}
-Exploratory Data Analysis is a key step in machine learning projects to gain a thorough understanding of the datasets used. In the interest of report conciceness,
-the full EDA process and results accompany this report as Appendix A. They were performed using the Seaborn Python library, which uses Matplotlib to produce 
-convenient visualisations to answer each question posed in Table \ref{tab:Questions}. The topics and issues identified during the process are solved in Section \ref{sec:Preprocessing}.
+In the interest of report conciseness, the full EDA process and results accompany this report as Appendix A. They were performed using the Seaborn Python library,
+which uses Matplotlib to produce convenient visualisations to answer each question posed in Table \ref{tab:Questions}. The topics and issues identified
+during the process are solved in Section \ref{sec:Preprocessing}.
 
-\pagebreak
+
 \section{EDA conclusions}
 The extensive EDA conducted in Appendix A provided clear answers to each question posed in Table \ref{tab:Questions}, 
 which are detailed below in Table \ref{tab:Answers}.
@@ -462,7 +472,7 @@ which are detailed below in Table \ref{tab:Answers}.
     associated with higher glucose levels.\\
     \hline
     8 & Blood pressure shows some correlation with diabetes outcomes but is not a strong standalone diagnostic factor. 
-    However, like pregnancies, previously mentioned academic research specifies that it is still a useful feature to keep for the models.\\
+    However, like pregnancies, previously mentioned academic research specifies that it is still a useful feature to keep.\\
     \hline
     9 & Individuals with diabetes tend to have higher skin thickness on average, although this feature contains significant high outliers
     in both individuals with and without diabetes.\\
@@ -485,16 +495,7 @@ imbalances in the dataset, guiding the development of strategies to handle this 
 ensuring that the models are trained on clean, balanced, and relevant data, ultimately enhancing their predictive performance. This is especially crucial 
 given that the models would be used in the medical field, where incorrect predictions could have life-changing ramifications.
 
-
-% With Appendix A included, you are now officially 234 words over the word count before having done half of the report.
-% This will be interesting to remedy; more appendices can be tactically used if they really don't count to the word limit.
-
 \chapter{Experimental Design} % This may benefit from being its own .TeX file.
-% !!! YOUR MISSING DATA IS USING THE WHOLE DF RATHER THAN FULLTRAINSET. THIS IS BAD.
-% This is fixed in the code, but screenshots of code should all come from your DESKTOP.
-% Therefore, you must retake all isna().sum() images and dataset descriptions.
-% Figures "InitialNoNAs", "ImpossibleValues" and "ConvertImpossibleValues" must change.
-
 This chapter details the planned algorithms to be leveraged against this dataset,
 as well as the metrics to evaluate them. Furthermore, the data cleaning and preprocessing 
 stages will be deeply explored, as well as some potential limitations relating to their use.
@@ -503,7 +504,58 @@ stages will be deeply explored, as well as some potential limitations relating t
 % What algorithms? 
 % Why those? 
 % How do those algorithms work?
+Five classification algorithms will be leveraged on this dataset, these being Random Forests,
+Support Vector Machines, Logistic Regression, Na\"ive Bayes, and K-Nearest Neighbours.
+% Up to this point is 2664 words, because appendices are excluded as confirmed by the brief.
 
+\subsection{Random Forest}
+Random forests are ensemble models, meaning that they leverage multiple other models and average their findings to 
+give a single result. The other models used by a random forest are decision trees, which are flowchart-like structures where 
+data is split at each node of the tree based on feature values to arrive at a classification. Random forests create many decision 
+trees based on randomly sampling the dataset, and these trees then classify rows based on what they learn. Then, the predictions 
+for each row by all decision trees are aggregated, and the prediction reached by the most trees is used.
+The amount of decision trees used is a parameter that can be set, and the computational requirements of the algorithm 
+also increase alongside this amount.
+% This was written half-asleep at 12am and likely doesn't make much sense.
+
+\para Random forests are reputed as one of the best classification algorithms, and are used frequently in many fields 
+including diabetes diagnosis as seen in works from \textcite{chang_pima_2023} and \textcite{alzubi_diabetes_2023},
+demonstrating their suitability for this classification task.
+% They're resistant to overfitting, too. Talk about this.
+
+\subsection{Support Vector Machine}
+Support vector machines aim to find the optimal hyperplane\footnote{A decision boundary that separates the classes. In a two-dimensional graph, this would be a line of best fit, but in a multidimensional dataset, it would be a hyperplane.}
+which separates classes with the highest possible margin, and are commonly used in classification problems \autocite{ibm_what_2023}. Data points on either 
+side of the margin are known as support vectors. Figure \ref{fig:OptimalSVM} shows how a perfect SVM would look in a two-dimensional dataset for demonstrative purposes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\linewidth]{Algorithms/OptimalSVM.png}
+    \caption{An optimal SVM that demonstrates the algorithm's key features. Rows on the dotted line are the support vectors, the solid line is the hyperplane, and the space
+    between the hyperplane and support vectors is the margin. \autocite{kirchner_using_2018}}
+    \label{fig:OptimalSVM}
+\end{figure}
+
+\para \textcite{kirchner_using_2018} state that SVMs are computationally intensive, requiring lots of memory and processing power 
+to run optimally. Additionally, \textcite{atla_sensitivity_2011} mention that SVMs are particularly sensitive to noise in 
+datasets, meaning their quality can be poor when there are many outliers. Despite these drawbacks, however, they can still 
+be useful in diabetes classification as observed in the work of \textcite{zou_construction_2024}.
+
+\subsection{Logistic Regression}
+Logistic regression computes a weighted sum of all input features, where the appropriate weights are learned by the algorithm as it trains.
+A sigmoid function is then used to transform the sum to a value between 0 and 1, which is then used to classify the row as 0 if it is below 
+0.5, or classify it as 1 if it is above 0.5.
+% Include the sigmoid function as a LaTeX equation.
+\para Logistic regression is a very common algorithm in binary classification tasks, as it is simple to implement and interpret, and
+can perform well even with limited amounts of training data \autocite{kavya_applications_2024}. It has also been widely used in previous 
+analyses of the Pima Indian dataset. (\textcite{alzubi_diabetes_2023}, \textcite{joshi_predicting_2021}, \textcite{zou_construction_2024})
+
+
+% You're struggling to define these; Zou et al. is an excellent paper for definitions that you should read more into.
+
+\subsection{Na\"ive Bayes}
+
+\subsection{K-Nearest Neighbours (KNN)}
 
 \section{Identification of appropriate evaluation techniques}
 % What metrics?
@@ -546,10 +598,9 @@ before any iterative improvements such as hyperparameter tuning.
 \chapter{Evaluation and further improvements}
 This chapter details the extensive evaluation of each model, as well as iterative improvements 
 that were made to enhance their performance.
-% This chapter MUST be its own .TeX file, and is the bulk of this report at first glance.
 % No idea what this section entails, as the template is quite non-descript on it. (or over-descript idk)
 % I believe it's about the iterative improvements to the models?
-
+% You should talk about GridSearchCV and how it allowed for optimal hyperparameter tuning.
 
 \chapter{Conclusion}
 % THIS IS NOT A DRAFT. YOU NEED TO PROOFREAD THIS!
@@ -565,8 +616,6 @@ that were made to enhance their performance.
 
 % A few times across the report you mention "the 9 features". I don't think the target variable is a feature, so shouldn't it be
 % the 8 features?
-
-% In the notebook, you've split AFTER identifying missing. That isn't what you said you'd do in this report.
 
 \section{Summary of results} 
 % You've done this in labs, make a DF of all models and accuracies, plot it on a graph.
