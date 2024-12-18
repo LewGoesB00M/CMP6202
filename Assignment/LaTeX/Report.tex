@@ -505,84 +505,12 @@ stages will be deeply explored, as well as some potential limitations relating t
 % Why those? 
 % How do those algorithms work?
 Five classification algorithms will be leveraged on this dataset, these being Random Forests,
-Support Vector Machines, Logistic Regression, Na\"ive Bayes, and K-Nearest Neighbours.
+Support Vector Machines, Logistic Regression, Na\"ive Bayes, and K-Nearest Neighbours. These were 
+selected due to their previous use in literature based on these datasets, and also due to their 
+high prevalence across many fields. Detailed descriptions of each algorithm, including their 
+mathematical formulae, can be found in Appendix B - Classification Algorithms.
 % Up to this point is 2664 words, because appendices are excluded as confirmed by the brief.
 % This could feasibly be an appendix, as you can't possibly keep below ~4400 with this section included.
-
-\subsection{Random Forest}
-Random forests are ensemble models, meaning that they leverage multiple other models and average their findings to 
-give a single result. The other models used by a random forest are decision trees, which are flowchart-like structures where 
-data is split at each node of the tree based on feature values to arrive at a classification. Random forests create many decision 
-trees based on randomly sampling the dataset, and these trees then classify rows based on what they learn. Then, the predictions 
-for each row by all decision trees are aggregated, and the prediction reached by the most trees is used.
-The amount of decision trees used is a parameter that can be set, and the computational requirements of the algorithm 
-also increase alongside this amount.
-% This was written half-asleep at 12am and likely doesn't make much sense.
-
-\para Random forests are reputed as one of the best classification algorithms, and are used frequently in many fields 
-including diabetes diagnosis as seen in works from \textcite{chang_pima_2023} and \textcite{alzubi_diabetes_2023},
-demonstrating their suitability for this classification task.
-% They're resistant to overfitting, too. Talk about this.
-
-\subsection{Support Vector Machine}
-Support vector machines aim to find the optimal hyperplane\footnote{A decision boundary that separates the classes. In a two-dimensional graph, this would be a line of best fit, but in a multidimensional dataset, it would be a hyperplane.}
-which separates classes with the highest possible margin, and are commonly used in classification problems \autocite{ibm_what_2023}. Data points on either 
-side of the margin are known as support vectors. Figure \ref{fig:OptimalSVM} shows how a perfect SVM would look in a two-dimensional dataset for demonstrative purposes.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.5\linewidth]{Algorithms/OptimalSVM.png}
-    \caption{An optimal SVM that demonstrates the algorithm's key features. Rows on the dotted line are the support vectors, the solid line is the hyperplane, and the space
-    between the hyperplane and support vectors is the margin. \autocite{kirchner_using_2018}}
-    \label{fig:OptimalSVM}
-\end{figure}
-
-\para \textcite{kirchner_using_2018} state that SVMs are computationally intensive, requiring lots of memory and processing power 
-to run optimally. Additionally, \textcite{atla_sensitivity_2011} mention that SVMs are particularly sensitive to noise in 
-datasets, meaning their quality can be poor when there are many outliers. Despite these drawbacks, however, they can still 
-be useful in diabetes classification as observed in the work of \textcite{zou_construction_2024}.
-
-\subsection{Logistic Regression}
-Logistic regression computes a weighted sum of all input features, where the appropriate weights are learned by the algorithm as it trains.
-A sigmoid function, shown in Equation \ref{eq:Sigmoid}, is then used to transform the sum to a value between 0 and 1, which is then used to classify the row as 0 if it is below 
-0.5, or classify it as 1 if it is above 0.5. 
-
-\begin{equation}\label{eq:Sigmoid}
-    f(x) = \frac{1}{1 + e^{-x}}     
-\end{equation}
-
-\para Logistic regression is a very common algorithm in binary classification tasks, as it is simple to implement and interpret, and
-can perform well even with limited amounts of training data \autocite{kavya_applications_2024}. It has also been widely used in previous 
-analyses of the Pima Indian dataset. (\textcite{alzubi_diabetes_2023}, \textcite{joshi_predicting_2021}, \textcite{zou_construction_2024})
-
-\subsection{Na\"ive Bayes}
-Na\"ive Bayes is an example of a probabilistic classification algorithm \autocite{ibm_what_2021}, as it is based on Bayes' theorem,
-which calculates the probability of an event given that another event has occurred, shown in Equation \ref{eq:Bayes}. 
-In binary classification, it is the probability of the target given the other features. Na\"ive Bayes gets its name from its na\"ive assumption
-that features are all independent of each other.
-
-\begin{equation}\label{eq:Bayes}
-    P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
-\end{equation}
-
-\para This theorem calculates that the probability of an event occurring is equal to the probability of the event given 
-prior knowledge multiplied by the prior probability of the event. This can be contextualised to this specific dataset, shown in Equation \ref{eq:ContextBayes}.
-
-\begin{equation}\label{eq:ContextBayes}
-    P(Diabetes | Other features) = \frac{P(Other features | Diabetes) \cdot P(Diabetes)}{P(Other features)}
-\end{equation}
-
-\para Gaussian Na\"ive Bayes is used in this project, as it is best suited to continuous data as seen in this dataset's 
-features. Interestingly, Na\"ive Bayes typically has lower accuracy than other models such as Random Forests \autocite{khan_novel_2023},
-though it has been used in previous diabetes classification tasks \autocite{aftab_cloud-based_2021, chang_pima_2023, zou_construction_2024}.
-
-\subsection{K-Nearest Neighbours (KNN)}
-The k-Nearest Neighbours (kNN) algorithm is a fundamental machine learning classification method that operates by identifying 
-the $k$ closest training examples to a data point across all features and assigns the most common class among these neighbours 
-as the prediction. $K$ is a parameter that can be set within the algorithm, and has a heavy influence over its accuracy.
-KNN doesn't make any assumptions about the distribution of the data, making it useful for complex, real-world scenarios
-such as healthcare \autocite{thomas_addressing_2021}, and has also been used on the Pima Indian and Frankfurt datasets
-to high success \autocite{alzubi_diabetes_2023, zou_construction_2024}.
 
 
 \pagebreak
@@ -653,18 +581,114 @@ and can bear significant consequences.
 % SMOTE AND NO SMOTE IN ITERATIVE IMPROVEMENT?
 
 % Significant problem: KNN Imputation of the testing set is not optimal as you're technically then testing the model
-% on data it's already been trained on.
+% on data it's already been trained on. Consider alternative improvement - mean imputation for testing set after KNN
+% applied to train? If this works, it's an iterative improvement.
+\subsection{Data encoding}
+Data encoding was not necessary in this dataset as all features were already numeric. However, a detailed description of typical 
+encoding processes can be found in Appendix C.
+
+\subsection{Data cleaning}
+The EDA revealed the necessity for data cleaning in this dataset through the transformation of outliers and imputation of missing values.
+
+\subsubsection{Outlier handling}
+It was observed that all columns had outliers, with some having particularly extreme outliers that caused massive skew in the data and 
+the visualisations produced from it. To address these, data was constrained to be within the 1st and 99th percentiles, and any data outside 
+of these would be increased or decreased to one of these boundaries.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Preprocessing/OutlierConstraining.png}
+    \caption{Using np.clip to transform values less than or greater than the 1st and 99th percentiles.}
+    \label{fig:OutlierConstraining}
+\end{figure}
+
+\pagebreak 
+
+\subsubsection{Missing data imputation}
+After handling the outliers in the data, missing data can be imputed. The selected method for this was KNN imputation,
+which uses the KNN algorithm to aggregate data from the $k$ nearest data points and imputes the average of these points 
+in place of the missing value \autocite{trainindata_knn_2024}. This method can be very useful as it will not impute many rows 
+of the same number as mean or median imputation would do, and instead imputes reasonable values based on similar rows,
+which is especially beneficial given the high correlations between some of the missing data (such as Insulin) and data 
+that is mostly present (such as Glucose).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\linewidth]{Preprocessing/KNNImputation.png}
+    \caption{Using KNN imputation to resolve missing data.}
+    \label{fig:KNNImputation}
+\end{figure}
+
+\para K was set to 6 in the imputer to increase the amount of data each imputed point is based on, but also to not average 
+too many data points, as the data still varies despite containing many less outliers. 
+% Bad description, scrap entirely? 6 was chosen randomly, maybe you could go way higher now with outlier removal.
+
+\subsection{Data scaling}
+After imputing missing data, scaling can occur. Algorithms such as KNN and SVMs rely heavily on the distance 
+between data points, meaning they can be heavily skewed by large distances between real numbers. Due to the high 
+variance in the dataset as many features use different scales (Age, Insulin, SkinThickness, and BMI for example), 
+it was decided that standardisation will be the scaling procedure. Standardisation uses the formula in Equation \ref{eq:Standardisation}
+to scale data so that it has a mean of 0 and a standard deviation of 1.
+
+\begin{equation}\label{eq:Standardisation}
+    Z = \frac{X - \mu}{\sigma}
+\end{equation}
+\begin{align*}
+    Z & \text{ is the standardized value (also known as "z-score")} \\
+    X & \text{ is the original value of the feature} \\
+    \mu & \text{ is the mean of the feature} \\
+    \sigma & \text{ is the standard deviation of the feature}
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Preprocessing/Standardisation.png}
+    \caption{Using a StandardScaler to standardise the data.}
+    \label{fig:Standardisation}
+\end{figure}
+
+\pagebreak
+
+\subsection{Data balancing}
+It was also established during EDA that the dataset is imbalanced, mostly containing rows without diabetes. Therefore,
+the Synthetic Minority Oversampling Technique (SMOTE) was used to generate synthetic data to balance the classes. 
+SMOTE also uses the KNN algorithm to generate data, but randomly selects nearest neighbours and generates data in-between
+the selected sample and the neighbour \autocite{trainindata_overcoming_2023}. This is repeated until the classes are balanced.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\linewidth]{Preprocessing/SMOTE.png}
+    \caption{Using SMOTE to balance the training set.}
+    \label{fig:SMOTE}
+\end{figure}
+
+\para SMOTE is not used to balance the testing set, as the testing set should be exclusively real data
+so that an accurate representation of the model's ability to predict real data can be gathered \autocite{ozbun_properly_2021}.
+
 
 
 \section{Limitations and Options}
 % What are the limitations of this approach?
 %   The sheer amount of missing insulin data and imputation means the datasets are basically synthetic now.
+A key limitation in this design comes from the datasets themselves; they contain colossal amounts of missing data, 
+with almost half of the Insulin values missing. With Insulin being such an integral part of type 2 diabetes diagnosis,
+the issue of having so much missing data cannot be overlooked. While it was addressed using KNN imputation, the synthetic 
+data generated by this approach could possibly be of poor quality.
 
+\para Furthermore, SMOTE was used to balance the classes. While SMOTE is a useful tool, it can introduce noise to a dataset.
+Additionally, SMOTE was performed after the KNN imputation, meaning that a substantial amount of the dataset was then synthetic data.
+
+\para In future projects, it would be best to use more organised and clean datasets, where such substantial 
+preprocessing measures would not be necessary. Furthermore, the features in the dataset are all numerical.
+While this is good for the development of machine learning models, it did not allow for the demonstration 
+of encoding techniques, which were instead described in Appendix C.
 
 \chapter{Model Development} % Titled "predictive modelling / model development" in template.
 % This may benefit from being its own .TeX file.
 This chapter details the training and evaluation processes of the original produced models
 before any iterative improvements such as hyperparameter tuning.
+
+% EDA - SHOW DATA DISTRIBUTIONS TO ADD CREDENCE TO YOUR POINT MADE IN DATA SCALING.
 
 \section{Predictive modelling process}
 % What processes did you undertake to train the models?
@@ -676,12 +700,16 @@ before any iterative improvements such as hyperparameter tuning.
 % Discuss evaluating your model on previously seen data i.e. the training set.
 % Screenshots of code or Minted code blocks necessary.
 
+% For Random Forest, you may be able to use "export_graphviz" to show the conditions of the decision tree itself.
+
 \chapter{Evaluation and further improvements}
 This chapter details the extensive evaluation of each model, as well as iterative improvements 
 that were made to enhance their performance.
 % No idea what this section entails, as the template is quite non-descript on it. (or over-descript idk)
 % I believe it's about the iterative improvements to the models?
 % You should talk about GridSearchCV and how it allowed for optimal hyperparameter tuning.
+
+% (The secret was primarily to increase KNN imputer's neighbours. Increased all metrics obscenely.)
 
 \chapter{Conclusion}
 % THIS IS NOT A DRAFT. YOU NEED TO PROOFREAD THIS!
@@ -719,7 +747,28 @@ that were made to enhance their performance.
 % that were only meant to be read by you. Pick and choose repos that are fine. Also the GitHub username needs to change,
 % there's no way I'm putting "LewGoesB00M" in an official University assignment.
 
+Over the course of this module and others, I have enhanced my skills with a wide variety of tech stacks to a degree 
+I previously thought impossible. I have thoroughly enjoyed expanding my Python skills for data science and machine learning 
+with the use of industry standard packages like Pandas and NumPy. This project in particular has heavily challenged me, 
+requiring extensive research into many academic papers and web resources to further my knowledge of the medical field 
+and machine learning trends.
+
+\para I have always enjoyed writing code from as young as 11 years old. I originally began by creating games on the Roblox platform 
+using their specialised fork of the Lua language, and expanded beyond that into Python as I furthered my knowledge of computing 
+and IT. Also, I have a \href{https://github.com/LewGoesB00M}{personal GitHub account}, which I use for version control and iterative 
+saving of my University work, including for this module in the \href{https://github.com/LewGoesB00M/CMP6202}{CMP6202 repository}, 
+where every step taken in the production of this report is documented across many commits.
+
+\para Irrespective of my personal appreciation and enjoyment in writing code, the particular topic of this project was one 
+that is close to my heart - members of my family suffer from type 2 diabetes and other health complications that arose from it,
+including neuropathy (intense pain and/or weakness), retinopathy (loss of vision) and even heart attacks and strokes. 
+Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning to make a positive difference 
+for others, and I believe that the knowledge I have gained through this project will be a strong asset in doing so.
+
+% Do SOMETHING to change the commit message in the Labs folder.
+
 \include{AppendixA}
+\include{AppendixB}
 
 \printbibliography
 

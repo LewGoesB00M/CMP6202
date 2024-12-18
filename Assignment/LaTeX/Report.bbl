@@ -1854,6 +1854,48 @@
       \verb https://www.nhsinform.scot/illnesses-and-conditions/diabetes/type-2-diabetes/
       \endverb
     \endentry
+    \entry{ozbun_properly_2021}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e33b021f3361399c1acdba0faf7a3b8e}{%
+           family={Ozbun},
+           familyi={O\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e33b021f3361399c1acdba0faf7a3b8e}
+      \strng{fullhash}{e33b021f3361399c1acdba0faf7a3b8e}
+      \strng{fullhashraw}{e33b021f3361399c1acdba0faf7a3b8e}
+      \strng{bibnamehash}{e33b021f3361399c1acdba0faf7a3b8e}
+      \strng{authorbibnamehash}{e33b021f3361399c1acdba0faf7a3b8e}
+      \strng{authornamehash}{e33b021f3361399c1acdba0faf7a3b8e}
+      \strng{authorfullhash}{e33b021f3361399c1acdba0faf7a3b8e}
+      \strng{authorfullhashraw}{e33b021f3361399c1acdba0faf7a3b8e}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Tales of a Learning Experience}
+      \field{day}{6}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{title}{Properly Using {SMOTE}}
+      \field{titleaddon}{Nerd For Tech}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://medium.com/nerd-for-tech/properly-using-smote-930924e81ab5
+      \endverb
+      \verb{url}
+      \verb https://medium.com/nerd-for-tech/properly-using-smote-930924e81ab5
+      \endverb
+    \endentry
     \entry{ruiz-alejos_skinfold_2020}{article}{}{}
       \name{author}{6}{}{%
         {{un=0,uniquepart=base,hash=bc0b6638827fcb461f6024ee5061b91f}{%
@@ -2276,6 +2318,93 @@
       \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\UCZMWDUL\\Thomas and Rajabi - 2021 - Addressing Missing Data in a Healthcare Dataset Using an Improved kNN Algorithm.pdf:application/pdf
       \endverb
       \keyw{Classification,Data imputation,Healthcare,{kNN},Missing value}
+    \endentry
+    \entry{trainindata_overcoming_2023}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ffc7fee524f436a61d4bfda829dcf47d}{%
+           family={{TrainInData}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{fullhash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{fullhashraw}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{bibnamehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authorbibnamehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authornamehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authorfullhash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authorfullhashraw}{ffc7fee524f436a61d4bfda829dcf47d}
+      \field{extraname}{1}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Find out more about {SMOTE}, how it works, and how to implement it in Python.}
+      \field{day}{28}
+      \field{langid}{american}
+      \field{month}{3}
+      \field{shorttitle}{Overcoming Class Imbalance with {SMOTE}}
+      \field{title}{Overcoming Class Imbalance with {SMOTE}: How to Tackle Imbalanced Datasets in Machine Learning}
+      \field{titleaddon}{Train in Data's Blog}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\9QRYLAYX\\overcoming-class-imbalance-with-smote.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.blog.trainindata.com/overcoming-class-imbalance-with-smote/
+      \endverb
+      \verb{url}
+      \verb https://www.blog.trainindata.com/overcoming-class-imbalance-with-smote/
+      \endverb
+    \endentry
+    \entry{trainindata_knn_2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ffc7fee524f436a61d4bfda829dcf47d}{%
+           family={{TrainInData}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{fullhash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{fullhashraw}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{bibnamehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authorbibnamehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authornamehash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authorfullhash}{ffc7fee524f436a61d4bfda829dcf47d}
+      \strng{authorfullhashraw}{ffc7fee524f436a61d4bfda829dcf47d}
+      \field{extraname}{2}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{KNN} imputation is a simple imputation technique to replace missing data for machine learning while preserving the variable distribution.}
+      \field{day}{24}
+      \field{langid}{american}
+      \field{month}{7}
+      \field{title}{{KNN} imputation of missing values in machine learning}
+      \field{titleaddon}{Train in Data's Blog}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\9M53JDJG\\knn-imputation-of-missing-values-in-machine-learning.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.blog.trainindata.com/knn-imputation-of-missing-values-in-machine-learning/
+      \endverb
+      \verb{url}
+      \verb https://www.blog.trainindata.com/knn-imputation-of-missing-values-in-machine-learning/
+      \endverb
     \endentry
     \entry{uci_machine_learning_pima_nodate}{online}{}{}
       \name{author}{1}{}{%
