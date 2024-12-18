@@ -497,8 +497,8 @@ given that the models would be used in the medical field, where incorrect predic
 
 \chapter{Experimental Design} % This may benefit from being its own .TeX file.
 This chapter details the planned algorithms to be leveraged against this dataset,
-as well as the metrics to evaluate them. Furthermore, the data cleaning and preprocessing 
-stages will be deeply explored, as well as some potential limitations relating to their use.
+as well as the metrics to evaluate them. Furthermore, leveraged data preprocessing techniques
+are deeply explored, as well as some potential limitations relating to their use.
 
 \section{Identification of chosen algorithms}\label{sec:ChosenAlgorithms}
 % What algorithms? 
@@ -509,11 +509,7 @@ Support Vector Machines, Logistic Regression, Na\"ive Bayes, and K-Nearest Neigh
 selected due to their previous use in literature based on these datasets, and also due to their 
 high prevalence across many fields. Detailed descriptions of each algorithm, including their 
 mathematical formulae, can be found in Appendix B - Classification Algorithms.
-% Up to this point is 2664 words, because appendices are excluded as confirmed by the brief.
-% This could feasibly be an appendix, as you can't possibly keep below ~4400 with this section included.
 
-
-\pagebreak
 \section{Identification of appropriate evaluation techniques}
 % What metrics?
 % Why those?
@@ -539,7 +535,7 @@ of imbalanced datasets, which is a concern in this dataset that will need to be 
 
 \subsection{Recall}
 Recall, also known as sensitivity or true positive rate, is particularly important in medical diagnosis scenarios like diabetes detection. It measures
-the model's ability to correctly identify all positive cases. In our context, high recall ensures that we minimize the number of diabetic patients
+the model's ability to correctly identify all positive cases. In this context, high recall ensures that we minimize the number of diabetic patients
 who are incorrectly classified as non-diabetic (false negatives). This is crucial because missing a diabetes diagnosis could have serious health implications for the patient such 
 as neuropathy, vision problems and other health complications such as heart disease or strokes \autocite{nhs_type_nodate}.
 
@@ -565,17 +561,7 @@ and can bear significant consequences.
 
 
 \section{Data Cleaning and Pre-processing Transformations}\label{sec:Preprocessing}
-% What data cleaning techniques did you apply and why?
-% Discuss:
-%   What is data cleaning? (e.g. handling missing data)
-%       Imputation via KNN will work because each missing column has a highly correlated associate. Insulin can be inferred from Glucose. SkinThickness from BMI.
-%       BloodPressure can't but it's not missing too many.
-%   What is data encoding? (label, one-hot)
-%   What is data scaling? Why is it done?
-%       KNN and SVM - Distance between points. Heavily skewed by large differences.
-%   Have any further engineering techniques been applied? Dimensionality reduction?
-%       Certainly not dimensionality reduction because you only have 8 features to begin with.
-%   How have you handled missing data? KNN Imputation as Zou et al. did because mean and median were catastrophic.
+% How have you handled missing data? KNN Imputation as Zou et al. did because mean and median were catastrophic.
 
 % SCALING - STANDARDSCALER THEN ROBUST IN ITERATIVE IMPROVEMENT?
 % SMOTE AND NO SMOTE IN ITERATIVE IMPROVEMENT?
@@ -747,8 +733,8 @@ that were made to enhance their performance.
 
 % You need evidence for this section. Miscellaneous certificates as well as public Github repositories.
 % On that topic, many of your repos aren't exactly "sanitised" for public viewing and had many colorful notes in
-% that were only meant to be read by you. Pick and choose repos that are fine. Also the GitHub username needs to change,
-% there's no way I'm putting "LewGoesB00M" in an official University assignment.
+% that were only meant to be read by you. Pick and choose repos that are fine.
+% DataVis is theoretically fine, but the commit history contains many wonderful messages I'd rather weren't seen.
 
 % This section alone is about 300 words. Cutting it down could be best.
 Over the course of this module and others, I have enhanced my skills with a wide variety of tech stacks to a degree 
@@ -769,10 +755,11 @@ including neuropathy (intense pain and/or weakness), retinopathy (loss of vision
 Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning to make a positive difference 
 for others, and I believe that the knowledge I have gained through this project will be a strong asset in doing so.
 
-% Do SOMETHING to change the commit message in the Labs folder.
+% When you're done and get back to here, write the abstract!
 
 \include{AppendixA}
 \include{AppendixB}
+\include{AppendixC}
 
 \printbibliography
 

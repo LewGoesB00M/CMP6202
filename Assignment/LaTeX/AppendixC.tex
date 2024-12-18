@@ -1,0 +1,49 @@
+% Interesting trick to instead make the chapter number the letter C for this appendix.
+\begingroup
+\renewcommand\thechapter{C}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{20pt}{\Huge}
+\setcounter{section}{0} % Set the section counter back to 0 so that Appendix B doesn't interfere.
+
+\chapter*{Appendix C - What is data encoding?}
+\addcontentsline{toc}{chapter}{Appendix C - What is data encoding?}
+\markboth{Appendix C}{}
+
+Machine learning models are unable to directly interpret string data. This is a significant issue 
+in many datasets, as some features may contain strings for categorical data, such as "Yes" and "No", for example.
+To solve this issue, data is \textbf{encoded} to a numerical representation. Many strategies exist to do so,
+for both nominal and ordinal data.
+
+\section{Nominal data}
+Nominal data is defined by \textcite{oxford_brookes_university_types_nodate} as "unordered, categorical 
+and mutually exclusive", providing examples of country names or "Yes" or "No" questions\footnote{Data with only two possibilities is known as dichotomous data \autocite{oxford_brookes_university_types_nodate}.}.
+Mutually exclusive means that data cannot fit into multiple of these categories, as a question cannot be answered with both "Yes" and 
+"No", for example. To encode nominal data, processes such as one-hot encoding are used.
+
+\subsection{One-hot encoding}
+One-hot encoding is a technique to encode nominal data by creating new features representing each possibility of the data.
+For example, if a "Countries" feature included "England", "America", and "France", one-hot encoding of that feature would 
+replace the original feature with "Countries\_England", "Countries\_America", and "Countries\_France", where the data in each of these 
+would either be a 1 or 0 based on what the row's value originally was. With one-hot encoding, it is especially important to ensure 
+data does all fit in the expected categories, as errors like spelling mistakes would cause the creation of an entirely new and 
+irrelevant feature.
+
+\para Because a new feature is created for every possibility, one-hot encoding drastically increases the dimensionality of 
+datasets it is leveraged against. This can massively increase storage and processing requirements, especially in datasets 
+with many rows.
+
+\section{Ordinal data}
+\textcite{oxford_brookes_university_types_nodate} defines ordinal data as "ordered, categorical and mutually exclusive."
+The examples they provide are BMI categories (underweight, normal, overweight, obese) and questionnaire answers (strongly disagree,
+disagree, etc.). Ordinal data can be encoded using processes such as label encoding.
+
+\subsection{Label encoding}
+Label encoding encodes ordinal data by assigning integer values to each possibility. Reusing the questionnaire example, "strongly disagree"
+could correlate to 1, with "disagree" correlating to 2, and so on\footnote{This particular example is known as a "Likert scale". \autocite{oxford_brookes_university_types_nodate}}. 
+Encoding data in this way maintains its ordinal nature, as machine learning algorithms can interpret "larger number = better", which allows them
+to use the data for classification or regression tasks. 
+
+\para If label encoding is used on non-ordinal data, however, it can mislead machine learning algorithms into believing there is an inherent 
+order in data where there is not, and interpret these as relationships that do not exist. Reusing the countries example, if data such 
+as "England", "America" and "France" was encoded to 1, 2 and 3 respectively, a machine learning algorithm may interpret France as being the 
+best country, despite them all being equal. 

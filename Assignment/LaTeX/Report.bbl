@@ -1414,7 +1414,6 @@
       \field{issn}{1365-2524}
       \field{journaltitle}{Health \& Social Care in the Community}
       \field{langid}{english}
-      \field{note}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1155/2023/1406060}
       \field{number}{1}
       \field{title}{A Novel Study on Machine Learning Algorithm-Based Cardiovascular Disease Prediction}
       \field{urlday}{17}
@@ -1852,6 +1851,43 @@
       \endverb
       \verb{url}
       \verb https://www.nhsinform.scot/illnesses-and-conditions/diabetes/type-2-diabetes/
+      \endverb
+    \endentry
+    \entry{oxford_brookes_university_types_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4a67d2abf83b77abf2869c380ae4ad82}{%
+           family={{Oxford Brookes University}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{fullhash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{fullhashraw}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{bibnamehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authorbibnamehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authornamehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authorfullhash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authorfullhashraw}{4a67d2abf83b77abf2869c380ae4ad82}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Types of data}
+      \field{titleaddon}{Oxford Brookes University}
+      \field{urlday}{18}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\R8CLBY8F\\types-of-data.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.brookes.ac.uk/students/academic-development/maths-and-stats/statistics/types-of-data
+      \endverb
+      \verb{url}
+      \verb https://www.brookes.ac.uk/students/academic-development/maths-and-stats/statistics/types-of-data
       \endverb
     \endentry
     \entry{ozbun_properly_2021}{online}{}{}
