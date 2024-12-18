@@ -46,6 +46,7 @@ of their collection.
 \end{figure}
 
 \para This conversion is applied to the actual X\_train set for model training, as well as to the fullTrainSet copy made in Figure \ref{fig:FullTrainingSet}.
+Also, it is assumed that there will also be impossible values in the testing set, so they are also converted to NaNs there.
 Now that there are officially recognised missing values, they can be visualised using the Missingno package, which can produce a 
 matrix of missing values by column, seen in Figure \ref{fig:MissingnoMatrix}.
 % bar chart of the amount of values in each column, seen in Figure \ref{fig:MissingnoBar}.
@@ -121,8 +122,8 @@ but also for model development, as outliers can cause some algorithms to perform
 such as K-Nearest Neighbours (KNN) and Support Vector Machines (SVM), which is further discussed in Section \ref{sec:ChosenAlgorithms}. 
 % Source? It's true but cite something for that.
 
-\para The simplest way to visualise outliers in the dataset is through box plots, which present the spread and skewness of numerical 
-data in a simple visual format by showing the inter-quartile range (IQR), with rows outside of these being outliers. 
+\para One of the simplest ways to visualise data distributions in the dataset is through box plots, which present the spread and skewness of numerical 
+data in a simple visual format by showing the inter-quartile range (IQR). This has the added benefit of identifying outliers, as rows outside of the IQR. 
 The boxplots of each column in the training set are shown below in Figure \ref{fig:AllBoxplotsByOutcome}. Each of the plots 
 contains two boxplots, where one is for individuals without diabetes, and one is for those with diabetes.
 
@@ -246,6 +247,91 @@ differs from the original assumption.
 \subsubsection{Age}
 Individuals with diabetes tend to be older on average, as indicated by a higher median age for the diabetic group, and the fact that 
 the IQR for the diabetic group is shifted upwards. However, many outliers without diabetes exist.
+
+
+\para Another way to view data distributions is through histograms, which group data into "bins" before counting the occurrence of 
+data in each bin and plotting this similarly to a bar plot. These are very useful for viewing the distribution curves of data. 
+An additional feature of Seaborn is the Kernel Density Estimate (KDE), which will plot a line showing the distribution in the histogram.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{EDA/Code/HistogramsByOutcome.png}
+    \caption{The code used to produce Figure \ref{fig:AllHistogramsByOutcome}.}
+    \label{fig:HistogramsByOutcomeCode}
+\end{figure}
+
+\para Figure \ref{fig:AllHistogramsByOutcome} on the following page shows the distributions of each 
+feature. There are a variety of distributions, with many features having left-skewed distribution curves,
+though others such as BloodPressure and Glucose have bell curves, also known as normal distributions.
+Interestingly, Age follows a power law distribution, with the vast majority of data inhabiting the lower 
+values, which would correlate with the knowledge of the dataset - women aged 21 or over had data collected,
+which reasonably explains why many of the values are from women aged between 20 and 30.
+
+\begin{figure}[H]
+    \centering
+    % First row: 2 subfigures
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/Pregnancies.png}
+        \caption{Pregnancies}
+        \label{fig:PregnanciesByOutcomeHist}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/Glucose.png}
+        \caption{Glucose}
+        \label{fig:GlucoseByOutcomeHist}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Second row: 2 subfigures
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/BloodPressure.png}
+        \caption{BloodPressure}
+        \label{fig:BloodPressureByOutcomeHist}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/SkinThickness.png}
+        \caption{SkinThickness}
+        \label{fig:SkinThicknessByOutcomeHist}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Third row: 2 subfigures
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/Insulin.png}
+        \caption{Insulin}
+        \label{fig:InsulinByOutcomeHist}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/BMI.png}
+        \caption{BMI}
+        \label{fig:BMIByOutcomeHist}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    % Fourth row: 2 subfigures
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/DiabetesPedigreeFunction.png}
+        \caption{DiabetesPedigreeFunction}
+        \label{fig:PedigreeByOutcomeHist}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\linewidth]{EDA/Plots/HistogramsByOutcome/Age.png}
+        \caption{Age}
+        \label{fig:AgeByOutcomeHist}
+    \end{subfigure}
+    
+    \caption{Histograms of all features by the outcome (Blue: No diabetes, Orange: Diabetes).}
+    \label{fig:AllHistogramsByOutcome}
+\end{figure}
+
 
 \subsection{Pair plot}
 % This section is weak, though I don't know how best to improve it.
