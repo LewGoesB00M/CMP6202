@@ -510,7 +510,7 @@ selected due to their previous use in literature based on these datasets, and al
 high prevalence across many fields. Detailed descriptions of each algorithm, including their 
 mathematical formulae, can be found in Appendix B - Classification Algorithms.
 
-\section{Identification of appropriate evaluation techniques}
+\section{Identification of appropriate evaluation techniques}\label{sec:ChosenMetrics}
 % What metrics?
 % Why those?
 % How do they show the model's performance?
@@ -676,28 +676,148 @@ before any iterative improvements such as hyperparameter tuning.
 
 % 3929 without appendices, 6417 with.
 
-% EDA - SHOW DATA DISTRIBUTIONS TO ADD CREDENCE TO YOUR POINT MADE IN DATA SCALING.
-
 \section{Predictive modelling process}
 % What processes did you undertake to train the models?
 %   How did you use the pre-processed data for training?
 %   What parameters did you use?
 %   Screenshots of code or Minted code blocks necessary.
+After the extensive EDA and preprocessing of the data, including the transformation of outliers and the imputation of
+missing data, the refined training set consisting of 80\% of the data could then be used to train the five models. 
+No features were removed, as all were deemed to be relevant in diabetes diagnosis from topical research and the
+exploration of the dataset itself. 
 
+\para While the inner workings of each algorithm differ immensely, Scikit-Learn allows the fitting and prediction of 
+all models to be uniform, using "fit()" methods to fit each model to the training set, and "predict()" methods to run 
+predictions based on the fit. Figure \ref{fig:ModelFitting} shows the code used to fit the models.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\linewidth]{ModelDev/Iteration1/Code/Fitting.png}
+    \caption{The code to fit each of the five models.}
+    \label{fig:ModelFitting}
+\end{figure}
+
+
+\pagebreak
 \section{Results on seen data}
 % Discuss evaluating your model on previously seen data i.e. the training set.
 % Screenshots of code or Minted code blocks necessary.
 
-% For Random Forest, you may be able to use "export_graphviz" to show the conditions of the decision tree itself.
+To evaluate each model, the metrics previously discussed in section \ref{sec:ChosenMetrics} 
+were logged, but confusion matrices were additionally produced, which show the amounts of data
+each model correctly and incorrectly predicted, divided into true positives, false positives, 
+false negatives and true negatives.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\linewidth]{ModelDev/Iteration1/Code/Seen/Matrices.png}
+    \caption{The code to output the evaluation metrics and confusion matrices for each model.}
+    \label{fig:SeenDataCode}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/RF.png}
+        \caption{Random Forest}
+        \label{fig:RFSeen}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/SVC.png}
+        \caption{Support Vector Machine}
+        \label{fig:SVMSeen}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/LR.png}
+        \caption{Logistic Regression}
+        \label{fig:LRSeen}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/NB.png}
+        \caption{Na\"ive Bayes}
+        \label{fig:NBSeen}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/KNN.png}
+        \caption{KNN}
+        \label{fig:KNNSeen}
+    \end{subfigure}
+    \caption{The confusion matrices of each model on seen data.}
+    \label{fig:SeenDataMatrices}
+\end{figure}
+
+% \para The confusion matrices and metrics show that Random Forest is the best algorithm when applied to the training set,
+% achieving the maximum possible result in all metrics. This is followed by KNN, with over 99 in all metrics. After these two,
+% however, the remaining models performed poorly in comparison, with SVM having 86.9\% accuracy, 84.8\% recall and an F1-Score of 
+% 87.3, and logistic regression achieving 75 or 76 in all metrics. Na\"ive Bayes performed the worst of the models, with 71.9\% accuracy,
+% 73.8\% recall, and an F1-Score of 70.8.
+
+\subsection{Random Forest}
+Random Forest performed perfectly on the training set, achieving 100\% in all metrics, likely due to the fact that it is an ensemble model 
+with the ability to identify correlations in the data, such as those between Insulin and Glucose. If it performed 
+in this way on the testing data, however, this would mean the model was overfitted.
+
+\subsection{Support Vector Machine}
+It is possible the SVM was unable to create the perfect hyperplane in the data to separate the classes. However, 
+the metrics it did achieve (86.9\% accuracy, 84.8\% recall, F1-Score of 87.3) are not bad. An additional reason 
+for this performance is that the SVM was not assigned any parameters, instead left to its defaults.
+
+\subsection{Logistic Regression}
+Logistic regression performed the second-worst of the models, achieving 75.5\% accuracy, 76.2\% recall and an F1-Score 
+of 75.1. This could be due to the lack of parameters set.
+
+\subsection{Na\"ive Bayes}
+Na\"ive Bayes performed poorly in relation to other models (71.9\% accuracy, 73.8\% recall, F1-Score of 70.8) because it assumes feature independence,
+which is not true in this dataset due to correlating columns such as BMI and SkinThickness, and Insulin and Glucose.
+
+\subsection{K-Nearest Neighbours}
+KNN performed exceptionally well (over 99\% in all metrics), as it effectively memorises the data it is trained on when it is fitted,
+meaning that it is not unexpected for it to perform extremely well on the training set.
+
 
 \chapter{Evaluation and further improvements}
 This chapter details the extensive evaluation of each model, as well as iterative improvements 
 that were made to enhance their performance.
+
+\section{Initial results on unseen data}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ModelDev/Iteration1/Code/Unseen/RF.png}
+    \caption{The code to evaluate the Random Forest model on unseen data. This code is repeated for each model,
+    only differing in the variable names used for each model's prediction and metrics (rf\_acc would be lr\_acc for Logistic Regression, for example).}
+    \label{fig:UnseenDataCode}
+\end{figure}
 % No idea what this section entails, as the template is quite non-descript on it. (or over-descript idk)
 % I believe it's about the iterative improvements to the models?
 % You should talk about GridSearchCV and how it allowed for optimal hyperparameter tuning.
 
 % (The secret was primarily to increase KNN imputer's neighbours. Increased all metrics obscenely.)
+
+\section{Iterative improvements}
+Machine learning is an iterative process, where it is unlikely that the first model will achieve excellent results.
+Therefore, an additional iteration of the models was produced, utilising a different splitting method for the data,
+and a detailed tuning of hyperparameters to achieve the best possible model performance. Detailed descriptions 
+of new techniques can be found in Appendix D.
+
+\subsection{Cross-Validation}
+% Don't talk about it here, make it an appendix. 
+% Just say "Straified k-fold was used...." etc
+Instead of Scikit-Learn's train\_test\_split method, the new iteration uses StratifiedKFold.
+
+
+
+
+\subsection{Hyperparameter tuning}
+
+\section{New results on unseen data}
+
 
 \chapter{Conclusion}
 % THIS IS NOT A DRAFT. YOU NEED TO PROOFREAD THIS!
@@ -713,6 +833,8 @@ that were made to enhance their performance.
 
 % A few times across the report you mention "the 9 features". I don't think the target variable is a feature, so shouldn't it be
 % the 8 features?
+
+% Check the code's package imports. Ensure they're all correct, and describe each package.
 
 \section{Summary of results} 
 % You've done this in labs, make a DF of all models and accuracies, plot it on a graph.
