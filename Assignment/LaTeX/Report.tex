@@ -136,11 +136,18 @@
 \tableofcontents
 \thispagestyle{empty}
 
-\pagecolor{yellow}
 \begin{abstract}
-    UNFINISHED - ABSTRACT NEEDED.
+    This report presents a comprehensive study on predicting the presence of diabetes mellitus using supervised learning models. 
+    The research integrates two datasets, the Pima Indian Diabetes Database and a Frankfurt diabetes dataset, resulting in a combined dataset of
+    2,768 samples. Extensive exploratory data analysis revealed key insights into feature relationships and data quality issues, which were 
+    addressed through preprocessing techniques including outlier handling, missing data imputation with KNN, and class balancing with SMOTE. 
+    Five classification algorithms were developed and evaluated: Random Forest, Support Vector Machine, Logistic Regression, Naïve Bayes, and K-Nearest Neighbours.
+    The models had an initial iteration with reasonably good performance, which was further improved in a second iteration of each model using stratified cross-validation
+    and hyperparameter tuning. K-Nearest Neighbours emerged as the top-performing model, achieving 97.8\% accuracy, 96.2\% recall, and an F1-score of 96.6 on the unseen test set,
+    with this performance closely followed by Random Forest. The study demonstrates the potential of machine learning in the medical field, while also highlighting the 
+    importance of proper data preprocessing and model optimization techniques. 
 \end{abstract}
-\pagecolor{white}
+
 
 \chapter{Introduction}
 
@@ -947,7 +954,35 @@ and hyperparameter tuning in supervised learning tasks. Table \ref{tab:Improveme
 %   Your methodology
 %   Your results
 %   Any insights gained?
+This project aimed to develop and evaluate machine learning models for predicting the presence of diabetes mellitus using clinical data. 
+Through extensive exploratory data analysis, data preprocessing, and model development, the following key results were achieved:
 
+\begin{itemize}
+    \item Dataset Identification and Integration
+    \begin{itemize}
+        \item The identification and integration of two datasets (Pima Indian and Frankfurt) resulted in a comprehensive dataset of 2,768 samples. 
+    \end{itemize}
+    \item Data Preprocessing and EDA
+    \begin{itemize}
+        \item Assumptions and questions solved by exploratory data analysis revealed critical insights, including the presence of outliers, missing values,
+        and class imbalance, which were addressed through constraining outliers to upper and lower quantiles, imputing missing data using KNN, and balancing
+        classes with SMOTE.
+    \end{itemize}
+    \item Model Development and Evaluation
+    \begin{itemize}
+        \item K-Nearest Neighbours (KNN) emerged as the top-performing model after hyperparameter tuning, achieving 97.8\% accuracy, 96.2\% recall, and an F1-score of 96.6.
+        \item Random Forest performed exceptionally well, with 97.7\% accuracy, 96.2\% recall, and an F1-score of 96.5, only slightly behind KNN.
+        \item Support Vector Machine (SVM) showed significant improvement after tuning, reaching 85.7\% accuracy, 85\% recall, and an F1-score of 80.1.
+        \item Logistic Regression demonstrated moderate performance with 75\% accuracy, 70.5\% recall, and an F1-score of 65.6.
+        \item Na\"ive Bayes performed the least effectively, with 73.8\% accuracy, 69.5\% recall, and an F1-score of 64.2.
+    \end{itemize}
+\end{itemize}
+
+\para Furthermore, the production of a second iteration of each model implementing stratified cross-validation and hyperparameter tuning led to substantial enhancements
+in model performance for SVM, Logistic Regression, and KNN, though not for Random Forest or Na\"ive Bayes. In conclusion, this project successfully developed machine
+learning models capable of accurately predicting diabetes, with the KNN and Random Forest models being most successful. These results demonstrate the potential of
+machine learning in supporting medical diagnosis, specifically for diabetes mellitus. However, further validation with larger, more complete datasets would be beneficial
+to enhance the models' robustness and generalizability in clinical settings.
 
 
 
@@ -957,7 +992,7 @@ and hyperparameter tuning in supervised learning tasks. Table \ref{tab:Improveme
 % What aspects of the assignment did you enjoy most?
 % How will you further hone your skills in future?
 
-% This section alone is about 300 words. Cutting it down could be best.
+% This section alone is about 350 words. Cutting it down could be best.
 Over the course of this module and others, I have enhanced my skills with a wide variety of tech stacks to a degree 
 I previously thought impossible. I have thoroughly enjoyed expanding my Python skills for data science and machine learning 
 with the use of industry standard packages like Pandas, NumPy and Scikit-Learn. This project in particular has heavily challenged me, 
@@ -980,10 +1015,6 @@ that is close to my heart - members of my family suffer from type 2 diabetes and
 including neuropathy (intense pain and/or weakness), retinopathy (loss of vision) and even heart attacks and strokes. 
 Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning to make a positive difference 
 for others, and I believe that the knowledge I have gained through this project will be a strong asset in doing so.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Write the abstract!!!!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{AppendixA}
 \include{AppendixB}
