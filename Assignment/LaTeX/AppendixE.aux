@@ -1,12 +1,27 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{Appendix D - What is data encoding?}{46}{chapter*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {D.1}Nominal data}{46}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.1.1}One-hot encoding}{46}{subsection.6.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {D.2}Ordinal data}{46}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.2.1}Label encoding}{46}{subsection.6.2.1}\protected@file@percent }
-\@setckpt{AppendixD}{
-\setcounter{page}{48}
+\@writefile{toc}{\contentsline {chapter}{Appendix E - Additional techniques}{48}{chapter*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E.1}Cross-Validation}{48}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1.1}Definition}{48}{subsection.6.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {E.18}{\ignorespaces A visual representation of KFold cross-validation \blx@tocontentsinit {0}\autocite {rosaen_scikit-learn_nodate}.}}{48}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:KFExample}{{E.18}{48}{A visual representation of KFold cross-validation \autocite {rosaen_scikit-learn_nodate}}{figure.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {E.19}{\ignorespaces A visual representation of StratifiedKFold cross-validation \blx@tocontentsinit {0}\autocite {muller_data_nodate}.}}{49}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:SKFExample}{{E.19}{49}{A visual representation of StratifiedKFold cross-validation \autocite {muller_data_nodate}}{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1.2}Application}{50}{subsection.6.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {E.20}{\ignorespaces The code used to instantiate a 10-fold StratifiedKFold.}}{50}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:SKFCode}{{E.20}{50}{The code used to instantiate a 10-fold StratifiedKFold}{figure.caption.55}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E.2}Hyperparameter tuning}{50}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.2.1}Definition}{50}{subsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.2.2}Application}{51}{subsection.6.2.2}\protected@file@percent }
+\newlabel{ASec:HyperparameterApplication}{{E.2.2}{51}{Application}{subsection.6.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {E.21}{\ignorespaces The parameter grid that will be used for GridSearchCV. As mentioned in the code, GaussianNB does not have any relevant parameters to tune.}}{51}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:ParamGrid}{{E.21}{51}{The parameter grid that will be used for GridSearchCV. As mentioned in the code, GaussianNB does not have any relevant parameters to tune}{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {E.22}{\ignorespaces The created dictionary of models. RF, SVC and LR had their random\_state parameters set ahead of time for reproducibility.}}{52}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:ModelDict}{{E.22}{52}{The created dictionary of models. RF, SVC and LR had their random\_state parameters set ahead of time for reproducibility}{figure.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {E.23}{\ignorespaces Using GridSearchCV to iterate through the dictionary of models and cross-validate them on the training set. After this, the best model identified by GridSearchCV based on the maximum F1 score on the training set is saved and used to predict the unseen testing set, outputting its evaluation metrics and confusion matrices.}}{53}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:GridSearchCV}{{E.23}{53}{Using GridSearchCV to iterate through the dictionary of models and cross-validate them on the training set. After this, the best model identified by GridSearchCV based on the maximum F1 score on the training set is saved and used to predict the unseen testing set, outputting its evaluation metrics and confusion matrices}{figure.caption.58}{}}
+\@setckpt{AppendixE}{
+\setcounter{page}{54}
 \setcounter{equation}{9}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -17,11 +32,11 @@
 \setcounter{part}{0}
 \setcounter{chapter}{6}
 \setcounter{section}{2}
-\setcounter{subsection}{1}
+\setcounter{subsection}{2}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{17}
+\setcounter{figure}{23}
 \setcounter{table}{0}
 \setcounter{float@type}{8}
 \setcounter{caption@flags}{2}
@@ -38,7 +53,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{57}
+\setcounter{instcount}{62}
 \setcounter{maxnames}{2}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -146,7 +161,7 @@
 \setcounter{section@level}{0}
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{11}
-\setcounter{bookmark@seq@number}{52}
+\setcounter{bookmark@seq@number}{59}
 \setcounter{LT@tables}{7}
 \setcounter{LT@chunks}{1}
 \setcounter{tcbbreakpart}{0}

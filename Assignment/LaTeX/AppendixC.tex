@@ -5,45 +5,45 @@
 {\normalfont\huge\bfseries}{}{20pt}{\Huge}
 \setcounter{section}{0} % Set the section counter back to 0 so that Appendix B doesn't interfere.
 
-\chapter*{Appendix C - What is data encoding?}
-\addcontentsline{toc}{chapter}{Appendix C - What is data encoding?}
-\markboth{Appendix C}{}
+\chapter*{Appendix D - Descriptions of metrics}
+\addcontentsline{toc}{chapter}{Appendix D - Descriptions of metrics}
+\markboth{Appendix D}{}
 
-Machine learning models are unable to directly interpret string data. This is a significant issue 
-in many datasets, as some features may contain strings for categorical data, such as "Yes" and "No", for example.
-To solve this issue, data is \textbf{encoded} to a numerical representation. Many strategies exist to do so,
-for both nominal and ordinal data.
+\section{Accuracy}
+Accuracy is the most straightforward metric, measuring the overall correctness of the model's predictions. It is calculated as the ratio of correct predictions
+(both true positives [TP] and true negatives [TN]) to the total number of predictions, including false positives [FP] and negatives [FN] \autocite{google_classification_nodate},
+shown in Equation \ref{eq:Accuracy}.
 
-\section{Nominal data}
-Nominal data is defined by \textcite{oxford_brookes_university_types_nodate} as "unordered, categorical 
-and mutually exclusive", providing examples of country names or "Yes" or "No" questions\footnote{Data with only two possibilities is known as dichotomous data \autocite{oxford_brookes_university_types_nodate}.}.
-Mutually exclusive means that data cannot fit into multiple of these categories, as a question cannot be answered with both "Yes" and 
-"No", for example. To encode nominal data, processes such as one-hot encoding are used.
+\begin{equation}\label{eq:Accuracy}
+    \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}
+\end{equation}
 
-\subsection{One-hot encoding}
-One-hot encoding is a technique to encode nominal data by creating new features representing each possibility of the data.
-For example, if a "Countries" feature included "England", "America", and "France", one-hot encoding of that feature would 
-replace the original feature with "Countries\_England", "Countries\_America", and "Countries\_France", where the data in each of these 
-would either be a 1 or 0 based on what the row's value originally was. With one-hot encoding, it is especially important to ensure 
-data does all fit in the expected categories, as errors like spelling mistakes would cause the creation of an entirely new and 
-irrelevant feature.
 
-\para Because a new feature is created for every possibility, one-hot encoding drastically increases the dimensionality of 
-datasets it is leveraged against. This can massively increase storage and processing requirements, especially in datasets 
-with many rows.
+\para While accuracy is intuitive and easy to interpret, it can be misleading in cases
+of imbalanced datasets, which is a concern in this dataset that will need to be addressed in preprocessing.
 
-\section{Ordinal data}
-\textcite{oxford_brookes_university_types_nodate} defines ordinal data as "ordered, categorical and mutually exclusive."
-The examples they provide are BMI categories (underweight, normal, overweight, obese) and questionnaire answers (strongly disagree,
-disagree, etc.). Ordinal data can be encoded using processes such as label encoding.
+\section{Recall}
+Recall, also known as sensitivity or true positive rate, is particularly important in medical diagnosis scenarios like diabetes detection. It measures
+the model's ability to correctly identify all positive cases. In this context, high recall ensures that we minimize the number of diabetic patients
+who are incorrectly classified as non-diabetic (false negatives). This is crucial because missing a diabetes diagnosis could have serious health implications for the patient such 
+as neuropathy, vision problems and other health complications such as heart disease or strokes \autocite{nhs_type_nodate}.
 
-\subsection{Label encoding}
-Label encoding encodes ordinal data by assigning integer values to each possibility. Reusing the questionnaire example, "strongly disagree"
-could correlate to 1, with "disagree" correlating to 2, and so on\footnote{This particular example is known as a "Likert scale". \autocite{oxford_brookes_university_types_nodate}}. 
-Encoding data in this way maintains its ordinal nature, as machine learning algorithms can interpret "larger number = better", which allows them
-to use the data for classification or regression tasks. 
+\begin{equation}\label{eq:Recall}
+    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\end{equation}
 
-\para If label encoding is used on non-ordinal data, however, it can mislead machine learning algorithms into believing there is an inherent 
-order in data where there is not, and interpret these as relationships that do not exist. Reusing the countries example, if data such 
-as "England", "America" and "France" was encoded to 0, 1 and 2 respectively, a machine learning algorithm may interpret France as being the 
-best country, despite them all being equal. 
+\section{F1 Score}
+The F1 score provides a balanced measure of the model's performance by combining precision\footnote{The rate of correctly classified positives. Often has an inverse relationship with Recall \autocite{google_classification_nodate}.}
+and recall into a single metric, and is particularly useful with imbalanced datasets such as the one used in this project.
+The F1 score is calculated as the harmonic mean\footnote{The reciprocal of the mean of the reciprocals of the features. A reciprocal is 1 divided by the number, such as 4's reciprocal being 1/4.}
+of precision and recall, giving equal weight to both metrics, which is useful because in a medical context, false positives and negatives are extremely important 
+and can bear significant consequences.
+
+\begin{equation}\label{eq:Precision}
+    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+\end{equation}
+
+\begin{equation}\label{eq:F1Score}
+    \text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+

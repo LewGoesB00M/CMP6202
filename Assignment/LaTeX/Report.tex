@@ -515,7 +515,7 @@ Five classification algorithms will be leveraged on this dataset, these being Ra
 Support Vector Machines, Logistic Regression, Na\"ive Bayes, and K-Nearest Neighbours. These were 
 selected due to their previous use in literature based on these datasets, and also due to their 
 high prevalence across many fields. Detailed descriptions of each algorithm, including their 
-mathematical formulae, can be found in Appendix B - Classification Algorithms.
+mathematical formulae, can be found in Appendix B.
 
 \section{Identification of appropriate evaluation techniques}\label{sec:ChosenMetrics}
 % What metrics?
@@ -525,58 +525,20 @@ When evaluating classification models, it is crucial to select appropriate metri
 For this project, three key evaluation metrics will be used: accuracy, recall, and F1 score. 
 By using these three metrics in combination, we can gain a comprehensive understanding of our classification models' performance. Accuracy provides an overall measure of correctness,
 recall ensures positive cases are not missed, and the F1 score offers a balanced view that accounts for both precision and recall.
-This multi-metric approach will allow for a detailed evaluation of the five models.
-
-\subsection{Accuracy}
-Accuracy is the most straightforward metric, measuring the overall correctness of the model's predictions. It is calculated as the ratio of correct predictions
-(both true positives [TP] and true negatives [TN]) to the total number of predictions, including false positives [FP] and negatives [FN] \autocite{google_classification_nodate},
-shown in Equation \ref{eq:Accuracy}.
-
-\begin{equation}\label{eq:Accuracy}
-    \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}
-\end{equation}
-
-
-\para While accuracy is intuitive and easy to interpret, it can be misleading in cases
-of imbalanced datasets, which is a concern in this dataset that will need to be addressed in preprocessing.
-
-\subsection{Recall}
-Recall, also known as sensitivity or true positive rate, is particularly important in medical diagnosis scenarios like diabetes detection. It measures
-the model's ability to correctly identify all positive cases. In this context, high recall ensures that we minimize the number of diabetic patients
-who are incorrectly classified as non-diabetic (false negatives). This is crucial because missing a diabetes diagnosis could have serious health implications for the patient such 
-as neuropathy, vision problems and other health complications such as heart disease or strokes \autocite{nhs_type_nodate}.
-
-\begin{equation}\label{eq:Recall}
-    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
-\end{equation}
-
-\subsection{F1 Score}
-The F1 score provides a balanced measure of the model's performance by combining precision\footnote{The rate of correctly classified positives. Often has an inverse relationship with Recall \autocite{google_classification_nodate}.}
-and recall into a single metric, and is particularly useful with imbalanced datasets such as the one used in this project.
-The F1 score is calculated as the harmonic mean\footnote{The reciprocal of the mean of the reciprocals of the features. A reciprocal is 1 divided by the number, such as 4's reciprocal being 1/4.}
-of precision and recall, giving equal weight to both metrics, which is useful because in a medical context, false positives and negatives are extremely important 
-and can bear significant consequences.
-
-\begin{equation}\label{eq:Precision}
-    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
-\end{equation}
-
-\begin{equation}\label{eq:F1Score}
-    \text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-\end{equation}
-
+This multi-metric approach will allow for a detailed evaluation of the five models. Detailed descriptions 
+of each metric and how it is calculated can be found in Appendix C.
 
 
 \section{Data Cleaning and Pre-processing Transformations}\label{sec:Preprocessing}
 \subsection{Data encoding}
 Data encoding was not necessary in this dataset as all features were already numeric. However, a detailed description of typical 
-encoding processes can be found in Appendix C.
+encoding processes can be found in Appendix D.
 
 \subsection{Data cleaning}
 The EDA revealed the necessity for data cleaning in this dataset through the transformation of outliers and imputation of missing values.
 
 \subsubsection{Outlier handling}
-It was observed that all columns had outliers, with some having particularly extreme outliers that caused massive skew in the data and 
+It was observed that all columns had outliers, with some having particularly extreme outliers that caused massive variance in the data and 
 the visualisations produced from it. To address these, data was constrained to be within the 1st and 99th percentiles, and any data outside 
 of these would be increased or decreased to one of these boundaries.
 
@@ -586,8 +548,6 @@ of these would be increased or decreased to one of these boundaries.
     \caption{Using np.clip to transform values less than or greater than the 1st and 99th percentiles.}
     \label{fig:OutlierConstraining}
 \end{figure}
-
-\pagebreak 
 
 \subsubsection{Missing data imputation}
 After handling the outliers in the data, missing data can be imputed. The selected method for this was KNN imputation,
@@ -599,7 +559,7 @@ that is mostly present (such as Glucose).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\linewidth]{Preprocessing/KNNImputation.png}
+    \includegraphics[width=.6\linewidth]{Preprocessing/KNNImputation.png}
     \caption{Using KNN imputation to resolve missing data.}
     \label{fig:KNNImputation}
 \end{figure}
@@ -666,7 +626,7 @@ Additionally, SMOTE was performed after the KNN imputation, meaning that a subst
 \para In future projects, it would be best to use more organised and clean datasets, where such substantial 
 preprocessing measures would not be necessary. Furthermore, the features in the dataset are all numerical.
 While this is good for the development of machine learning models, it did not allow for the demonstration 
-of encoding techniques, which were instead described in Appendix C.
+of encoding techniques, which were instead described in Appendix D.
 
 \chapter{Model Development} % Titled "predictive modelling / model development" in template.
 % This may benefit from being its own .TeX file.
@@ -737,13 +697,13 @@ false negatives and true negatives.
     \vspace{1em}
     
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/NB.png}
+        \includegraphics[width=.9\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/NB.png}
         \caption{Na\"ive Bayes}
         \label{fig:NBSeen}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/KNN.png}
+        \includegraphics[width=.9\textwidth]{ModelDev/Iteration1/Matrices/Seen/MetricsIncluded/KNN.png}
         \caption{KNN}
         \label{fig:KNNSeen}
     \end{subfigure}
@@ -757,31 +717,48 @@ false negatives and true negatives.
 % 87.3, and logistic regression achieving 75 or 76 in all metrics. Na\"ive Bayes performed the worst of the models, with 71.9\% accuracy,
 % 73.8\% recall, and an F1-Score of 70.8.
 
-\subsection{Random Forest}
-Random Forest performed perfectly on the training set, achieving 100\% in all metrics, likely due to the fact that it is an ensemble model 
-with the ability to identify correlations in the data, such as those between Insulin and Glucose. If it also performed perfectly on the testing
-data, this would mean the model was overfitted.
+% \subsection{Random Forest}
+% Random Forest performed perfectly on the training set, achieving 100\% in all metrics, likely due to the fact that it is an ensemble model 
+% with the ability to identify correlations in the data, such as those between Insulin and Glucose. If it also performed perfectly on the testing
+% data, this would mean the model was overfitted.
 
-\subsection{Support Vector Machine}
-It is possible the SVM was unable to create the perfect hyperplane in the data to separate the classes. However, 
-the metrics it did achieve (86.9\% accuracy, 85.1\% recall, F1-Score of 87.2) are not bad. An additional reason 
-for this performance is that the SVM was not assigned any parameters, instead left to its defaults.
+% \subsection{Support Vector Machine}
+% It is possible the SVM was unable to create the perfect hyperplane in the data to separate the classes. However, 
+% the metrics it did achieve (86.9\% accuracy, 85.1\% recall, F1-Score of 87.2) are not bad. An additional reason 
+% for this performance is that the SVM was not assigned any parameters, instead left to its defaults.
 
-\subsection{Logistic Regression}
-Logistic regression performed the second-worst of the models, achieving 76.6\% accuracy, 77.1\% recall and an F1-Score 
-of 76.4. This could be due to the lack of parameters set.
+% \subsection{Logistic Regression}
+% Logistic regression performed the second-worst of the models, achieving 76.6\% accuracy, 77.1\% recall and an F1-Score 
+% of 76.4. This could be due to the lack of parameters set.
 
-\subsection{Na\"ive Bayes}
-Na\"ive Bayes performed poorly in relation to other models (74.7\% accuracy, 76.5\% recall, F1-Score of 73.9) because it assumes feature independence,
-which is not true in this dataset due to correlating columns such as BMI and SkinThickness, and Insulin and Glucose.
+% \subsection{Na\"ive Bayes}
+% Na\"ive Bayes performed poorly in relation to other models (74.7\% accuracy, 76.5\% recall, F1-Score of 73.9) because it assumes feature independence,
+% which is not true in this dataset due to correlating columns such as BMI and SkinThickness, and Insulin and Glucose.
 
-\subsection{K-Nearest Neighbours}
-KNN performed exceptionally well (over 99\% in all metrics), as it effectively memorises the data it is trained on when it is fitted,
-meaning that it is not unexpected for it to perform extremely well on the training set.
+% \subsection{K-Nearest Neighbours}
+% KNN performed exceptionally well (over 99\% in all metrics), as it effectively memorises the data it is trained on when it is fitted,
+% meaning that it is not unexpected for it to perform extremely well on the training set.
+
+\begin{longtable}{ | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | }
+    \hline
+    \cellcolor{blue!25} Model & \cellcolor{blue!25} Accuracy & \cellcolor{blue!25} Recall & \cellcolor{blue!25} F1 Score\\
+    \hline
+    Random Forest & 100\% & 100\% & 100\\ 
+    \hline
+    SVM & 86.9\% & 85.1\% & 87.2 \\
+    \hline
+    LR & 76.6\% & 77.1\% & 76.4\\
+    \hline
+    NB & 74.7\% & 76.5\% & 73.9\\
+    \hline
+    KNN & 99.5\% & 99.4\% & 99.5 \\
+    \hline
+    \caption{The metrics of each algorithm on the seen training data.}\label{tab:Iteration1Training}
+\end{longtable}
 
 \subsection{Overall findings}
-In conclusion, Random Forest and KNN showed the best performance on the seen data, with nearly perfect scores across all metrics. 
-SVM demonstrated good performance, while Logistic Regression and Naïve Bayes were the least effective on the training set. 
+Random Forest and KNN showed the best performance on the seen data, with perfect or nearly perfect scores across all metrics. 
+SVM demonstrated good performance, while Logistic Regression and Naïve Bayes were the least effective. 
 It's important to note that performance on seen data doesn't necessarily translate to good performance on unseen data, and further
 evaluation using the unseen testing set is crucial to assess the models' true predictive capabilities.
 
@@ -839,26 +816,43 @@ of how they would be expected to perform on real data could be gathered.
     \label{fig:UnseenDataMatrices}
 \end{figure}
 
-\subsection{Random Forest}
-Random Forest performed very well on the testing set, achieving an accuracy of 98\%, recall of 97.8\% and F1-Score of 97.
-This high performance shows it is an excellent predictor.
+\begin{longtable}{ | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | }
+    \hline
+    \cellcolor{blue!25} Model & \cellcolor{blue!25} Accuracy & \cellcolor{blue!25} Recall & \cellcolor{blue!25} F1 Score\\
+    \hline
+    Random Forest & 98\% & 97.8\% & 97\\
+    \hline
+    SVM & 82.6\% & 71.1\% & 76.1\\
+    \hline
+    LR & 74.3\% & 60.8\% & 63.9\\
+    \hline
+    NB & 76.8\% & 64.6\% & 67\\
+    \hline
+    KNN & 95.3\% & 91.7\% & 93.1\\
+    \hline
+    \caption{The metrics of each algorithm on the unseen testing data.}\label{tab:Iteration1Testing}
+\end{longtable}
 
-\subsection{Support Vector Machine}
-The SVM also performed decently well on the testing set, with an accuracy of 82.6\%, recall of 71.1\%, and F1-Score of 76.1.
-This would still be considered a good model, but pales in comparison to some of the others produced.
+% \subsection{Random Forest}
+% Random Forest performed very well on the testing set, achieving an accuracy of 98\%, recall of 97.8\% and F1-Score of 97.
+% This high performance shows it is an excellent predictor.
 
-\subsection{Logistic Regression}
-Logistic regression was one of the lower performers, with an accuracy of 74.3\%, recall of 60.8\%, and F1-Score of 63.9.
-These metrics indicate that it is not a very good predictor, especially with its low recall and F1-Scores. Its confusion matrix 
-also shows this, classifying 61 false negatives, which would be extremely dangerous in diabetes diagnosis.
+% \subsection{Support Vector Machine}
+% The SVM also performed decently well on the testing set, with an accuracy of 82.6\%, recall of 71.1\%, and F1-Score of 76.1.
+% This would still be considered a good model, but pales in comparison to some of the others produced.
 
-\subsection{Na\"ive Bayes}
-Na\"ive Bayes performed similarly to logistic regression, but was slightly better performing. It had an accuracy of 76.8\%, recall of 
-64.6\%, and F1-Score of 67. While this still makes it a poor predictor, it is slightly better than logistic regression.
+% \subsection{Logistic Regression}
+% Logistic regression was one of the lower performers, with an accuracy of 74.3\%, recall of 60.8\%, and F1-Score of 63.9.
+% These metrics indicate that it is not a very good predictor, especially with its low recall and F1-Scores. Its confusion matrix 
+% also shows this, classifying 61 false negatives, which would be extremely dangerous in diabetes diagnosis.
 
-\subsection{K-Nearest Neighbours}
-KNN performed very well, with 95.3\% accuracy, 91.7\% recall and F1-Score of 93.1. This makes it a very reliable predictor, only 
-misclassifying 26 rows according to its classification matrix. 
+% \subsection{Na\"ive Bayes}
+% Na\"ive Bayes performed similarly to logistic regression, but was slightly better performing. It had an accuracy of 76.8\%, recall of 
+% 64.6\%, and F1-Score of 67. While this still makes it a poor predictor, it is slightly better than logistic regression.
+
+% \subsection{K-Nearest Neighbours}
+% KNN performed very well, with 95.3\% accuracy, 91.7\% recall and F1-Score of 93.1. This makes it a very reliable predictor, only 
+% misclassifying 26 rows according to its classification matrix. 
 
 \subsection{Overall findings}
 In conclusion, Random Forest and KNN emerged as the top-performing models, with Random Forest slightly edging out KNN.
@@ -978,13 +972,12 @@ Through extensive exploratory data analysis, data preprocessing, and model devel
     \end{itemize}
 \end{itemize}
 
-\para Furthermore, the production of a second iteration of each model implementing stratified cross-validation and hyperparameter tuning led to substantial enhancements
-in model performance for SVM, Logistic Regression, and KNN, though not for Random Forest or Na\"ive Bayes. In conclusion, this project successfully developed machine
+\para In conclusion, this project successfully developed machine
 learning models capable of accurately predicting diabetes, with the KNN and Random Forest models being most successful. These results demonstrate the potential of
 machine learning in supporting medical diagnosis, specifically for diabetes mellitus. However, further validation with larger, more complete datasets would be beneficial
 to enhance the models' robustness and generalizability in clinical settings.
 
-
+\pagebreak
 
 \section{Reflection on Individual Learning}
 % Nouh has previously stated he will begin here. This section could be 10% of the marks.
@@ -993,33 +986,33 @@ to enhance the models' robustness and generalizability in clinical settings.
 % How will you further hone your skills in future?
 
 % This section alone is about 350 words. Cutting it down could be best.
-Over the course of this module and others, I have enhanced my skills with a wide variety of tech stacks to a degree 
-I previously thought impossible. I have thoroughly enjoyed expanding my Python skills for data science and machine learning 
-with the use of industry standard packages like Pandas, NumPy and Scikit-Learn. This project in particular has heavily challenged me, 
-requiring extensive research into many academic papers and web resources to further my knowledge of the medical field 
-and machine learning trends. The most challenging part of this project was the use of GridSearchCV on five different models, though 
-I eventually reached the solution of an iterative for-loop that ran the search on all five in a clean block of code.
+Over the course of this project, I have enhanced my skills to a degree I previously thought impossible. I have thoroughly enjoyed expanding
+my Python skills for data science and machine learning with the use of industry standard packages like Pandas, NumPy and Scikit-Learn. 
+This project in particular has heavily challenged me, requiring extensive research into many academic papers and web resources to further my
+knowledge of the medical field and machine learning trends. The most challenging part of this project was the use of GridSearchCV on five different
+models, though I eventually reached the solution of an iterative for-loop that ran the search on all five in a clean block of code.
 
 \para Despite the accomplishments of this project, it is not without flaws. KNN imputation was also used on the testing set to address 
 the missing data within it. While this did mean that more of the testing set could be used, this potentially comes at the expense of 
-the data not being legitimate, as it was synthetically generated, and could have potentially caused some overfitting.
+the data not being legitimate, as it was synthetically generated, and could have potentially caused overfitting.
 
 \para I have always enjoyed writing code from as young as 11 years old. I originally began by creating games on the Roblox platform 
 using their specialised fork of the Lua language, and expanded beyond that into Python as I furthered my knowledge of computing 
 and IT. Also, I have a \href{https://github.com/LewGoesB00M}{personal GitHub account}, which I use for version control and iterative 
 saving of my University work, including for this module in the \href{https://github.com/LewGoesB00M/CMP6202}{CMP6202 repository}, 
-where every step taken in the production of this report is documented across many commits.
+where every step taken in the production of this report and code is documented across many commits.
 
-\para Irrespective of my personal appreciation and enjoyment in writing code, the particular topic of this project was one 
+\para Irrespective of my personal enjoyment in writing code, the topic of this project was one 
 that is close to my heart - members of my family suffer from type 2 diabetes and other health complications that arose from it,
-including neuropathy (intense pain and/or weakness), retinopathy (loss of vision) and even heart attacks and strokes. 
-Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning to make a positive difference 
-for others, and I believe that the knowledge I have gained through this project will be a strong asset in doing so.
+including heart attacks and strokes. Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning
+to make a positive difference, and I believe that the knowledge I gained through this project will be a strong asset in doing so.
+
 
 \include{AppendixA}
 \include{AppendixB}
 \include{AppendixC}
 \include{AppendixD}
+\include{AppendixE}
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
