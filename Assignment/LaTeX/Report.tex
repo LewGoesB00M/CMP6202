@@ -103,7 +103,7 @@
 \usepackage{tikz}
 % -------------------------------------------------------------------------------
 
-\title{Using supervised learning for the binary classification of Type 2 Diabetes}
+\title{Predicting the presence of diabetes mellitus using supervised learning models}
 \author{Lewis Higgins - Student ID 22133848}
 \date{December 2024}
 
@@ -115,10 +115,12 @@
 \makeatletter
 \begin{titlepage}
     \begin{center}
-        \includegraphics[width=0.7\linewidth]{BCU}\\[4ex]
-        {\huge \bfseries  \@title}\\[50ex]
+        \includegraphics[width=.8\linewidth]{BCU-Long.jpg}\\[4ex]
+        {\huge \bfseries CMP6202}\\[4ex]
+        {\huge \bfseries Artificial Intelligence \& Machine Learning}\\[4ex]
+        {\huge \bfseries 2024–2025}\\[16ex]
+        {\huge \bfseries  \@title}\\[40ex]
         {\@author}\\[2ex]
-        {CMP6202 - Artificial Intelligence \& Machine Learning}\\[2ex]
         {Module Coordinator: Nouh Elmitwally}\\[10ex]
     \end{center}
 \end{titlepage}
@@ -136,10 +138,7 @@
 
 \pagecolor{yellow}
 \begin{abstract}
-    Probably would benefit from an abstract. You can't really write this until the very end though,
-    so return to it then. \textbf{The example work is from a previous year wherein this assessment was a group task.
-    You can see that each group member developed one ML model, but you seem to be developing all of them yourself, so don't be mislead
-    by the report titles only mentioning one model.}
+    UNFINISHED - ABSTRACT NEEDED.
 \end{abstract}
 \pagecolor{white}
 
@@ -711,7 +710,7 @@ false negatives and true negatives.
 \begin{figure}[H]
     \centering 
     \includegraphics[width=\linewidth]{ModelDev/Iteration1/Code/Seen/Matrices.png}
-    \caption{The code to output the evaluation metrics and confusion matrices for each model.}
+    \caption{The code to predict with, and output the metrics and confusion matrices of each model on the training set.}
     \label{fig:SeenDataCode}
 \end{figure}
 
@@ -748,7 +747,7 @@ false negatives and true negatives.
         \caption{KNN}
         \label{fig:KNNSeen}
     \end{subfigure}
-    \caption{The confusion matrices of each model on seen data.}
+    \caption{The confusion matrices and evaluation metrics of each model on seen data.}
     \label{fig:SeenDataMatrices}
 \end{figure}
 
@@ -760,25 +759,31 @@ false negatives and true negatives.
 
 \subsection{Random Forest}
 Random Forest performed perfectly on the training set, achieving 100\% in all metrics, likely due to the fact that it is an ensemble model 
-with the ability to identify correlations in the data, such as those between Insulin and Glucose. If it performed 
-in this way on the testing data, however, this would mean the model was overfitted.
+with the ability to identify correlations in the data, such as those between Insulin and Glucose. If it also performed perfectly on the testing
+data, this would mean the model was overfitted.
 
 \subsection{Support Vector Machine}
 It is possible the SVM was unable to create the perfect hyperplane in the data to separate the classes. However, 
-the metrics it did achieve (86.9\% accuracy, 84.8\% recall, F1-Score of 87.3) are not bad. An additional reason 
+the metrics it did achieve (86.9\% accuracy, 85.1\% recall, F1-Score of 87.2) are not bad. An additional reason 
 for this performance is that the SVM was not assigned any parameters, instead left to its defaults.
 
 \subsection{Logistic Regression}
-Logistic regression performed the second-worst of the models, achieving 75.5\% accuracy, 76.2\% recall and an F1-Score 
-of 75.1. This could be due to the lack of parameters set.
+Logistic regression performed the second-worst of the models, achieving 76.6\% accuracy, 77.1\% recall and an F1-Score 
+of 76.4. This could be due to the lack of parameters set.
 
 \subsection{Na\"ive Bayes}
-Na\"ive Bayes performed poorly in relation to other models (71.9\% accuracy, 73.8\% recall, F1-Score of 70.8) because it assumes feature independence,
+Na\"ive Bayes performed poorly in relation to other models (74.7\% accuracy, 76.5\% recall, F1-Score of 73.9) because it assumes feature independence,
 which is not true in this dataset due to correlating columns such as BMI and SkinThickness, and Insulin and Glucose.
 
 \subsection{K-Nearest Neighbours}
 KNN performed exceptionally well (over 99\% in all metrics), as it effectively memorises the data it is trained on when it is fitted,
 meaning that it is not unexpected for it to perform extremely well on the training set.
+
+\subsection{Overall findings}
+In conclusion, Random Forest and KNN showed the best performance on the seen data, with nearly perfect scores across all metrics. 
+SVM demonstrated good performance, while Logistic Regression and Naïve Bayes were the least effective on the training set. 
+It's important to note that performance on seen data doesn't necessarily translate to good performance on unseen data, and further
+evaluation using the unseen testing set is crucial to assess the models' true predictive capabilities.
 
 
 \chapter{Evaluation and further improvements}
@@ -786,37 +791,90 @@ This chapter details the extensive evaluation of each model, as well as iterativ
 that were made to enhance their performance.
 
 \section{Initial results on unseen data}
+The models were evaluated against the testing set which they have not previously seen, so that an analysis 
+of how they would be expected to perform on real data could be gathered.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{ModelDev/Iteration1/Code/Unseen/RF.png}
-    \caption{The code to evaluate the Random Forest model on unseen data. This code is repeated for each model,
-    only differing in the variable names used for each model's prediction and metrics (rf\_acc would be lr\_acc for Logistic Regression, for example).}
+    \includegraphics[width=\linewidth]{ModelDev/Iteration1/Code/Unseen/Matrices.png}
+    \caption{The code to predict with, and output the metrics and confusion matrices of each model on the testing set.}
     \label{fig:UnseenDataCode}
 \end{figure}
-% No idea what this section entails, as the template is quite non-descript on it. (or over-descript idk)
-% I believe it's about the iterative improvements to the models?
-% You should talk about GridSearchCV and how it allowed for optimal hyperparameter tuning.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Unseen/MetricsIncluded/RF.png}
+        \caption{Random Forest}
+        \label{fig:RFUnseen}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Unseen/MetricsIncluded/SVC.png}
+        \caption{Support Vector Machine}
+        \label{fig:SVMUnseen}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Unseen/MetricsIncluded/LR.png}
+        \caption{Logistic Regression}
+        \label{fig:LRUnseen}
+    \end{subfigure}
+    
+    \vspace{1em}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Unseen/MetricsIncluded/NB.png}
+        \caption{Na\"ive Bayes}
+        \label{fig:NBUnseen}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{ModelDev/Iteration1/Matrices/Unseen/MetricsIncluded/KNN.png}
+        \caption{KNN}
+        \label{fig:KNNUnseen}
+    \end{subfigure}
+    \caption{The confusion matrices and evaluation metrics of each model on unseen data.}
+    \label{fig:UnseenDataMatrices}
+\end{figure}
+
+\subsection{Random Forest}
+Random Forest performed very well on the testing set, achieving an accuracy of 98\%, recall of 97.8\% and F1-Score of 97.
+This high performance shows it is an excellent predictor.
+
+\subsection{Support Vector Machine}
+The SVM also performed decently well on the testing set, with an accuracy of 82.6\%, recall of 71.1\%, and F1-Score of 76.1.
+This would still be considered a good model, but pales in comparison to some of the others produced.
+
+\subsection{Logistic Regression}
+Logistic regression was one of the lower performers, with an accuracy of 74.3\%, recall of 60.8\%, and F1-Score of 63.9.
+These metrics indicate that it is not a very good predictor, especially with its low recall and F1-Scores. Its confusion matrix 
+also shows this, classifying 61 false negatives, which would be extremely dangerous in diabetes diagnosis.
+
+\subsection{Na\"ive Bayes}
+Na\"ive Bayes performed similarly to logistic regression, but was slightly better performing. It had an accuracy of 76.8\%, recall of 
+64.6\%, and F1-Score of 67. While this still makes it a poor predictor, it is slightly better than logistic regression.
+
+\subsection{K-Nearest Neighbours}
+KNN performed very well, with 95.3\% accuracy, 91.7\% recall and F1-Score of 93.1. This makes it a very reliable predictor, only 
+misclassifying 26 rows according to its classification matrix. 
+
+\subsection{Overall findings}
+In conclusion, Random Forest and KNN emerged as the top-performing models, with Random Forest slightly edging out KNN.
+SVM showed moderate performance, while Logistic Regression and Naïve Bayes were the least effective for this particular diabetes classification
+task.
+
+
 
 % (The secret was primarily to increase KNN imputer's neighbours. Increased all metrics obscenely.)
 
-\section{Iterative improvements}
+\section{Final model results}
 Machine learning is an iterative process, where it is unlikely that the first model will achieve excellent results.
-Therefore, an additional iteration of the models was produced, utilising a different splitting method for the data,
-and a detailed tuning of hyperparameters to achieve the best possible model performance. Detailed descriptions 
-of new techniques can be found in Appendix D.
-
-\subsection{Cross-Validation}
-% Don't talk about it here, make it an appendix. 
-% Just say "Straified k-fold was used...." etc
-Instead of Scikit-Learn's train\_test\_split method, the new iteration uses StratifiedKFold.
+Therefore, an additional iteration of the models was produced using stratified cross-validation and detailed hyperparameter tuning.
+Detailed descriptions of how this was accomplished can be found in Appendix D.
 
 
-
-
-\subsection{Hyperparameter tuning}
-
-\section{New results on unseen data}
 
 
 \chapter{Conclusion}
@@ -882,7 +940,10 @@ for others, and I believe that the knowledge I have gained through this project 
 \include{AppendixA}
 \include{AppendixB}
 \include{AppendixC}
+\include{AppendixD}
 
+\addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
+
 
 \end{document}

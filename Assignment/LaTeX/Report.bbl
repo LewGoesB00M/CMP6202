@@ -1695,6 +1695,44 @@
       \endverb
       \keyw{environmental factors,Genes,non-genetic factors,type 2 diabetes,variants}
     \endentry
+    \entry{muller_data_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ded57eec209923f330307cf72b4a8e1d}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Andreas\bibnamedelima C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{fullhash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{fullhashraw}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{bibnamehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authorbibnamehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authornamehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authorfullhash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authorfullhashraw}{ded57eec209923f330307cf72b4a8e1d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data Splitting Strategies — Applied Machine Learning in Python}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Data Splitting Strategies — Applied Machine Learning in Python:C\:\\Users\\Lewis\\Zotero\\storage\\7SB4C4RS\\1-data-splitting-strategies.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://amueller.github.io/aml/04-model-evaluation/1-data-splitting-strategies.html
+      \endverb
+      \verb{url}
+      \verb https://amueller.github.io/aml/04-model-evaluation/1-data-splitting-strategies.html
+      \endverb
+    \endentry
     \entry{nelaj_high_2023}{article}{}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=d87b46d1b3edc12fc5d7c46a98cfe50c}{%
@@ -1930,6 +1968,44 @@
       \endverb
       \verb{url}
       \verb https://medium.com/nerd-for-tech/properly-using-smote-930924e81ab5
+      \endverb
+    \endentry
+    \entry{rosaen_scikit-learn_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ced27893847b846b2e0d96ba0e91edbd}{%
+           family={Rosaen},
+           familyi={R\bibinitperiod},
+           given={Karl},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{fullhash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{fullhashraw}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{bibnamehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authorbibnamehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authornamehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authorfullhash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authorfullhashraw}{ced27893847b846b2e0d96ba0e91edbd}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{scikit-learn Pipeline gotchas, k-fold cross-validation, hyperparameter tuning and improving my score on Kaggle's Forest Cover Type Competition {|} {ML} Learning Log}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb 2016-06-20 | scikit-learn Pipeline gotchas, k-fold cross-validation, hyperparameter tuning and improving my score on Kaggle's Forest Cover Type Competition | ML Learning Log:C\:\\Users\\Lewis\\Zotero\\storage\\RPITDNC3\\2016-06-20.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://karlrosaen.com/ml/learning-log/2016-06-20/
+      \endverb
+      \verb{url}
+      \verb http://karlrosaen.com/ml/learning-log/2016-06-20/
       \endverb
     \endentry
     \entry{ruiz-alejos_skinfold_2020}{article}{}{}
