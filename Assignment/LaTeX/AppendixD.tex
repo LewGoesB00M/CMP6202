@@ -84,10 +84,38 @@ combination, which is extremely computationally intensive in terms of processing
 object will return the best model based on the metrics it achieved.
 
 \subsection{Application}\label{ASec:HyperparameterApplication}
+GridSearchCV requires a parameter grid to be set up for each model containing the parameters to test in each combination. 
 
 \begin{figure}[H]
     \centering 
-    \includegraphics[width=\linewidth]{ModelDev/Iteration2/SKF+Metrics.png}
-    \caption{The code used to instantiate a 10-fold StratifiedKFold.}
-    \label{fig:SKFCode}
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/ParamGrid.png}
+    \caption{The parameter grid that will be used for GridSearchCV. As mentioned in the code, GaussianNB does not have any relevant 
+    parameters to tune.}
+    \label{fig:ParamGrid}
 \end{figure}
+
+\para The parameters of each model were found on their respective Scikit-Learn documentation page. A range of values was set for numerical 
+parameters, and predefined strings were used for categorical parameters, such as the Support Vector Classifier's kernels. Following the creation 
+of the parameter grid, a dictionary of models was created in the format "{Model Name} : {Model object}" to allow each model to be iterated through 
+when using GridSearchCV.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/ModelsDict.png}
+    \caption{The created dictionary of models. RF, SVC and LR had their random\_state parameters set ahead of time for reproducibility.}
+    \label{fig:ModelDict}
+\end{figure}
+
+\para This dictionary of models was then iterated through, using GridSearchCV on each model to identify the best combination of parameters from 
+those listed in the parameter grid. The StratifiedKFold produced in Figure \ref{fig:SKFCode} is used as the cross-validator.
+
+\begin{figure}[H]
+    \centering 
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/GridSearchCV.png}
+    \caption{Using GridSearchCV to iterate through the dictionary of models and cross-validate them on the training set. After this, the best model 
+    identified by GridSearchCV based on the maximum F1 score on the training set is saved and used to predict the unseen testing set, outputting 
+    its evaluation metrics and confusion matrices.}
+    \label{fig:GridSearchCV}
+\end{figure}
+
+\para The evaluation metrics and confusion matrices produced are visible in Section \ref{sec:FinalResults}.

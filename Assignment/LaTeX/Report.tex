@@ -226,7 +226,7 @@ As previously mentioned, it is possible for patients to have diabetes without kn
 it is paramount that swift and simple diagnosis methods are put in place, which can be achieved 
 through the use of supervised learning classification models. This requires the existence of the 
 "ground truth", which refers to the label given to data that indicates its class \autocite{c3ai_what_nodate}. 
-Within these datasets, the ground truth is present as the 'Outcome' feature, which will be used 
+Within these datasets, the ground truth is present as the 'Outcome' feature, which was used 
 as the target variable for the produced classification models.
 % Write more.
 
@@ -348,6 +348,7 @@ on topical background research of each of the features in the dataset, detailed 
     \hline
     \caption{The questions that this EDA process aims to answer.}\label{tab:Questions}
 \end{longtable}
+\pagebreak
 
 \section{Splitting the dataset}
 % How was the data split?
@@ -560,14 +561,6 @@ and can bear significant consequences.
 
 
 \section{Data Cleaning and Pre-processing Transformations}\label{sec:Preprocessing}
-% How have you handled missing data? KNN Imputation as Zou et al. did because mean and median were catastrophic.
-
-% SCALING - STANDARDSCALER THEN ROBUST IN ITERATIVE IMPROVEMENT?
-% SMOTE AND NO SMOTE IN ITERATIVE IMPROVEMENT?
-
-% Significant problem: KNN Imputation of the testing set is not optimal as you're technically then testing the model
-% on data it's already been trained on. Consider alternative improvement - mean imputation for testing set after KNN
-% applied to train? If this works, it's an iterative improvement.
 \subsection{Data encoding}
 Data encoding was not necessary in this dataset as all features were already numeric. However, a detailed description of typical 
 encoding processes can be found in Appendix C.
@@ -702,7 +695,7 @@ predictions based on the fit. Figure \ref{fig:ModelFitting} shows the code used 
 % Discuss evaluating your model on previously seen data i.e. the training set.
 % Screenshots of code or Minted code blocks necessary.
 
-To evaluate each model, the metrics previously discussed in section \ref{sec:ChosenMetrics} 
+To evaluate each model, the metrics previously discussed in Section \ref{sec:ChosenMetrics} 
 were logged, but confusion matrices were additionally produced, which show the amounts of data
 each model correctly and incorrectly predicted, divided into true positives, false positives, 
 false negatives and true negatives.
@@ -865,15 +858,76 @@ In conclusion, Random Forest and KNN emerged as the top-performing models, with 
 SVM showed moderate performance, while Logistic Regression and Naïve Bayes were the least effective for this particular diabetes classification
 task.
 
-
-
-% (The secret was primarily to increase KNN imputer's neighbours. Increased all metrics obscenely.)
-
-\section{Final model results}
+\section{Final model results}\label{sec:FinalResults}
 Machine learning is an iterative process, where it is unlikely that the first model will achieve excellent results.
 Therefore, an additional iteration of the models was produced using stratified cross-validation and detailed hyperparameter tuning.
-Detailed descriptions of how this was accomplished can be found in Appendix D.
+Detailed descriptions of how this was accomplished can be found in Appendix D, with the results of these improved iterations shown 
+in Figures \ref{fig:RFIteration2} through \ref{fig:KNNIteration2}.
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/Results/RF.png}
+    \caption{The optimal parameters, cross-validated F1 Score, evaluation metrics, and confusion matrix of the Random Forest model.}
+    \label{fig:RFIteration2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/Results/SVC.png}
+    \caption{The optimal parameters, cross-validated F1 Score, evaluation metrics, and confusion matrix of the Support Vector Machine model.}
+    \label{fig:SVCIteration2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/Results/LR.png}
+    \caption{The optimal parameters, cross-validated F1 Score, evaluation metrics, and confusion matrix of the Logistic Regression model.}
+    \label{fig:LRIteration2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/Results/NB.png}
+    \caption{The cross-validated F1 Score, evaluation metrics, and confusion matrix of the Na\"ive Bayes model. There are no optimal 
+    parameters for this model as hyperparameter tuning was not performed on it. The reason for this is described in Appendix D.}
+    \label{fig:NBIteration2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ModelDev/Iteration2/Results/KNN.png}
+    \caption{The optimal parameters, cross-validated F1 Score, evaluation metrics, and confusion matrix of the K-Nearest Neighbours model.}
+    \label{fig:KNNIteration2}
+\end{figure}
+
+\subsection{Overall summary of results}
+The introduction of stratified cross-validation and hyperparameter tuning\footnote{Except Na\"ive Bayes, which had no parameters to tune (See Appendix D.)} to the models
+resulted in significant improvements across almost all algorithms. Intriguingly, the Random Forest model was the only one to decrease in performance, with a decrease in 
+all three metrics on both the training and testing data, leading to the KNN model outperforming it by a very slight margin (F1 score + 0.0026, Accuracy + 0.0017)
+due to one more false positive being identified in the Random Forest model. This suggests that the Random Forest's first iteration may have been overfitted. Despite 
+this decrease, the model is still an excellent predictor.
+
+\para Every model other than Random Forest and Na\"ive Bayes saw marked improvements in all three evaluation metrics, demonstrating the necessity of cross-validation 
+and hyperparameter tuning in supervised learning tasks. Table \ref{tab:Improvements} shows the improvements in each metric.
+
+\pagebreak 
+\begin{longtable}{ | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | }
+    \hline
+    \cellcolor{blue!25} Model & \cellcolor{blue!25} Accuracy & \cellcolor{blue!25} Recall & \cellcolor{blue!25} F1 Score\\
+    \hline
+    Random Forest & \cellcolor{red!25} -0.35\% & \cellcolor{red!25}-1.6\% & \cellcolor{red!25} -0.49\\ 
+    \hline
+    SVM & \cellcolor{green!18}+3.1\% & \cellcolor{green!18}+13.9\% & \cellcolor{green!18}+0.04\\ 
+    \hline
+    LR & \cellcolor{green!18}+0.7\% & \cellcolor{green!18}+9.7\% & \cellcolor{green!18}+1.6\\
+    \hline
+    NB & \cellcolor{red!25}-3\% & \cellcolor{green!18}+4.9\% & \cellcolor{red!25}-2.8\\
+    \hline
+    KNN & \cellcolor{green!18}+2.5\% & \cellcolor{green!18}+4.5\% & \cellcolor{green!18}+3.6\\
+    \hline
+    \caption{The differences in each evaluation metric in each second-iteration model on the unseen testing data.}\label{tab:Improvements}
+\end{longtable}
 
 
 
@@ -881,18 +935,8 @@ Detailed descriptions of how this was accomplished can be found in Appendix D.
 % THIS IS NOT A DRAFT. YOU NEED TO PROOFREAD THIS!
 % ENSURE IT'S STRUCTURED WELL WITH NO WEIRD PAGE BREAKS.
 
-% You say "will be" a lot, but a report is past tense. Change these to "is".
-
 % Upon reaching this point, go back and make sure your introduction is still valid and makes sense in relation
 % to the rest of the document. This was an issue in CMP6230 that you caught last-minute.
-
-% Pay significant attention to the conclusion, especially the individual learning reflection, as Nouh mentioned 
-% in previous weeks that he's starting his reading from there and it's a heavy bearing on your grade (10% so 8% overall)
-
-% A few times across the report you mention "the 9 features". I don't think the target variable is a feature, so shouldn't it be
-% the 8 features?
-
-% Check the code's package imports. Ensure they're all correct, and describe each package.
 
 \section{Summary of results} 
 % You've done this in labs, make a DF of all models and accuracies, plot it on a graph.
@@ -904,24 +948,26 @@ Detailed descriptions of how this was accomplished can be found in Appendix D.
 %   Your results
 %   Any insights gained?
 
+
+
+
 \section{Reflection on Individual Learning}
 % Nouh has previously stated he will begin here. This section could be 10% of the marks.
 % What did you learn by doing this assignment?
 % What aspects of the assignment did you enjoy most?
 % How will you further hone your skills in future?
 
-
-% You need evidence for this section. Miscellaneous certificates as well as public Github repositories.
-% On that topic, many of your repos aren't exactly "sanitised" for public viewing and had many colorful notes in
-% that were only meant to be read by you. Pick and choose repos that are fine.
-% DataVis is theoretically fine, but the commit history contains many wonderful messages I'd rather weren't seen.
-
 % This section alone is about 300 words. Cutting it down could be best.
 Over the course of this module and others, I have enhanced my skills with a wide variety of tech stacks to a degree 
 I previously thought impossible. I have thoroughly enjoyed expanding my Python skills for data science and machine learning 
-with the use of industry standard packages like Pandas and NumPy. This project in particular has heavily challenged me, 
+with the use of industry standard packages like Pandas, NumPy and Scikit-Learn. This project in particular has heavily challenged me, 
 requiring extensive research into many academic papers and web resources to further my knowledge of the medical field 
-and machine learning trends.
+and machine learning trends. The most challenging part of this project was the use of GridSearchCV on five different models, though 
+I eventually reached the solution of an iterative for-loop that ran the search on all five in a clean block of code.
+
+\para Despite the accomplishments of this project, it is not without flaws. KNN imputation was also used on the testing set to address 
+the missing data within it. While this did mean that more of the testing set could be used, this potentially comes at the expense of 
+the data not being legitimate, as it was synthetically generated, and could have potentially caused some overfitting.
 
 \para I have always enjoyed writing code from as young as 11 years old. I originally began by creating games on the Roblox platform 
 using their specialised fork of the Lua language, and expanded beyond that into Python as I furthered my knowledge of computing 
@@ -935,7 +981,9 @@ including neuropathy (intense pain and/or weakness), retinopathy (loss of vision
 Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning to make a positive difference 
 for others, and I believe that the knowledge I have gained through this project will be a strong asset in doing so.
 
-% When you're done and get back to here, write the abstract!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Write the abstract!!!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{AppendixA}
 \include{AppendixB}
