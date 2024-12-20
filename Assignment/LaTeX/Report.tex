@@ -119,9 +119,10 @@
         {\huge \bfseries CMP6202}\\[4ex]
         {\huge \bfseries Artificial Intelligence \& Machine Learning}\\[4ex]
         {\huge \bfseries 2024–2025}\\[16ex]
-        {\huge \bfseries  \@title}\\[40ex]
+        {\huge \bfseries  \@title}\\[35ex]
         {\@author}\\[2ex]
-        {Module Coordinator: Nouh Elmitwally}\\[10ex]
+        {Module Coordinator: Nouh Elmitwally}\\[2ex]
+        {\bfseries Word count excluding figures, tables and appendices: 4,354}\\[10ex]
     \end{center}
 \end{titlepage}
 \makeatother
@@ -153,20 +154,19 @@
 
 % You've opened by talking about the UK but then transitioned to the whole world?
 % Your datasets are American and German in origin, so it's likely that the worldwide perspective will be better.
-Diabetes mellitus, or type 2 diabetes, accounts for 90\% of the 4.4 million cases of diabetes in the UK, and it is estimated that 
-there are 1.2 million undiagnosed cases of type 2 diabetes across the country \autocite{diabetes_uk_how_nodate}. The rate of type 
-2 diabetes per 100,000 individuals is rapidly increasing, with \textcite{khan_epidemiology_2020}'s analysis projecting that by 
+Type 2 diabetes, or diabetes mellitus, accounts for 90\% of the 4.4 million cases of diabetes in the UK, and it is estimated that 
+there are 1.2 million undiagnosed cases of the condition across the country \autocite{diabetes_uk_how_nodate}. The condition's 
+occurrence per 100,000 individuals is rapidly increasing, with \textcite{khan_epidemiology_2020}'s analysis projecting that by 
 2030, the rate will reach 7,079 per 100,000. Many people with diabetes suffer immensely reduced quality of life, with approximately 50\% 
-of patients suffering from peripheral neuropathy \autocite{dhanapalaratnam_effect_2024}, an irreversible disability which causes immense pain due 
+of patients suffering from peripheral neuropathy \autocite{dhanapalaratnam_effect_2024}, an irreversible disability causing immense pain due 
 to nerve damage from high blood sugar \autocite{nhs_peripheral_2022}, which can occur when the patient was unaware they even 
 had diabetes. 
 
 \para
-Therefore, it is imperative that systems are put in place to enable the swift diagnosis of diabetes, especially type 2 diabetes 
-given its major prevalence. This can be accomplished by training machine learning models on existing clinical datasets 
-to identify common trends in those with and without type 2 diabetes. This report will document the planning, development 
-and evaluation of multiple machine learning models in their classification of whether individuals have type 2 diabetes based 
-on multiple clinical factors, specifically through the stages of:
+Therefore, it is imperative that systems are put in place to enable the swift diagnosis of diabetes mellitus. 
+This can be accomplished by training machine learning models on existing clinical datasets 
+to identify common trends in those with and without the condition. This report will document the planning, development 
+and evaluation of five machine learning models to classify diabetes mellitus based on multiple clinical factors, specifically through the stages of:
 
 \begin{itemize}
     \item Dataset Identification
@@ -181,73 +181,57 @@ on multiple clinical factors, specifically through the stages of:
 \pagebreak 
 \section{Dataset Identification}
 
-Machine learning models require large amounts of data to train upon, meaning a dataset must be identified consisting of many 
-rows and features. This project identified two datasets which could be integrated into one larger dataset, the first of which being 
-the well-reputed Pima Indian Diabetes Database \autocite{uci_machine_learning_pima_nodate}, downloaded from \href{https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database}{Kaggle}, 
-a platform for students and researchers alike to download and upload datasets and code for research purposes. The data originates from the National Institute 
-of Diabetes and Digestive and Kidney Diseases, who collected this data from Pima Indian\footnote{"Pima Indian" refers to a specific Native American ethnic group rather than people from India.}
-women aged 21 and over in hospitals in Phoenix, Arizona, USA, and it has previously seen wide use across academic literature relating to machine learning (\textcite{alzubi_diabetes_2023}, \textcite{zou_construction_2024}, \textcite{joshi_predicting_2021}, \textcite{hayashi_rule_2016}),
-where other researchers have also aimed to solve the problem of diabetes classification via supervised learning. This dataset contains 768 rows with 9 features.
-% Also cite Kaggle here rather than just hyperlinking it.
+Machine learning models require lots of training data, meaning a dataset must be identified consisting of many 
+rows and features. Two datasets were identified which could be integrated into one larger dataset, the first of which being 
+the Pima Indian Diabetes Database \autocite{uci_machine_learning_pima_nodate}, downloaded from \href{https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database}{Kaggle}.
+The data originates from the National Institute of Diabetes and Digestive and Kidney Diseases, who collected this data from Pima Indian\footnote{"Pima Indian" refers to a specific Native American ethnic group rather than people from India.}
+women aged 21 and over in hospitals in Phoenix, Arizona, USA. It has seen wide use across academic literature relating to machine learning 
+where other researchers have also performed diabetes classification via supervised learning \autocite{alzubi_diabetes_2023,zou_construction_2024,joshi_predicting_2021,hayashi_rule_2016}.
+This dataset contains 768 rows with 9 features.
 
 \para
-This project also includes a second dataset, also from \href{https://www.kaggle.com/datasets/johndasilva/diabetes/data}{Kaggle}, that has been previously used in literature by 
-\textcite{zou_construction_2024}. This dataset \autocite{john_dasilva_frankfurt_nodate} is based on data from female patients in Frankfurt, Germany, and includes the same 9 features as the Pima Indian dataset, but includes 2000 rows. By integrating these two datasets into one larger
+The second dataset is also from \href{https://www.kaggle.com/datasets/johndasilva/diabetes/data}{Kaggle}, and has been previously used in literature by 
+\textcite{zou_construction_2024}. This dataset \autocite{john_dasilva_frankfurt_nodate} is based on data from female patients in Frankfurt, Germany, and
+includes the same 9 features as the Pima Indian dataset, but with 2000 samples. By integrating these two datasets into one larger
 dataset of 2768 rows, it will be possible to give the machine learning models more data to train upon.
 
 \para Table \ref{tab:Features} details the 9 features seen in both datasets and their descriptions.
-% You also need to include their types. Ordinal, nominal, etc as with CMP6230.
 
-\begin{longtable}{ | p{0.3\textwidth} | p{0.5\textwidth} | }
+\begin{longtable}{ | p{0.2\textwidth} | p{0.5\textwidth} | p{0.2\textwidth} |}
     \hline
-    \cellcolor{blue!25}Feature & \cellcolor{blue!25}Description \\
+    \cellcolor{blue!25}Feature & \cellcolor{blue!25}Description & \cellcolor{blue!25}Measurement \\
     \hline
-    Pregnancies & The number of pregnancies the patient has had. \\
+    Pregnancies & The number of pregnancies the patient has had. & Ratio\\
     \hline
-    Glucose & Plasma glucose concentration over 2 hours in an oral glucose tolerance test. \\
+    Glucose & Plasma glucose concentration over 2 hours in an oral glucose tolerance test. & Ratio \\
     \hline
-    BloodPressure & Diastolic blood pressure in mm/Hg. \\
+    BloodPressure & Diastolic blood pressure in mm/Hg. & Ratio \\
     \hline
-    SkinThickness & Triceps skin fold thickness (mm) \\
+    SkinThickness & Triceps skin fold thickness (mm) & Ratio \\
     \hline
-    Insulin & 2-hour serum insulin. \\
+    Insulin & 2-hour serum insulin. & Ratio \\
     \hline
-    BMI & Body Mass Index, calculated from the patient's weight and height. \\
+    BMI & Body Mass Index, calculated from the patient's weight and height. & Ratio \\
     \hline
-    DiabetesPedigreeFunction & The product of a function to ascertain the probability of diabetes based on family genetics. \autocite{akmese_diagnosing_2022} \\
+    DiabetesPedigree-\newline Function & The product of a function to ascertain the probability of diabetes based on family genetics. \autocite{akmese_diagnosing_2022}
+    & Ratio \\
     \hline
-    Age & The patient's age.\\
+    Age & The patient's age. & Ratio\\
     \hline
-    Outcome & Whether the patient is likely to develop diabetes.\\
+    Outcome & Whether the patient is likely to develop diabetes. & Nominal\\
     \hline 
     \caption{The features seen in both datasets.}\label{tab:Features}
 \end{longtable}
 
-% An interesting statement was made by Mihai in Week 7.
-% He said "You split your data BEFORE EDA to avoid conceptual overfitting".
-% This probably should have been considered in the presentation slides.
-% The template also is structured in a way where you split before analysis.
+\pagebreak
 
 \section{Supervised learning task identification}
-As previously mentioned, it is possible for patients to have diabetes without knowing. Therefore,
+Because patients can have diabetes without knowing,
 it is paramount that swift and simple diagnosis methods are put in place, which can be achieved 
-through the use of supervised learning classification models. This requires the existence of the 
-"ground truth", which refers to the label given to data that indicates its class \autocite{c3ai_what_nodate}. 
+through the use of binary classification models. This requires the existence of the 
+"ground truth": the label given to data that indicates its class \autocite{c3ai_what_nodate}. 
 Within these datasets, the ground truth is present as the 'Outcome' feature, which was used 
-as the target variable for the produced classification models.
-% Write more.
-
-% RECALL VERY IMPORTANT DUE TO MEDICAL FIELD!
-% SMOTE drawbacks - Synthetic data. Needs data to make more data. In the event of SEVERE imbalance
-% (not like your data) it might just give noise instead of useful data.
-% KNN + SMOTE - Your dataset is 50% synthetic now. Talk somewhere about the risks of that.
-% You removed 98th percentile before imputing your 0s, so was it even the 98th percentile or not?
-%   He either didn't notice that or thought it was the right thing to do and didn't mention it so maybe it's fine?
-% Split before EDA.
-% Why do we do training and testing splits? You were unable to directly answer that during the presentation.
-
-% If you take VSCode screenshots, ensure that your IDE theme is the same across all of them.
-
+as the target variable for the models.
 
 \chapter{Exploratory Data Analysis}
 This chapter details the EDA processes undertaken with the datasets, including 
@@ -258,8 +242,7 @@ sets.
 \section{Data Integration}
 % Not included in template but I feel it's necessary to include somewhere because that's what you're doing.
 The two datasets must first be merged into one to allow for an overall analysis to be performed.
-This is a simple process because they both contain the same 9 features, and is detailed in Figure 
-\ref{fig:Integration}.
+This was a simple process because they both contain the same 9 features.
 
 \begin{figure}[H]
     \centering
@@ -409,7 +392,7 @@ maximize the size of the training split, so a split of 80\% training and 20\% te
     \label{fig:TrainTestDiagram}
 \end{figure}
 
-\para To accomplish this, the data must first be split into $X$ and $y$ tables, where $X$ consists of the eight features, and $y$ is the target variable.
+\para To accomplish this, the data must be split into $X$ and $y$ tables, where $X$ consists of the eight features, and $y$ is the target variable.
 After the data is split to $X$ and $y$, it can be split into training and testing sets through Scikit-Learn's "train\_test\_split" method, as depicted in Figure \ref{fig:TrainTestSplit}
 
 \begin{figure}[H]
@@ -419,8 +402,8 @@ After the data is split to $X$ and $y$, it can be split into training and testin
     \label{fig:TrainTestSplit}
 \end{figure}
 
-\para By default, this method will first shuffle all rows in the dataset before splitting it, which introduces an element of randomness which can damage 
-reproducibility. To combat this, the "random\_state" parameter can be set to ensure that the same shuffle will occur every time.
+\para By default, this method will shuffle all rows in the dataset before splitting it, which introduces an element of randomness, damaging
+reproducibility. To combat this, the "random\_state" parameter was set to ensure that the same shuffle will occur every time.
 
 \para When performing EDA, the Outcome column will be necessary to the analysis, so a deep copy\footnote{A complete copy rather than a pointer to the original data}
 of X\_train was made with y\_train (the Outcome column) being added to it, merging the two back into a full training set, shown in Figure \ref{fig:FullTrainingSet}.
@@ -434,8 +417,8 @@ of X\_train was made with y\_train (the Outcome column) being added to it, mergi
 
 
 \section{EDA process and results}
-In the interest of report conciseness, the full EDA process and results accompany this report as Appendix A. They were performed using the Seaborn Python library,
-which uses Matplotlib to produce convenient visualisations to answer each question posed in Table \ref{tab:Questions}. The topics and issues identified
+The full EDA process and results can be found in Appendix A. They were performed using the Seaborn Python library,
+which produces intepretable visualisations to answer each question posed in Table \ref{tab:Questions}. The topics and issues identified
 during the process are solved in Section \ref{sec:Preprocessing}.
 
 
@@ -571,9 +554,8 @@ too many data points, as the data still varies despite containing many less outl
 \subsection{Data scaling}
 After imputing missing data, scaling can occur. Algorithms such as KNN and SVMs rely heavily on the distance 
 between data points, meaning they can be heavily skewed by large distances between real numbers. Due to the high 
-variance in the dataset as many features use different scales (Age, Insulin, SkinThickness, and BMI for example), 
-it was decided that standardisation will be the scaling procedure. Standardisation uses the formula in Equation \ref{eq:Standardisation}
-to scale data so that it has a mean of 0 and a standard deviation of 1.
+variance in the dataset, it was decided that standardisation will be the scaling procedure. Standardisation uses the 
+formula in Equation \ref{eq:Standardisation} to scale data so that it has a mean of 0 and a standard deviation of 1.
 
 \begin{equation}\label{eq:Standardisation}
     Z = \frac{X - \mu}{\sigma}
@@ -595,7 +577,7 @@ to scale data so that it has a mean of 0 and a standard deviation of 1.
 \pagebreak
 
 \subsection{Data balancing}
-It was also established during EDA that the dataset is imbalanced, mostly containing rows without diabetes. Therefore,
+The dataset is imbalanced, containing more samples without diabetes. Therefore,
 the Synthetic Minority Oversampling Technique (SMOTE) was used to generate synthetic data to balance the classes. 
 SMOTE also uses the KNN algorithm to generate data, but randomly selects nearest neighbours and generates data in-between
 the selected sample and the neighbour \autocite{trainindata_overcoming_2023}. This is repeated until the classes are balanced.
@@ -630,8 +612,8 @@ of encoding techniques, which were instead described in Appendix D.
 
 \chapter{Model Development} % Titled "predictive modelling / model development" in template.
 % This may benefit from being its own .TeX file.
-This chapter details the training and evaluation processes of the original produced models
-before any iterative improvements such as hyperparameter tuning.
+This chapter details the training and evaluation processes of the first iteration models
+before any iterative improvements.
 
 % 3929 without appendices, 6417 with.
 
@@ -640,14 +622,13 @@ before any iterative improvements such as hyperparameter tuning.
 %   How did you use the pre-processed data for training?
 %   What parameters did you use?
 %   Screenshots of code or Minted code blocks necessary.
-After the extensive EDA and preprocessing of the data, including the transformation of outliers and the imputation of
-missing data, the refined training set consisting of 80\% of the data could then be used to train the five models. 
-No features were removed, as all were deemed to be relevant in diabetes diagnosis from topical research and the
-exploration of the dataset itself. 
+After the extensive EDA and preprocessing of the data, the refined training set consisting of 80\% of the data 
+could then be used to train the five models. No features were removed, as all were deemed to be relevant in
+diabetes diagnosis from topical research and the exploration of the dataset itself. 
 
-\para While the inner workings of each algorithm differ immensely, Scikit-Learn allows the fitting and prediction of 
-all models to be uniform, using "fit()" methods to fit each model to the training set, and "predict()" methods to run 
-predictions based on the fit. Figure \ref{fig:ModelFitting} shows the code used to fit the models.
+% \para While the inner workings of each algorithm differ immensely, Scikit-Learn allows the fitting and prediction of 
+% all models to be uniform, using "fit()" methods to fit each model to the training set, and "predict()" methods to run 
+% predictions based on the fit. 
 
 \begin{figure}[H]
     \centering 
@@ -663,7 +644,7 @@ predictions based on the fit. Figure \ref{fig:ModelFitting} shows the code used 
 % Screenshots of code or Minted code blocks necessary.
 
 To evaluate each model, the metrics previously discussed in Section \ref{sec:ChosenMetrics} 
-were logged, but confusion matrices were additionally produced, which show the amounts of data
+were logged alongside confusion matrices, which show the amounts of data
 each model correctly and incorrectly predicted, divided into true positives, false positives, 
 false negatives and true negatives.
 
@@ -759,8 +740,8 @@ false negatives and true negatives.
 \subsection{Overall findings}
 Random Forest and KNN showed the best performance on the seen data, with perfect or nearly perfect scores across all metrics. 
 SVM demonstrated good performance, while Logistic Regression and Naïve Bayes were the least effective. 
-It's important to note that performance on seen data doesn't necessarily translate to good performance on unseen data, and further
-evaluation using the unseen testing set is crucial to assess the models' true predictive capabilities.
+Performance on seen data doesn't necessarily translate to good performance on unseen data, and further
+evaluation using the unseen testing set was performed to assess the models' true predictive capabilities.
 
 
 \chapter{Evaluation and further improvements}
@@ -768,8 +749,8 @@ This chapter details the extensive evaluation of each model, as well as iterativ
 that were made to enhance their performance.
 
 \section{Initial results on unseen data}
-The models were evaluated against the testing set which they have not previously seen, so that an analysis 
-of how they would be expected to perform on real data could be gathered.
+The models were evaluated against the unseen training set, so that an analysis 
+of how they would perform on real data could be gathered.
 
 \begin{figure}[H]
     \centering
@@ -902,35 +883,6 @@ in Figures \ref{fig:RFIteration2} through \ref{fig:KNNIteration2}.
     \label{fig:KNNIteration2}
 \end{figure}
 
-\subsection{Overall summary of results}
-The introduction of stratified cross-validation and hyperparameter tuning\footnote{Except Na\"ive Bayes, which had no parameters to tune (See Appendix D.)} to the models
-resulted in significant improvements across almost all algorithms. Intriguingly, the Random Forest model was the only one to decrease in performance, with a decrease in 
-all three metrics on both the training and testing data, leading to the KNN model outperforming it by a very slight margin (F1 score + 0.0026, Accuracy + 0.0017)
-due to one more false positive being identified in the Random Forest model. This suggests that the Random Forest's first iteration may have been overfitted. Despite 
-this decrease, the model is still an excellent predictor.
-
-\para Every model other than Random Forest and Na\"ive Bayes saw marked improvements in all three evaluation metrics, demonstrating the necessity of cross-validation 
-and hyperparameter tuning in supervised learning tasks. Table \ref{tab:Improvements} shows the improvements in each metric.
-
-\pagebreak 
-\begin{longtable}{ | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | }
-    \hline
-    \cellcolor{blue!25} Model & \cellcolor{blue!25} Accuracy & \cellcolor{blue!25} Recall & \cellcolor{blue!25} F1 Score\\
-    \hline
-    Random Forest & \cellcolor{red!25} -0.35\% & \cellcolor{red!25}-1.6\% & \cellcolor{red!25} -0.49\\ 
-    \hline
-    SVM & \cellcolor{green!18}+3.1\% & \cellcolor{green!18}+13.9\% & \cellcolor{green!18}+0.04\\ 
-    \hline
-    LR & \cellcolor{green!18}+0.7\% & \cellcolor{green!18}+9.7\% & \cellcolor{green!18}+1.6\\
-    \hline
-    NB & \cellcolor{red!25}-3\% & \cellcolor{green!18}+4.9\% & \cellcolor{red!25}-2.8\\
-    \hline
-    KNN & \cellcolor{green!18}+2.5\% & \cellcolor{green!18}+4.5\% & \cellcolor{green!18}+3.6\\
-    \hline
-    \caption{The differences in each evaluation metric in each second-iteration model on the unseen testing data.}\label{tab:Improvements}
-\end{longtable}
-
-
 
 \chapter{Conclusion}
 % THIS IS NOT A DRAFT. YOU NEED TO PROOFREAD THIS!
@@ -940,7 +892,6 @@ and hyperparameter tuning in supervised learning tasks. Table \ref{tab:Improveme
 % to the rest of the document. This was an issue in CMP6230 that you caught last-minute.
 
 \section{Summary of results} 
-% You've done this in labs, make a DF of all models and accuracies, plot it on a graph.
 % Discuss the evaluation results for your final models.
 % Summarise the entire report:
 %   The problem
@@ -948,37 +899,76 @@ and hyperparameter tuning in supervised learning tasks. Table \ref{tab:Improveme
 %   Your methodology
 %   Your results
 %   Any insights gained?
-This project aimed to develop and evaluate machine learning models for predicting the presence of diabetes mellitus using clinical data. 
-Through extensive exploratory data analysis, data preprocessing, and model development, the following key results were achieved:
+% This project aimed to develop and evaluate machine learning models for predicting the presence of diabetes mellitus using clinical data. 
+% Through extensive exploratory data analysis, data preprocessing, and model development, the following key results were achieved:
 
-\begin{itemize}
-    \item Dataset Identification and Integration
-    \begin{itemize}
-        \item The identification and integration of two datasets (Pima Indian and Frankfurt) resulted in a comprehensive dataset of 2,768 samples. 
-    \end{itemize}
-    \item Data Preprocessing and EDA
-    \begin{itemize}
-        \item Assumptions and questions solved by exploratory data analysis revealed critical insights, including the presence of outliers, missing values,
-        and class imbalance, which were addressed through constraining outliers to upper and lower quantiles, imputing missing data using KNN, and balancing
-        classes with SMOTE.
-    \end{itemize}
-    \item Model Development and Evaluation
-    \begin{itemize}
-        \item K-Nearest Neighbours (KNN) emerged as the top-performing model after hyperparameter tuning, achieving 97.8\% accuracy, 96.2\% recall, and an F1-score of 96.6.
-        \item Random Forest performed exceptionally well, with 97.7\% accuracy, 96.2\% recall, and an F1-score of 96.5, only slightly behind KNN.
-        \item Support Vector Machine (SVM) showed significant improvement after tuning, reaching 85.7\% accuracy, 85\% recall, and an F1-score of 80.1.
-        \item Logistic Regression demonstrated moderate performance with 75\% accuracy, 70.5\% recall, and an F1-score of 65.6.
-        \item Na\"ive Bayes performed the least effectively, with 73.8\% accuracy, 69.5\% recall, and an F1-score of 64.2.
-    \end{itemize}
-\end{itemize}
+% \begin{itemize}
+%     \item Dataset Identification and Integration
+%     \begin{itemize}
+%         \item The identification and integration of two datasets (Pima Indian and Frankfurt) resulted in a comprehensive dataset of 2,768 samples. 
+%     \end{itemize}
+%     \item Data Preprocessing and EDA
+%     \begin{itemize}
+%         \item Assumptions and questions solved by exploratory data analysis revealed critical insights, including the presence of outliers, missing values,
+%         and class imbalance, which were addressed through constraining outliers to upper and lower quantiles, imputing missing data using KNN, and balancing
+%         classes with SMOTE.
+%     \end{itemize}
+%     \item Model Development and Evaluation
+%     \begin{itemize}
+%         % \item KNN was the best-performing model, followed very closely by Random Forest, then SVM, Logistic Regression and Na\"ive Bayes.
+%         \item KNN was the top-performing model after hyperparameter tuning, achieving 97.8\% accuracy, 96.2\% recall, and an F1-score of 96.6.
+%         \item Random Forest performed exceptionally well, with 97.7\% accuracy, 96.2\% recall, and an F1-score of 96.5, only slightly behind KNN.
+%         \item SVM showed significant improvement after tuning, reaching 85.7\% accuracy, 85\% recall, and an F1-score of 80.1.
+%         \item Logistic Regression demonstrated moderate performance with 75\% accuracy, 70.5\% recall, and an F1-score of 65.6.
+%         \item Na\"ive Bayes performed the least effectively, with 73.8\% accuracy, 69.5\% recall, and an F1-score of 64.2.
+%     \end{itemize}
+% \end{itemize}
+The introduction of stratified cross-validation and hyperparameter tuning\footnote{Except Na\"ive Bayes, which had no parameters to tune (See Appendix D.)} to the models
+resulted in significant improvements across almost all algorithms. Intriguingly, the Random Forest model was the only one to decrease in performance, with a decrease in 
+all three metrics on both the training and testing data, leading to the KNN model outperforming it by a very slight margin (F1 score + 0.0026, Accuracy + 0.0017)
+due to one more false positive being identified in the Random Forest model. This suggests that the Random Forest's first iteration may have been overfitted. Despite 
+this decrease, the model is still an excellent predictor.
 
-\para In conclusion, this project successfully developed machine
-learning models capable of accurately predicting diabetes, with the KNN and Random Forest models being most successful. These results demonstrate the potential of
-machine learning in supporting medical diagnosis, specifically for diabetes mellitus. However, further validation with larger, more complete datasets would be beneficial
-to enhance the models' robustness and generalizability in clinical settings.
+\para Every model other than Random Forest and Na\"ive Bayes saw marked improvements in all three evaluation metrics, demonstrating the benefits of cross-validation 
+and hyperparameter tuning.
 
-\pagebreak
+\begin{longtable}{ | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | }
+    \hline
+    \cellcolor{blue!25} Model & \cellcolor{blue!25} Accuracy & \cellcolor{blue!25} Recall & \cellcolor{blue!25} F1 Score\\
+    \hline
+    Random Forest & 97.6\% & 96.2\% & 96.5\\
+    \hline
+    SVM & 85.7\% & 85\% & 80.1 \\
+    \hline
+    LR & 75\% & 70.5\% & 65.6\\
+    \hline
+    NB & 73.8\% & 69.5\% & 64.2\\
+    \hline
+    KNN & 97.8\% & 96.2\% & 96.7 \\
+    \hline
+    \caption{The metrics of each second-iteration model on the unseen testing data.}\label{tab:Iteration2Results}
+\end{longtable}
 
+
+
+\begin{longtable}{ | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | }
+    \hline
+    \cellcolor{blue!25} Model & \cellcolor{blue!25} Accuracy & \cellcolor{blue!25} Recall & \cellcolor{blue!25} F1 Score\\
+    \hline
+    Random Forest & \cellcolor{red!25} -0.3\% & \cellcolor{red!25}-1.6\% & \cellcolor{red!25} -0.5\\ 
+    \hline
+    SVM & \cellcolor{green!18}+3.1\% & \cellcolor{green!18}+13.9\% & \cellcolor{green!18}+4\\ 
+    \hline
+    LR & \cellcolor{green!18}+0.7\% & \cellcolor{green!18}+9.7\% & \cellcolor{green!18}+1.7\\
+    \hline
+    NB & \cellcolor{red!25}-3\% & \cellcolor{green!18}+4.9\% & \cellcolor{red!25}-2.8\\
+    \hline
+    KNN & \cellcolor{green!18}+2.5\% & \cellcolor{green!18}+4.5\% & \cellcolor{green!18}+3.6\\
+    \hline
+    \caption{The differences in each evaluation metric in each second-iteration model on the unseen testing data compared to the first-iteration models.}\label{tab:Improvements}
+\end{longtable}
+
+\pagebreak 
 \section{Reflection on Individual Learning}
 % Nouh has previously stated he will begin here. This section could be 10% of the marks.
 % What did you learn by doing this assignment?
@@ -986,33 +976,34 @@ to enhance the models' robustness and generalizability in clinical settings.
 % How will you further hone your skills in future?
 
 % This section alone is about 350 words. Cutting it down could be best.
-Over the course of this project, I have enhanced my skills to a degree I previously thought impossible. I have thoroughly enjoyed expanding
-my Python skills for data science and machine learning with the use of industry standard packages like Pandas, NumPy and Scikit-Learn. 
-This project in particular has heavily challenged me, requiring extensive research into many academic papers and web resources to further my
-knowledge of the medical field and machine learning trends. The most challenging part of this project was the use of GridSearchCV on five different
+Over the course of this project, I have thoroughly enjoyed expanding
+my Python skills for data science and machine learning with industry standard packages like Pandas, NumPy and Scikit-Learn. 
+The project was a massive challenge that seemed insurmountable at times, requiring extensive research into many academic papers and web resources to further my
+knowledge of the medical field and machine learning practices. The most challenging part of this project was the use of GridSearchCV on five different
 models, though I eventually reached the solution of an iterative for-loop that ran the search on all five in a clean block of code.
 
-\para Despite the accomplishments of this project, it is not without flaws. KNN imputation was also used on the testing set to address 
+\para The topic of this project was one 
+that is close to my heart - members of my family suffer from diabetes mellitus and other health complications caused by it,
+including heart attacks and strokes. Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning
+to make a positive difference, and the knowledge I gained through this project will be a strong asset in doing so.
+
+\para Despite the accomplishments of this project, it is not without flaws - KNN imputation was used on the testing set to address 
 the missing data within it. While this did mean that more of the testing set could be used, this potentially comes at the expense of 
 the data not being legitimate, as it was synthetically generated, and could have potentially caused overfitting.
 
 \para I have always enjoyed writing code from as young as 11 years old. I originally began by creating games on the Roblox platform 
-using their specialised fork of the Lua language, and expanded beyond that into Python as I furthered my knowledge of computing 
-and IT. Also, I have a \href{https://github.com/LewGoesB00M}{personal GitHub account}, which I use for version control and iterative 
+using the Lua language, and expanded into Python as I furthered my knowledge of computing 
+and IT. In University, I made my \href{https://github.com/LewGoesB00M}{personal GitHub account}, which I use for version control and iterative 
 saving of my University work, including for this module in the \href{https://github.com/LewGoesB00M/CMP6202}{CMP6202 repository}, 
 where every step taken in the production of this report and code is documented across many commits.
-
-\para Irrespective of my personal enjoyment in writing code, the topic of this project was one 
-that is close to my heart - members of my family suffer from type 2 diabetes and other health complications that arose from it,
-including heart attacks and strokes. Therefore, I am intensely interested in the applications of my passions in AI and Machine Learning
-to make a positive difference, and I believe that the knowledge I gained through this project will be a strong asset in doing so.
-
+% IF ANY FURTHER CHANGES ARE MADE, WORD COUNT ON THE TITLE PAGE MUST BE UPDATED!
 
 \include{AppendixA}
 \include{AppendixB}
 \include{AppendixC}
 \include{AppendixD}
 \include{AppendixE}
+% Appendices are 3,807 words.
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography

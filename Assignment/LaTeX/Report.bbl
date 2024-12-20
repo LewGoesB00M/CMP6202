@@ -419,6 +419,63 @@
       \endverb
       \keyw{big data intelligence,classification,data science,deep learning,diabetes prediction,E-health,healthcare analytics,intelligent diagnosis,machine learning}
     \endentry
+    \entry{atla_sensitivity_2011}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=c650828eb15ba7071b55c37ac82efd18}{%
+           family={Atla},
+           familyi={A\bibinitperiod},
+           given={Abhinav},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5dece966047402c7c1f225578defffe4}{%
+           family={Tada},
+           familyi={T\bibinitperiod},
+           given={Rahul},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fb3ceef0c8e27b0d91ebed68e1ddc85}{%
+           family={Sheng},
+           familyi={S\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=932c431cad6934c5851c054fab3f600d}{%
+           family={Singireddy},
+           familyi={S\bibinitperiod},
+           given={Naveen},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e094d25e51d59ee180f3ee970b03819f}
+      \strng{fullhash}{ffd887bf3e4aa783f55060a4fac2ad0d}
+      \strng{fullhashraw}{ffd887bf3e4aa783f55060a4fac2ad0d}
+      \strng{bibnamehash}{ffd887bf3e4aa783f55060a4fac2ad0d}
+      \strng{authorbibnamehash}{ffd887bf3e4aa783f55060a4fac2ad0d}
+      \strng{authornamehash}{e094d25e51d59ee180f3ee970b03819f}
+      \strng{authorfullhash}{ffd887bf3e4aa783f55060a4fac2ad0d}
+      \strng{authorfullhashraw}{ffd887bf3e4aa783f55060a4fac2ad0d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Noise in data is an effective cause of concern for many machine learning techniques that are used in modeling data. Researchers have studied the impact of noise only on some particular learning algorithm, but only very few attempted to analyze the effect of noise on different ones. In this work, we study the noise sensitivity of four different learning algorithms under different intensities of noise. Particularly, we compare the noise sensitivity of decision tree, naïve bayes, support vector machine, and logistic regression. The algorithms are tested on different datasets that are artificially injected with different degrees of noise. The study helps us understand the impact of different levels of noise on the learning algorithms mentioned above. Furthermore, it also guides of choosing the learning algorithms. In general, naïve bayes is the most resistant to noise. However, it performs also the worst. The other algorithms perform much better than naïve bayes especially after the noisy level is lower than 40\%. When we have approaches to improve the data quality (reduce the noise level), decision tree is the most preferred one, followed by support vector machine and logistic regression, not naïve bayes.}
+      \field{day}{1}
+      \field{issn}{1937-4771}
+      \field{journaltitle}{J. Comput. Sci. Coll.}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{Sensitivity of different machine learning algorithms to noise}
+      \field{volume}{26}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{96\bibrangedash 103}
+      \range{pages}{8}
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\WQBES7AU\\Atla et al. - 2011 - Sensitivity of different machine learning algorithms to noise.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{c3ai_what_nodate}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=fe5ca4bdce9e8bcd5fb228480fffb804}{%
@@ -456,6 +513,77 @@
       \endverb
       \verb{url}
       \verb https://c3.ai/glossary/machine-learning/ground-truth/
+      \endverb
+    \endentry
+    \entry{chang_pima_2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e51911e17d0be2aaf958c1c9b55adaa3}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94bfbeaa6a3df85c2f7e3a4a4b6472e0}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={Jozeene},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbee37baa54c6bb124981e72e60a2682}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Qianwen\bibnamedelima Ariel},
+           giveni={Q\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=375c5b05a2e17565870a0380790f4567}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Zhili},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a443451684ea9c22e699b6524b82f6f4}
+      \strng{fullhash}{da5af34846d5baf09eff3401b64629a8}
+      \strng{fullhashraw}{da5af34846d5baf09eff3401b64629a8}
+      \strng{bibnamehash}{da5af34846d5baf09eff3401b64629a8}
+      \strng{authorbibnamehash}{da5af34846d5baf09eff3401b64629a8}
+      \strng{authornamehash}{a443451684ea9c22e699b6524b82f6f4}
+      \strng{authorfullhash}{da5af34846d5baf09eff3401b64629a8}
+      \strng{authorfullhashraw}{da5af34846d5baf09eff3401b64629a8}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper proposes an e-diagnosis system based on machine learning ({ML}) algorithms to be implemented on the Internet of Medical Things ({IoMT}) environment, particularly for diagnosing diabetes mellitus (type 2 diabetes). However, the {ML} applications tend to be mistrusted because of their inability to show the internal decision-making process, resulting in slow uptake by end-users within certain healthcare sectors. This research delineates the use of three interpretable supervised {ML} models: Naı¨ve Bayes classiﬁer, random forest classiﬁer, and J48 decision tree models to be trained and tested using the Pima Indians diabetes dataset in R programming language. The performance of each algorithm is analyzed to determine the one with the best accuracy, precision, sensitivity, and speciﬁcity. An assessment of the decision process is also made to improve the model. It can be concluded that a Naı¨ve Bayes model works well with a more ﬁne-tuned selection of features for binary classiﬁcation, while random forest works better with more features.}
+      \field{issn}{0941-0643, 1433-3058}
+      \field{journaltitle}{Neural Computing and Applications}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{22}
+      \field{shortjournal}{Neural Comput \& Applic}
+      \field{title}{Pima Indians diabetes mellitus classification based on machine learning ({ML}) algorithms}
+      \field{urlday}{28}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{35}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{16157\bibrangedash 16173}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s00521-022-07049-z
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\Lewis\\Zotero\\storage\\UT3AK3GY\\Chang et al. - 2023 - Pima Indians diabetes mellitus classification based on machine learning (ML) algorithms.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/s00521-022-07049-z
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/s00521-022-07049-z
       \endverb
     \endentry
     \entry{dennison_absolute_2021}{article}{}{}
@@ -799,6 +927,45 @@
       \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11446948/
       \endverb
     \endentry
+    \entry{google_classification_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8b36e9207c24c76e6719268e49201d94}{%
+           family={{Google}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{fullhashraw}{8b36e9207c24c76e6719268e49201d94}
+      \strng{bibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorbibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authornamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorfullhash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorfullhashraw}{8b36e9207c24c76e6719268e49201d94}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Learn how to calculate three key classification metrics—accuracy, precision, recall—and how to choose the appropriate metric to evaluate a given binary classification model.}
+      \field{langid}{english}
+      \field{shorttitle}{Classification}
+      \field{title}{Classification: Accuracy, recall, precision, and related metrics {|} Machine Learning}
+      \field{titleaddon}{Google for Developers}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\FYSFC2FC\\accuracy-precision-recall.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall
+      \endverb
+      \verb{url}
+      \verb https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall
+      \endverb
+    \endentry
     \entry{hayashi_rule_2016}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=959addcc30c42555d48ab09bfbe5b238}{%
@@ -857,6 +1024,89 @@
       \verb https://www.sciencedirect.com/science/article/pii/S2352914816300016
       \endverb
       \keyw{Data mining,Pima Indian diabetes,Re-{RX} algorithm,Rule extraction,Sampling selection,Type 2 diabetes mellitus}
+    \endentry
+    \entry{ibm_what_2021}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cbf44511d041dc6d1dd73cc0c033122c}{%
+           family={{IBM}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \field{extraname}{1}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The Naïve Bayes classifier is a supervised machine learning algorithm that is used for classification tasks such as text classification.}
+      \field{day}{6}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shorttitle}{What Are Naïve Bayes Classifiers?}
+      \field{title}{What Are Naïve Bayes Classifiers? {|} {IBM}}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\5T77CLEB\\naive-bayes.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ibm.com/topics/naive-bayes
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/topics/naive-bayes
+      \endverb
+    \endentry
+    \entry{ibm_what_2023}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cbf44511d041dc6d1dd73cc0c033122c}{%
+           family={{IBM}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{fullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
+      \strng{authorfullhashraw}{cbf44511d041dc6d1dd73cc0c033122c}
+      \field{extraname}{2}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{{SVM} is a supervised {ML} algorithm that classifies data by finding an optimal line or hyperplane to maximize distance between each class in N-dimensional space.}
+      \field{day}{12}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{shorttitle}{What are {SVMs}?}
+      \field{title}{What are {SVMs}?}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ibm.com/topics/support-vector-machine
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/topics/support-vector-machine
+      \endverb
     \endentry
     \entry{john_dasilva_frankfurt_nodate}{online}{}{}
       \name{author}{1}{}{%
@@ -954,6 +1204,71 @@
       \verb{url}
       \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8306487/
       \endverb
+    \endentry
+    \entry{kavya_applications_2024}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=988d1be68fa46209506dcb62ec60df75}{%
+           family={{Kavya}},
+           familyi={K\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=34256fa61b39f3008aaa8aac4e0ca27d}{%
+           family={Shetty},
+           familyi={S\bibinitperiod},
+           given={Mangala},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=23acfa552ab912cb2e3d6fa7096da0d2}{%
+           family={Shetty},
+           familyi={S\bibinitperiod},
+           given={Spoorthi\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1c72658e1015e3f8483382a77df6de5}{%
+           family={Iqbal},
+           familyi={I\bibinitperiod},
+           given={Ihsan\bibnamedelima Mohammed},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e59f0c5dbcd17f7f5af0db2430031ad4}
+      \strng{fullhash}{2e24ac8648a498ae08fb21f05361e527}
+      \strng{fullhashraw}{2e24ac8648a498ae08fb21f05361e527}
+      \strng{bibnamehash}{2e24ac8648a498ae08fb21f05361e527}
+      \strng{authorbibnamehash}{2e24ac8648a498ae08fb21f05361e527}
+      \strng{authornamehash}{e59f0c5dbcd17f7f5af0db2430031ad4}
+      \strng{authorfullhash}{2e24ac8648a498ae08fb21f05361e527}
+      \strng{authorfullhashraw}{2e24ac8648a498ae08fb21f05361e527}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The research seeks to offer valuable insights and references for the prediction of thyroid illness, with a particular focus on accuracy assessment. Through a comprehensive examination, it evaluates the efficacy of three commonly utilized machine learning ({ML}) algorithms: K-Nearest Neighbors ({KNN}), Decision Trees, and Logistic Regression. This analysis not only investigates their performance but also elucidates their utilization as classification tools within the context of thyroid disease prediction. Emphasizing the simplicity and effectiveness of logistic regression, especially in binary outcome prediction tasks, the abstract underscores its significance. Decision trees are described as versatile instruments with a hierarchical decision-making structure adaptable for various classification and regression tasks. In contrast, {KNN} simplifies supervised learning by categorizing new instances based on their similarity to existing ones, ensuring consistency in predictions. In my research, I have developed and applied three distinct algorithms. Notably, the decision tree algorithm exhibited the most promising performance, achieving an accuracy rate of 99 \%. Additionally, the logistic regression model demonstrated an accuracy of 88\%, while the K-nearest neighbors ({KNN}) approach yielded a respectable accuracy of 93 \%. Leveraging the thyroid dataset from the {UC} Irvine Finding Knowledge in Databases Archive, this research aims to advance the understanding of thyroid disease prediction methodologies while contributing to improved assessment practices. By providing insights into these {ML} techniques, the study endeavors to enhance the accuracy and effectiveness of thyroid illness prediction models, ultimately benefiting clinical decision-making and patient care.}
+      \field{booktitle}{2024 Third International Conference on Distributed Computing and Electrical Circuits and Electronics ({ICDCECE})}
+      \field{eventtitle}{2024 Third International Conference on Distributed Computing and Electrical Circuits and Electronics ({ICDCECE})}
+      \field{month}{4}
+      \field{title}{Applications of Thyroid Disease Detection Using Machine Learning}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICDCECE60827.2024.10548749
+      \endverb
+      \verb{file}
+      \verb IEEE Xplore Abstract Record:C\:\\Users\\Lewis\\Zotero\\storage\\X5R9IDRR\\10548749.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10548749
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10548749
+      \endverb
+      \keyw{Classification algorithms,Decision making,Decision-Tree,{KNN},Logistic regression,Logistic-Regression,Machine learning algorithms,Machine-Learning,Prediction algorithms,Predictive models,Supervised learning}
     \endentry
     \entry{khalili_are_2023}{article}{}{}
       \name{author}{9}{}{%
@@ -1054,14 +1369,83 @@
       \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9926772/
       \endverb
     \endentry
+    \entry{khan_novel_2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=1,uniquepart=given,hash=e358461d66b90d4a09cec0d04d7de4a7}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Arsalan},
+           giveni={A\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=2e12af081089b24a5790fdd6e9fad006}{%
+           family={Qureshi},
+           familyi={Q\bibinitperiod},
+           given={Moiz},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=54a7f628fefadee947f6bb1c22ed3f9f}{%
+           family={Daniyal},
+           familyi={D\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5b6b016d19b05c93fd005cfdf472a933}{%
+           family={Tawiah},
+           familyi={T\bibinitperiod},
+           given={Kassim},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e3abe89551c4f1f36721fc087cb4fe1d}
+      \strng{fullhash}{6c5b6d5f079ed414cc0fcff5aba247b3}
+      \strng{fullhashraw}{6c5b6d5f079ed414cc0fcff5aba247b3}
+      \strng{bibnamehash}{6c5b6d5f079ed414cc0fcff5aba247b3}
+      \strng{authorbibnamehash}{6c5b6d5f079ed414cc0fcff5aba247b3}
+      \strng{authornamehash}{e3abe89551c4f1f36721fc087cb4fe1d}
+      \strng{authorfullhash}{6c5b6d5f079ed414cc0fcff5aba247b3}
+      \strng{authorfullhashraw}{6c5b6d5f079ed414cc0fcff5aba247b3}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Cardiovascular disease ({CVD}) is a life-threatening disease rising considerably in the world. Early detection and prediction of {CVD} as well as other heart diseases might protect many lives. This requires tact clinical data analysis. The potential of predictive machine learning algorithms to develop the doctor’s perception is essential to all stakeholders in the health sector since it can augment the efforts of doctors to have a healthier climate for patient diagnosis and treatment. We used the machine learning ({ML}) algorithm to carry out a significant explanation for accurate prediction and decision making for {CVD} patients. Simple random sampling was used to select heart disease patients from the Khyber Teaching Hospital and Lady Reading Hospital, Pakistan. {ML} methods such as decision tree ({DT}), random forest ({RF}), logistic regression ({LR}), Naïve Bayes ({NB}), and support vector machine ({SVM}) were implemented for classification and prediction purposes for {CVD} patients in Pakistan. We performed exploratory analysis and experimental output analysis for all algorithms. We also estimated the confusion matrix and recursive operating characteristic curve for all algorithms. The performance of the proposed {ML} algorithm was estimated using numerous conditions to recognize the best suitable machine learning algorithm in the class of models. The {RF} algorithm had the highest accuracy of prediction, sensitivity, and recursive operative characteristic curve of 85.01\%, 92.11\%, and 87.73\%, respectively, for {CVD}. It also had the least specificity and misclassification errors of 43.48\% and 8.70\%, respectively, for {CVD}. These results indicated that the {RF} algorithm is the most appropriate algorithm for {CVD} classification and prediction. Our proposed model can be implemented in all settings worldwide in the health sector for disease classification and prediction.}
+      \field{issn}{1365-2524}
+      \field{journaltitle}{Health \& Social Care in the Community}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{A Novel Study on Machine Learning Algorithm-Based Cardiovascular Disease Prediction}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{2023}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1406060}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1155/2023/1406060
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\GUEJRUHJ\\Khan et al. - 2023 - A Novel Study on Machine Learning Algorithm-Based Cardiovascular Disease Prediction.pdf:application/pdf;Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\5I3RE2FC\\1406060.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1155/2023/1406060
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1155/2023/1406060
+      \endverb
+    \endentry
     \entry{khan_epidemiology_2020}{article}{}{}
       \name{author}{6}{}{%
-        {{un=0,uniquepart=base,hash=1228131e4bc8d64387ee38d537c3f997}{%
+        {{un=1,uniquepart=given,hash=1228131e4bc8d64387ee38d537c3f997}{%
            family={Khan},
            familyi={K\bibinitperiod},
            given={Moien\bibnamedelimb Abdul\bibnamedelima Basith},
            giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
         {{un=0,uniquepart=base,hash=1680a443c12811b551cef58abe58a7f8}{%
            family={Hashim},
            familyi={H\bibinitperiod},
@@ -1134,6 +1518,219 @@
       \endverb
       \verb{url}
       \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7310804/
+      \endverb
+    \endentry
+    \entry{kirchner_using_2018}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=bf5cdcb82b3fec7dee528406083ed80b}{%
+           family={Kirchner},
+           familyi={K\bibinitperiod},
+           given={Antje},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3e93d97102e37a6d36e3404a721fb84}{%
+           family={Signorino},
+           familyi={S\bibinitperiod},
+           given={Curtis\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0eddc15a26d9e2422d29f7d30b283981}
+      \strng{fullhash}{0eddc15a26d9e2422d29f7d30b283981}
+      \strng{fullhashraw}{0eddc15a26d9e2422d29f7d30b283981}
+      \strng{bibnamehash}{0eddc15a26d9e2422d29f7d30b283981}
+      \strng{authorbibnamehash}{0eddc15a26d9e2422d29f7d30b283981}
+      \strng{authornamehash}{0eddc15a26d9e2422d29f7d30b283981}
+      \strng{authorfullhash}{0eddc15a26d9e2422d29f7d30b283981}
+      \strng{authorfullhashraw}{0eddc15a26d9e2422d29f7d30b283981}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent developments in machine learning allow for flexible functional form estimation beyond the approaches typically used by survey researchers and social scientists. Support vector machines ({SVMs}) are one such technique, commonly used for binary classification problems, such as whether or not an individual decides to participate in a survey. Since their inception, {SVMs} have been extended to solve categorical classification and regression problems. Their versatility in combination with the fact that they perform well in the presence of a large number of predictors, even with a small number of cases, makes them very appealing for a wide range of problems, including character recognition and text classification, speech and speaker verification, as well as imputation problems and record linkage. In this article, we provide a non-technical introduction to the main concepts of {SVMs}, discuss their advantages and disadvantages, present ideas as to how they can be used in survey research, and, finally, provide a hands-on example, including code, as to how they can be used in survey research and how the results compare to a traditional logistic regression.}
+      \field{day}{2}
+      \field{journaltitle}{Survey Practice}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shortjournal}{Survey Practice}
+      \field{title}{Using Support Vector Machines for Survey Research}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{11}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.29115/SP-2018-0001
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\TMJD44CL\\Kirchner and Signorino - 2018 - Using Support Vector Machines for Survey Research.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.surveypractice.org/article/2715-using-support-vector-machines-for-survey-research
+      \endverb
+      \verb{url}
+      \verb https://www.surveypractice.org/article/2715-using-support-vector-machines-for-survey-research
+      \endverb
+    \endentry
+    \entry{mambiya_play_2019}{article}{}{}
+      \name{author}{12}{}{%
+        {{un=0,uniquepart=base,hash=c553b07ab0abb3247a7059ce69246e6d}{%
+           family={Mambiya},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=29a2798e83592e5d79a91a4c590d9c86}{%
+           family={Shang},
+           familyi={S\bibinitperiod},
+           given={Mengke},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=471e61c37bc3e62dbe8655e02a002343}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9885f16be76c4e68e9c2aaf363a53600}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=36c047048acd08560ca8d536b5fb8b58}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Shan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=174256a48cfcc0b62eca8eb846d284a4}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Luping},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab5652acf0de64074be2a35319b7c36a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=47e5a8d5e9ca67c4376873aa4609ddef}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Kaili},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7984ce58a5d9f0aa970e93509d236ecc}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Mengwei},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ecefe7f4a4bedfe92f1c1b842b90dfcf}{%
+           family={Nie},
+           familyi={N\bibinitperiod},
+           given={Fangfang},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2ec72e144f0ab343bb613001c741941}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Fanxin},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a5fd47622a1b7907ffee05ce640c59c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Wanyang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2494ea7a74e2c7515cd2ec30c2cdfb15}
+      \strng{fullhash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{fullhashraw}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{bibnamehash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{authorbibnamehash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{authornamehash}{2494ea7a74e2c7515cd2ec30c2cdfb15}
+      \strng{authorfullhash}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \strng{authorfullhashraw}{1fc75fa8f8cb21034d0080e5b3c0436e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{<}p{>}Diabetes has been a disease of public health concern for a number of decades. It was in the 1930s when scientists made an interesting discovery that the disease is actually divided into two types as some patients were insensitive to insulin treatment then. Type 2 Diabetes which happens to be the non-insulin dependent one is the most common form of the disease and is caused by the interaction between genetic and non-genetic factors. Despite conflicting results, numerous studies have identified genetic and non-genetic factors associated with this common type of diabetes. This review has summarized literature on some genes and non-genetic factors which have been identified to be associated with Type 2 diabetes. It has sourced literature from {PubMed}, Web of Science and Medline without any limitation to regions, publication types, or languages. The paper has started with the introduction, the play of non-genetic factors, the impact of genes in general, and ended with the interaction between some genes and environmental factors.{<}/p{>}}
+      \field{day}{19}
+      \field{issn}{2296-2565}
+      \field{journaltitle}{Frontiers in Public Health}
+      \field{month}{11}
+      \field{note}{Publisher: Frontiers}
+      \field{shortjournal}{Front. Public Health}
+      \field{title}{The Play of Genes and Non-genetic Factors on Type 2 Diabetes}
+      \field{urlday}{15}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fpubh.2019.00349
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\35GF48I5\\Mambiya et al. - 2019 - The Play of Genes and Non-genetic Factors on Type 2 Diabetes.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2019.00349/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2019.00349/full
+      \endverb
+      \keyw{environmental factors,Genes,non-genetic factors,type 2 diabetes,variants}
+    \endentry
+    \entry{muller_data_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ded57eec209923f330307cf72b4a8e1d}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Andreas\bibnamedelima C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{fullhash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{fullhashraw}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{bibnamehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authorbibnamehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authornamehash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authorfullhash}{ded57eec209923f330307cf72b4a8e1d}
+      \strng{authorfullhashraw}{ded57eec209923f330307cf72b4a8e1d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data Splitting Strategies — Applied Machine Learning in Python}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Data Splitting Strategies — Applied Machine Learning in Python:C\:\\Users\\Lewis\\Zotero\\storage\\7SB4C4RS\\1-data-splitting-strategies.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://amueller.github.io/aml/04-model-evaluation/1-data-splitting-strategies.html
+      \endverb
+      \verb{url}
+      \verb https://amueller.github.io/aml/04-model-evaluation/1-data-splitting-strategies.html
       \endverb
     \endentry
     \entry{nelaj_high_2023}{article}{}{}
@@ -1225,6 +1822,7 @@
       \strng{authornamehash}{4459a7e783de4f93dc38a03555f4191f}
       \strng{authorfullhash}{4459a7e783de4f93dc38a03555f4191f}
       \strng{authorfullhashraw}{4459a7e783de4f93dc38a03555f4191f}
+      \field{extraname}{1}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{extradatescope}{labelyear}
@@ -1252,6 +1850,82 @@
       \endverb
       \verb{url}
       \verb https://www.nhs.uk/conditions/peripheral-neuropathy/causes/
+      \endverb
+    \endentry
+    \entry{nhs_type_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4459a7e783de4f93dc38a03555f4191f}{%
+           family={{NHS}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{fullhash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{fullhashraw}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{bibnamehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authorbibnamehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authornamehash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authorfullhash}{4459a7e783de4f93dc38a03555f4191f}
+      \strng{authorfullhashraw}{4459a7e783de4f93dc38a03555f4191f}
+      \field{extraname}{2}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Diabetes is a lifelong condition that causes a person's blood sugar level to become too high. Learn about type 2 diabetes symptoms and treatments.}
+      \field{langid}{british}
+      \field{title}{Type 2 diabetes symptoms and treatments}
+      \field{titleaddon}{{NHS} inform}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\MXMHHQFP\\type-2-diabetes.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nhsinform.scot/illnesses-and-conditions/diabetes/type-2-diabetes/
+      \endverb
+      \verb{url}
+      \verb https://www.nhsinform.scot/illnesses-and-conditions/diabetes/type-2-diabetes/
+      \endverb
+    \endentry
+    \entry{oxford_brookes_university_types_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4a67d2abf83b77abf2869c380ae4ad82}{%
+           family={{Oxford Brookes University}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{fullhash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{fullhashraw}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{bibnamehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authorbibnamehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authornamehash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authorfullhash}{4a67d2abf83b77abf2869c380ae4ad82}
+      \strng{authorfullhashraw}{4a67d2abf83b77abf2869c380ae4ad82}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Types of data}
+      \field{titleaddon}{Oxford Brookes University}
+      \field{urlday}{18}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Lewis\\Zotero\\storage\\R8CLBY8F\\types-of-data.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.brookes.ac.uk/students/academic-development/maths-and-stats/statistics/types-of-data
+      \endverb
+      \verb{url}
+      \verb https://www.brookes.ac.uk/students/academic-development/maths-and-stats/statistics/types-of-data
       \endverb
     \endentry
     \entry{ozbun_properly_2021}{online}{}{}
@@ -1294,6 +1968,44 @@
       \endverb
       \verb{url}
       \verb https://medium.com/nerd-for-tech/properly-using-smote-930924e81ab5
+      \endverb
+    \endentry
+    \entry{rosaen_scikit-learn_nodate}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ced27893847b846b2e0d96ba0e91edbd}{%
+           family={Rosaen},
+           familyi={R\bibinitperiod},
+           given={Karl},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{fullhash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{fullhashraw}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{bibnamehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authorbibnamehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authornamehash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authorfullhash}{ced27893847b846b2e0d96ba0e91edbd}
+      \strng{authorfullhashraw}{ced27893847b846b2e0d96ba0e91edbd}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{scikit-learn Pipeline gotchas, k-fold cross-validation, hyperparameter tuning and improving my score on Kaggle's Forest Cover Type Competition {|} {ML} Learning Log}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb 2016-06-20 | scikit-learn Pipeline gotchas, k-fold cross-validation, hyperparameter tuning and improving my score on Kaggle's Forest Cover Type Competition | ML Learning Log:C\:\\Users\\Lewis\\Zotero\\storage\\RPITDNC3\\2016-06-20.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://karlrosaen.com/ml/learning-log/2016-06-20/
+      \endverb
+      \verb{url}
+      \verb http://karlrosaen.com/ml/learning-log/2016-06-20/
       \endverb
     \endentry
     \entry{ruiz-alejos_skinfold_2020}{article}{}{}
@@ -1635,6 +2347,89 @@
       \verb https://www.sciencedirect.com/science/article/pii/S1871402122001953
       \endverb
       \keyw{{HOMA}-{IR},Insulin resistance,Metabolic syndrome,{TyG} index}
+    \endentry
+    \entry{thomas_addressing_2021}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=df937711411b94b7d39c6a5620029190}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Tressy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=161af05b99a4fdf6a12d11b91b5973e3}{%
+           family={Rajabi},
+           familyi={R\bibinitperiod},
+           given={Enayat},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=d75601f7f99fecd4a3403d29847dbdcc}{%
+           family={Paszynski},
+           familyi={P\bibinitperiod},
+           given={Maciej},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4a1ab7774f93e137a741e625c24a0b9a}{%
+           family={Kranzlmüller},
+           familyi={K\bibinitperiod},
+           given={Dieter},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9e8c105de857d380f7ba7e0a20b14ec8}{%
+           family={Krzhizhanovskaya},
+           familyi={K\bibinitperiod},
+           given={Valeria\bibnamedelima V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=0e7c85e7550c9cf876b4ddf487193e8f}{%
+           family={Dongarra},
+           familyi={D\bibinitperiod},
+           given={Jack\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=24951e6a6503cb8a1fec551397605657}{%
+           family={Sloot},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima M.A.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{fullhash}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{fullhashraw}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{bibnamehash}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{authorbibnamehash}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{authornamehash}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{authorfullhash}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{authorfullhashraw}{c1a8919b951da905d5a3741c75ac5fcd}
+      \strng{editorbibnamehash}{ad09e7824de249197890e24903f1fb3e}
+      \strng{editornamehash}{40867205dfb90c6dfe74d46f8dd310c1}
+      \strng{editorfullhash}{ad09e7824de249197890e24903f1fb3e}
+      \strng{editorfullhashraw}{ad09e7824de249197890e24903f1fb3e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Missing values are ubiquitous in many real-world datasets. In scenarios where a dataset is not very large, addressing its missing values by utilizing appropriate data imputation methods benefits analysis significantly. In this paper, we leveraged and evaluated a new imputation approach called k-Nearest Neighbour with Most Significant Features and incomplete cases ({KNNI}\$\$\_{\textbackslash}mathrm\{{MSF}\}\$\${MSF}) to impute missing values in a healthcare dataset. This algorithm leverages k-Nearest Neighbour ({kNN}) and {ReliefF} feature selection techniques to address incomplete cases in the dataset. The merit of imputation is measured by comparing the classification performance of data models trained with the dataset with imputation and without imputation. We used a real-world dataset, “very low birth weight infants”, to predict the survival outcome of infants with low birth weights. Five different classifiers were used in the experiments. The comparison of multiple performance metrics shows that classifiers built on imputed dataset produce much better outcomes. {KNNI}\$\$\_{\textbackslash}mathrm\{{MSF}\}\$\${MSFoutperformed} in general than the k-Nearest Neighbour Imputation using the Random Forest feature weights ({KNNI}\$\$\_{\textbackslash}mathrm\{{RF}\}\$\${RF}) algorithm with respect to the balanced accuracy and specificity.}
+      \field{booktitle}{Computational Science – {ICCS} 2021}
+      \field{isbn}{978-3-030-77977-1}
+      \field{langid}{english}
+      \field{title}{Addressing Missing Data in a Healthcare Dataset Using an Improved {kNN} Algorithm}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{pages}{223\bibrangedash 230}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/978-3-030-77977-1_17
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Lewis\\Zotero\\storage\\UCZMWDUL\\Thomas and Rajabi - 2021 - Addressing Missing Data in a Healthcare Dataset Using an Improved kNN Algorithm.pdf:application/pdf
+      \endverb
+      \keyw{Classification,Data imputation,Healthcare,{kNN},Missing value}
     \endentry
     \entry{trainindata_overcoming_2023}{online}{}{}
       \name{author}{1}{}{%
